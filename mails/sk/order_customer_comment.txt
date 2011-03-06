@@ -1,0 +1,11 @@
+Dobrý deň,
+
+Správa od {firstname} {lastname} ({email}):
+
+Obdržali ste novú správu ohľadom objednávky č. {id_order}:
+
+{message}
+
+
+------------------
+Internetový obchod {shop_name} - {shop_url}

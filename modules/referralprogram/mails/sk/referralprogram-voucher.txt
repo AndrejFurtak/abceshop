@@ -1,0 +1,12 @@
+Dobrý deň {firstname} {lastname}!
+
+Radi by sme vás informovali o vytvorení kupónu vystaveného na vaše meno v súvislosti so sponzorským programom.
+
+Kód vášho kupónu: {voucher_num}, na sumu {voucher_amount}.
+Kód kupónu jednoducho vložte do nákupného košíka pred zaplatením budúcej objednávky.
+
+Ďakujeme Vám za nákup. Sledujte naše aktuálne zľavy, akcie a novinky.
+
+
+------------------
+Internetový obchod {shop_name} - {shop_url}

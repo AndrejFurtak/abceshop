@@ -1,0 +1,12 @@
+Dobrý deň p. {firstname} {lastname}!
+
+Informácia k objednávke č. {id_order}:
+		
+Vaša objednávka bola zrušená.
+
+Podrobnosti o objednávke nájdete vo svojom zákazníckom "Účte" po kliknutí na "História nákupov".
+
+Veríme, že nabudúce sa nákup podarí realizovať k Vašej spokojnosti. Sledujte naše aktuálne zľavy, akcie a novinky.
+
+------------------
+Internetový obchod {shop_name} - {shop_url}

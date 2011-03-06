@@ -1,0 +1,13 @@
+Dobrý deň p. {firstname} {lastname}!
+
+Zásielka s objednaným tovarom bola odoslaná a je na ceste k Vám.
+
+Zásielku môžete sledovať kliknutím na odkaz: {followup}
+
+Podrobnosti o objednávke a faktúru nájdete vo svojom zákazníckom "Účte" po kliknutí na "História nákupov". 
+
+Ďakujeme Vám za nákup. Sledujte naše aktuálne zľavy, akcie a novinky.
+
+
+------------------
+Internetový obchod {shop_name} - {shop_url}

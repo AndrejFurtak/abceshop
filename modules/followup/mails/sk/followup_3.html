@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/1999/REC-html401-19991224/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Správa z obchodu {shop_name}</title>
+<style type="text/css">
+<!--
+body,td,th {background-color: #FFF; font-family: Verdana, Geneva, sans-serif; font-size: 11px;	color:#374953;}
+body {background-color: #FFF;}
+a:link, a:visited  {font-size: 10px; font-weight:bold; color: #DB3484; text-decoration:none;}
+a:hover {font-size: 10px; font-weight:bold; color: #536226; text-decoration:underline;}
+a:active {font-size: 10px; font-weight:bold; color: #39431B; text-decoration:underline;}
+-->
+</style>
+</head>
+<body>
+<table style="width: 550px;">
+  <tr>
+    <td align="left">
+				<a href="{shop_url}" title="{shop_name}"><img src="{shop_logo}" alt="Logo: {shop_name}" align="right" style="border:none;" ></a>
+			</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="left">Dobrý deň <strong>{firstname} {lastname}</strong>,</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="left" style="background-color:#DB3484; color:#FFF; font-size: 12px; font-weight:bold; padding: 1em;">Poďakovanie za Vašu dôveru</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="left">Ste jedným z najvernejších zákazníkov v našom obchode. Radi by sme vám poďakovali za vašu dôveru a poskytli malý darček.<br />
+      <br />
+      Na základe tohoto vám ponúkame zľavu vo výške {amount}% z nasledujúcej objednávky! Táto ponuka bude trvať iba {days} dní. Nepremeškajte ju! </td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="left">Tu je váš kupón na zľavu: <strong>{voucher_num}</strong><br />
+      <br />
+      Vpíšte tento kód vo vašom nákupnom košíku, ak chcete získať túto zľavu.</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td align="center" style="border-top: 1px solid #D9DADE; height:30px;">Internetový obchod <a href="{shop_url}" title="{shop_url}">{shop_name}</a>
+    </td>
+  </tr>
+</table>
+<!-- E-mail template for PrestaShop 1.3.7.0 -->
+</body>
+</html>

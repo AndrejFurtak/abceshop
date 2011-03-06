@@ -1,0 +1,11 @@
+Dobrý deň p. {firstname} {lastname}!
+		
+Informácia k objednávke č. {id_order}
+
+Potvrdzujeme príjem Vašej objednávky. Personál nášho obchodu začal jej spracovanie.
+
+Podrobnosti o objednávke a faktúru nájdete vo svojom zákazníckom "Účte" po kliknutí na "História nákupov".
+
+	
+------------------
+Internetový obchod {shop_name} - {shop_url}

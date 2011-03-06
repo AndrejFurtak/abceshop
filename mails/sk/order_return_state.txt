@@ -1,0 +1,11 @@
+Dobrý deň p. {firstname} {lastname}!
+
+Stav Vašej žiadosti č. {id_order_return} bol zmenený na "{state_order_return}".
+
+Podrobnosti o objednávke a faktúru nájdete vo svojom zákazníckom "Účte" po kliknutí na "História nákupov".
+
+Veríme, že nabudúce sa nákup podarí realizovať k Vašej spokojnosti. Sledujte naše aktuálne zľavy, akcie a novinky.
+
+
+------------------
+Internetový obchod {shop_name} - {shop_url}

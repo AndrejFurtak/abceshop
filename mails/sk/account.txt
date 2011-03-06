@@ -1,0 +1,21 @@
+Dobrý deň p. {firstname} {lastname}!
+
+Ďakujeme, že ste si vytvorili účet v našom obchode.
+
+Vaše prihlasovacie údaje sú nasledovné:
+
+E-mailová adresa: {email}
+Heslo: {passwd}
+ 
+Odteraz môžete pohodlne nakupovať v našom obchode {shop_url}
+
+Bezpečnostné tipy:
+ * Majte uložené údaje o svojom účte na bezpečnom mieste, ideálne si ich iba pamätajte.
+ * Neposkytujte Vaše údaje iným osobám.
+ * Pravidelne meňte vaše heslo.
+ * Obchod {shop_name} vás nikdy nebude žiadať e-mailom, ani iným spôsobom o poskytnutie vašich prihlasovacích, či osobných údajov. Ak sa s takýmto prípadom stretnete, informujte nás o tom.
+ * Ak si myslíte, že niekto zneužil vaše údaje, okamžite nás kontaktujte a upozornite na túto skutočnosť.
+
+
+------------------
+Internetový obchod {shop_name} - {shop_url}

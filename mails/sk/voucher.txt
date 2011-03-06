@@ -1,0 +1,15 @@
+Dobrý deň p. {firstname} {lastname}!
+
+Objednávka č. {id_order}:
+
+Radi by sme vás informovali o vytvorení zľavy, ktorá Vám vznikla z objednávky č. {id_order}.
+
+Kód vášho kupónu: {voucher_num}, v hodnote {voucher_amount}.
+
+Jednoducho skopírujte tento kód a vložte počas platobného procesu pri ďalšom nákupe v našom internetovom obchode.
+
+Ďakujeme Vám za nákup. Sledujte naše aktuálne zľavy, akcie a novinky.
+
+
+------------------
+Internetový obchod {shop_name} - {shop_url}

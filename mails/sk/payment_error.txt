@@ -1,0 +1,15 @@
+Dobrý deň p. {firstname} {lastname}!
+
+Informácie k objednávke č. {id_order}
+
+Vyskytol sa problém pri úhrade vašej objednávky č. {id_order}. Čo najskôr nás prosím kontaktujte.
+
+Vašu objednávku nebude možné doručiť, pokiaľ nebude problém vyriešený.
+
+Podrobnosti o objednávke a faktúru nájdete vo svojom zákazníckom "Účte" po kliknutí na "História nákupov".
+
+Ďakujeme Vám za nákup. Sledujte naše aktuálne zľavy, akcie a novinky.
+
+
+------------------
+Internetový obchod {shop_name} - {shop_url}

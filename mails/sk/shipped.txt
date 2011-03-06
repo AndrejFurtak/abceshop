@@ -1,0 +1,16 @@
+Dobrý deň p. {firstname} {lastname}!
+
+Informácia k objednávke č. {id_order}
+
+Vaša objednávka bola odoslaná.
+
+Čoskoro Vám bude e-mailom doručený odkaz na stránku, na ktorej budete môcť sledovať proces doručenia zásielky (balíka) objednaným tovarom. 
+
+
+Podrobnosti o objednávke a faktúru nájdete vo svojom zákazníckom "Účte" po kliknutí na "História nákupov".
+
+Ďakujeme Vám za nákup. Sledujte naše aktuálne zľavy, akcie a novinky.
+
+
+------------------
+Internetový obchod {shop_name} - {shop_url}

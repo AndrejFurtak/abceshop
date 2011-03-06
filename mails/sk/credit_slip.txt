@@ -1,0 +1,11 @@
+Dobrý deň p. {firstname} {lastname}!
+
+Radi by sme vás informovali o vystavení dobropisu na vrátený tovar z objednávky č. {id_order}.
+
+Tento dobropis si môžete prezrieť a prevziať vo svojom zákazníckom "Účte" v časti "Dobropisy".
+
+Ďakujeme Vám za nákup. Sledujte naše aktuálne zľavy, akcie a novinky.
+
+
+------------------
+Internetový obchod {shop_name} - {shop_url}

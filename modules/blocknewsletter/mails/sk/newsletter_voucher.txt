@@ -1,0 +1,7 @@
+Dobrý deň!
+
+V súvislosti s odberom noviniek z nášho obchodu prostredníctvom Spravodaja, by sme vám radi ponúkli zaujímavú ponuku vo forme kupónu: {discount}
+
+
+------------------
+Internetový obchod {shop_name} - {shop_url}

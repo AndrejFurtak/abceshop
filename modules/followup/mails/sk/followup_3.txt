@@ -1,0 +1,13 @@
+Dobrı deò {firstname} {lastname},
+ 
+Ste jednım z najvernejších zákazníkov v našom obchode. Radi by sme vám poïakovali za vašu dôveru a poskytli malı darèek.
+
+Na základe tohoto vám ponúkame z¾avu vo vıške {amount}% z nasledujúcej objednávky! Táto ponuka bude trva iba {days} dní. Nepremeškajte ju!
+ 
+Tu je váš kupón na z¾avu: {voucher_num}
+
+Vpíšte tento kód vo vašom nákupnom košíku, ak chcete získa túto z¾avu.
+
+
+------------------
+Internetovı obchod {shop_name} - {shop_url}

@@ -1,0 +1,14 @@
+Dobrý deň p. {firstname} {lastname}!
+
+Objednávka č. {id_order}
+ 
+Vaša objednávka je spracovaná a evidovaná v našom systéme.
+Budeme Vás kontaktovať akonáhle bude tovar pripravený k osobému odberu.
+
+Podrobnosti o objednávke a faktúru nájdete vo svojom zákazníckom "Účte" po kliknutí na "História nákupov".
+
+Ďakujeme Vám za nákup. Sledujte naše aktuálne zľavy, akcie a novinky.
+
+
+------------------
+Internetový obchod {shop_name} - {shop_url}

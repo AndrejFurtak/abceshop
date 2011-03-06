@@ -1,0 +1,9 @@
+Spravodaj internetového obchodu {shop_name}
+
+Text správy
+
+{message}
+
+
+------------------
+Internetový obchod {shop_name} - {shop_url}

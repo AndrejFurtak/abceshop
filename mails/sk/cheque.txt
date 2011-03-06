@@ -1,0 +1,19 @@
+Dobrý deň p. {firstname} {lastname}!
+
+Potvrdzujeme príjem Vašej objednávky č. {id_order}. Zásielka s objednaným tovarom Vám bude odoslaná v čo najkratšom čase od prijatia úhrady.
+
+Pri objednávaní ste si vybrali spôsob platby šekom. Zašlite nám prosím šek:
+
+- suma za objednávku: {total_paid}
+- v prospech príjemcu: {cheque_name}
+- na adresu: {cheque_address_html}
+- variabilný symbol: {id_order}
+- konštantný symbol: 0008
+
+Túto objednávku si môžete prezrieť a vytlačiť faktúru v časti "História nákupov" vo svojom profile kliknutím na "Účet".
+
+Ďakujeme Vám za nákup. Sledujte naše aktuálne zľavy, akcie a novinky.
+
+
+------------------
+Internetový obchod {shop_name} - {shop_url}

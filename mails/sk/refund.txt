@@ -1,0 +1,13 @@
+Dobrý deň p. {firstname} {lastname}!
+
+Informácia k dobropisu č. {id_order_slip}
+
+Úhrada dobropisu k tejto objednávke bola odoslaná.
+
+Podrobnosti o návratke a dobropis nájdete vo svojom zákazníckom "Účte" po kliknutí na "Dobropisy".
+
+Veríme, že nabudúce sa nákup podarí realizovať k Vašej spokojnosti. Sledujte naše aktuálne zľavy, akcie a novinky.
+
+
+------------------
+Internetový obchod {shop_name} - {shop_url}

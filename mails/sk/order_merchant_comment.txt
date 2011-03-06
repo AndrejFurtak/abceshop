@@ -1,0 +1,12 @@
+Dobrý deň p. {firstname} {lastname}!
+	
+Obdržali ste správu v súvislosti s vašou objednávkou č. {id_order}:
+
+{message}	
+
+
+Podrobnosti o objednávke a faktúru nájdete vo svojom zákazníckom "Účte" po kliknutí na "História nákupov".
+
+
+------------------
+Internetový obchod {shop_name} - {shop_url}

@@ -1,0 +1,37 @@
+<?php
+
+global $_MODULE;
+$_MODULE = array();
+$_MODULE['<{statsproduct}prestashop>statsproduct_78e454064a7d3a7755a011a3b79f31a7'] = 'Detaily produktov';
+$_MODULE['<{statsproduct}prestashop>statsproduct_e495fcaeee4bc7645b9c2c539a429e14'] = 'Zobrazuje podrobné štatistiky o každom produkte';
+$_MODULE['<{statsproduct}prestashop>statsproduct_3ec365dd533ddb7ef3d1c111186ce872'] = 'Detaily';
+$_MODULE['<{statsproduct}prestashop>statsproduct_981a6013008c8f4b75836b0f415b05b8'] = 'Spolu zakúpené:';
+$_MODULE['<{statsproduct}prestashop>statsproduct_b262bbde88b3b8dca3b27d730aca69bf'] = 'Spolu zobrazené:';
+$_MODULE['<{statsproduct}prestashop>statsproduct_bebbab2c1ac732ccef4181f51ed52967'] = 'Konverzný pomer:';
+$_MODULE['<{statsproduct}prestashop>statsproduct_c90b9dca2d3f5bb6e0d0bdceac8a631d'] = 'Vlastnosti obchodnej distribúcie';
+$_MODULE['<{statsproduct}prestashop>statsproduct_11ff9f68afb6b8b5b8eda218d7c83a65'] = 'Predaj';
+$_MODULE['<{statsproduct}prestashop>statsproduct_44749712dbec183e983dcd78a7736c41'] = 'Dátum';
+$_MODULE['<{statsproduct}prestashop>statsproduct_a240fa27925a635b08dc28c9e4f9216d'] = 'Objednávka';
+$_MODULE['<{statsproduct}prestashop>statsproduct_ce26601dac0dea138b7295f02b7620a7'] = 'Zákazník';
+$_MODULE['<{statsproduct}prestashop>statsproduct_f2bbdf9f72c085adc4d0404e370f0f4c'] = 'Vlastnosť';
+$_MODULE['<{statsproduct}prestashop>statsproduct_03ab340b3f99e03cff9e84314ead38c0'] = 'Množ.';
+$_MODULE['<{statsproduct}prestashop>statsproduct_3601146c4e948c32b6424d2c0a7f0118'] = 'Cena';
+$_MODULE['<{statsproduct}prestashop>statsproduct_a1892c39b2598b4f30f9cc92c59f1aa5'] = 'Vzájomný predaj a nákup';
+$_MODULE['<{statsproduct}prestashop>statsproduct_df644ae155e79abf54175bd15d75f363'] = 'Názov produktu';
+$_MODULE['<{statsproduct}prestashop>statsproduct_2a0440eec72540c5b30d9199c01f348c'] = 'Predané množstvo';
+$_MODULE['<{statsproduct}prestashop>statsproduct_844c29394eea07066bb2efefc35784ec'] = 'Priemerná cena';
+$_MODULE['<{statsproduct}prestashop>statsproduct_0173374ac20f5843d58b553d5b226ef6'] = 'Zvoľte kategóriu';
+$_MODULE['<{statsproduct}prestashop>statsproduct_b1c94ca2fbc3e78fc30069c8d0f01680'] = 'Všetky';
+$_MODULE['<{statsproduct}prestashop>statsproduct_3303da9d5241177588a06ad60d7edaba'] = 'Kliknite na produkt pre zobrazenie jeho štatistiky';
+$_MODULE['<{statsproduct}prestashop>statsproduct_6ccf03bc05e4b749b74b5d577c7e7d3a'] = 'Dostupné produkty';
+$_MODULE['<{statsproduct}prestashop>statsproduct_12d3c7a4296542c62474856ec452c045'] = 'Kód';
+$_MODULE['<{statsproduct}prestashop>statsproduct_49ee3087348e8d44e1feda1917443987'] = 'Názov';
+$_MODULE['<{statsproduct}prestashop>statsproduct_27ce7f8b5623b2e2df568d64cf051607'] = 'Sklad';
+$_MODULE['<{statsproduct}prestashop>statsproduct_6602bbeb2956c035fb4cb5e844a4861b'] = 'Nápoveda';
+$_MODULE['<{statsproduct}prestashop>statsproduct_6c1a8292e4da90e1ef19ae9444226d8f'] = 'Počet predajov v porovnaní s počtom zobrazení';
+$_MODULE['<{statsproduct}prestashop>statsproduct_78b7f73e738991f2f0c08aa76e0c1354'] = 'Po vybratí kategórie a dostupnosti produktov, budú zobrazené grafy. Potom ich budete môcť analyzovať.';
+$_MODULE['<{statsproduct}prestashop>statsproduct_4c694fbaea539b8c135a187da5b508eb'] = 'Ak zistíte, že je nejaký produkt úspešný, predávaný, ale menej navštevovaný, mali by ste ho umiestniť na titulnú stránku obchodu, aby si ho zákazníci všimli.';
+$_MODULE['<{statsproduct}prestashop>statsproduct_47786db044f5982f2d9d475b03caa1ee'] = 'Ak zistíte, že je nejaký produkt veľa krát zobrazovaný, ale málo úspešný a predávaný, mali by ste upraviť jeho popis.';
+$_MODULE['<{statsproduct}prestashop>statsproduct_e22269bb51f9f2394e148716babbafbb'] = 'Popularita';
+$_MODULE['<{statsproduct}prestashop>statsproduct_5e9613e58f3bdbc89b1fef07274c0877'] = 'Návštevy (x100)';
+$_MODULE['<{statsproduct}prestashop>statsproduct_287234a1ff35a314b5b6bc4e5828e745'] = 'Vlastnosti';

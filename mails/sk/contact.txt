@@ -1,0 +1,13 @@
+Obdržali ste odkaz od zákazníka z obchodu {shop_name}.
+
+Detail o odkaze:
+
+E-mailová adresa: {email}
+
+Text spravy:
+
+{message}
+
+
+------------------
+Internetový obchod {shop_name} - {shop_url}

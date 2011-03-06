@@ -1,0 +1,5 @@
+{shop_name}
+Tento produkt sa èoskoro vypredá:
+Ref.è.: {product_ref}
+ID: {product_id}
+Množ.: {qty}

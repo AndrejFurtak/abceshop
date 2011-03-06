@@ -1,0 +1,15 @@
+Dobrý deň p. {firstname} {lastname}!
+		
+Informácie k objednávke č. {id_order}
+	
+Je nám ľúto, ale jedna alebo viac položiek vašej objednávky č. {id_order} sú momentálne vypredané. Táto skutočnosť môže spôsobiť, že sa odoslanie zásielky opozdí. Prosíme, prijmite naše ospravedlnenie. Objednávka bude odoslaná okamžite po doplnení našich skladových zásob.
+
+Ďakujeme za pochopenie.
+
+Podrobnosti o objednávke a faktúru nájdete vo svojom zákazníckom "Účte" po kliknutí na "História nákupov".
+
+Ďakujeme Vám za nákup. Sledujte naše aktuálne zľavy, akcie a novinky.
+
+
+------------------
+Internetový obchod {shop_name} - {shop_url}

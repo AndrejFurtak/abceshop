@@ -1,0 +1,11 @@
+Dobrý deň!
+ 
+Prehľad chýb z vášho modulu PayPal API.
+
+Klient zaznamenal problémy s modulom PayPal API. Pozrite si zoznam:
+
+{logs}
+
+
+------------------
+Internetový obchod {shop_name} - {shop_url}

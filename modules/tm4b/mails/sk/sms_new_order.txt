@@ -1,0 +1,5 @@
+{shop_name}
+Zákazník: {firstname} {lastname}
+Objednávka: {order_name}
+Platba: {payment}
+Spolu: ({total_paid} {currency})

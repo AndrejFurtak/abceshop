@@ -1,0 +1,7 @@
+config/settings-local.inc
+nbproject/private
+tools/smarty/compile/*
+!tools/smarty/compile/index.php
+upload/*
+!upload/.htaccess
+!upload/index.php

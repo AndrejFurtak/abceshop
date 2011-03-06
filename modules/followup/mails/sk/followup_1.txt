@@ -1,0 +1,15 @@
+Dobrı deò {firstname} {lastname},
+
+Radi by sme vás upozornili, e ste poèas poslednej návštevy nášho obchodu nedokonèili objednávku, ktorú ste zaèali vytvára.
+
+Keïe boli poloky vo vašom nákupnom košíku uloené, môete svoj nákup jednoducho dokonèi návštevou nášho obchodu: {shop_url}
+
+Na základe tohoto vám ponúkame z¾avu vo vıške {amount}% z nasledujúcej objednávky! Táto ponuka bude trva iba {days} dní. Nepremeškajte ju!
+ 
+Tu je váš kupón na z¾avu: {voucher_num}
+
+Vpíšte tento kód vo vašom nákupnom košíku, ak chcete získa túto z¾avu.
+
+
+------------------
+Internetovı obchod {shop_name} - {shop_url}

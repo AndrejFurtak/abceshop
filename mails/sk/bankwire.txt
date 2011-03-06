@@ -1,0 +1,23 @@
+Dobrý deň p. {firstname} {lastname}!
+
+Potvrdzujeme príjem Vašej objednávky č. {id_order}. Zásielka s objednaným tovarom Vám bude odoslaná v čo najkratšom čase od prijatia úhrady.
+
+Pri objednávaní ste si vybrali spôsob platby bankovým prevodom. Vykonajte preto prosím platbu v prospech účtu:
+
+{bankwire_owner}
+{bankwire_details}
+{bankwire_address}
+
+Variabilný symbol: {id_order}
+Konštantný symbol: 0008
+
+Celková suma k úhrade: {total_paid}
+
+
+Podrobnosti o objednávke a faktúru nájdete vo svojom zákazníckom "Účte" po kliknutí na "História nákupov".
+
+Ďakujeme Vám za nákup. Sledujte naše aktuálne zľavy, akcie a novinky.
+
+
+------------------
+Internetový obchod {shop_name} - {shop_url}

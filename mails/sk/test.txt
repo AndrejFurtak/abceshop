@@ -1,0 +1,7 @@
+Dobrý deň,
+	
+Toto je testovací e-mail z internetového obchodu PrestaShop.
+
+
+------------------
+Internetový obchod {shop_name} - {shop_url}
