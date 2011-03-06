@@ -1,0 +1,28 @@
+#left_column,
+#right_column,
+#footer,
+#usefull_link_block,
+#header_user,
+#languages_block_top,
+#search_block_top,
+#currencies_block_top,
+#header_links,
+a.button,
+span.button,
+.button,
+ul.idTabs,
+#availability_statut br {
+    display: none
+}
+
+#center_column { width: 100%; }
+input.text { border: 1px solid gray; }
+.block_hidden_only_for_screen {
+    display: block;
+    margin-top: 1em;
+}
+#more_info_sheets #idTab1 { width: 530px; }
+* {
+    background: none !important;
+    background-color: white !important;
+}
