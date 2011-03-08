@@ -177,7 +177,10 @@ h2 span {
 #header {
     /*sno*/background: #cd9f76;
     width: 815px;
+    font-size: 0;
+    padding-bottom: 8px;
 }
+#header-banner { position: absolute; top: 0; left: 171px; }
 #footer {
     /*sno*/background: #e29191;
 }

@@ -44,6 +44,7 @@
         <!-- Header -->
         <div id="header">
             <div id="logo"><a href="{$base_dir}" title="{$shop_name|escape:'htmlall':'UTF-8'}"><img src="{$img_ps_dir}logo.jpg" alt="{$shop_name|escape:'htmlall':'UTF-8'}" /></a></div>
+            <div id="header-banner"><img src="{$img_ps_dir}banner.jpg" alt="Najlepšia cena u nás v e-shope." width="636" height="190" /></div>
             <div id="header_right">
                 {$HOOK_TOP}
             </div>
