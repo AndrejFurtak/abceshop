@@ -13,7 +13,7 @@ body, html { margin: 0; padding: 0; }
 body {
     font-size: 12px;
     line-height: 1.6;
-    background: white;
+    background: #e3e3e3;
     color: #222;
     position: relative;
 }
@@ -175,7 +175,6 @@ h2 span {
     position: relative;
 }
 #header {
-    /*sno*/background: #cd9f76;
     width: 815px;
     font-size: 0;
     padding-bottom: 8px;
@@ -221,7 +220,6 @@ h2 span {
 	width: 163px;
 }
 #center_column {
-    /*sno*/background: #bbffbe;
 	width: 636px;
     padding: 0 8px;
 }
