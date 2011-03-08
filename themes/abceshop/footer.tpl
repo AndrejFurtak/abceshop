@@ -1,4 +1,5 @@
 {if !$content_only}
+                </div> <!-- main-content -->
             </div> <!-- center_column -->
 
         </div> <!-- columns -->

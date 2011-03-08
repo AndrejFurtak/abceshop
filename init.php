@@ -111,6 +111,9 @@ $smarty->register_modifier('convertAndFormatPrice', array('Product', 'convertAnd
 $smarty->assign(Tools::getMetaTags(intval($cookie->id_lang)));
 $smarty->assign('request_uri', Tools::safeOutput(urldecode($_SERVER['REQUEST_URI'])));
 
+$scriptFilenameInfo = pathinfo($_SERVER['SCRIPT_FILENAME']);
+$smarty->assign('script_name', $scriptFilenameInfo['filename']);
+
 /* Breadcrumb */
 $navigationPipe = (Configuration::get('PS_NAVIGATION_PIPE') ? Configuration::get('PS_NAVIGATION_PIPE') : '>');
 $smarty->assign('navigationPipe', $navigationPipe);

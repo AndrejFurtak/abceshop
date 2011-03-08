@@ -10,7 +10,6 @@ if(intval(Configuration::get('PS_REWRITING_SETTINGS')) === 1)
 /* CSS ans JS files calls */
 $css_files = array(__PS_BASE_URI__.'css/jquery.cluetip.css' => 'all', _THEME_CSS_DIR_.'scenes.css' => 'all');
 
-include(dirname(__FILE__).'/header.php');
 include(dirname(__FILE__).'/product-sort.php');
 
 $errors = array();
@@ -80,6 +79,9 @@ if (isset($subCategories))
 	$smarty->assign(array(
 		'subcategories_nb_total' => sizeof($subCategories),
 		'subcategories_nb_half' => ceil(sizeof($subCategories) / 2)));
+
+
+include(dirname(__FILE__).'/header.php');
 
 $smarty->display(_PS_THEME_DIR_.'category.tpl');
 

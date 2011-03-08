@@ -11,8 +11,8 @@
 body, html { margin: 0; padding: 0; }
 
 body {
-    font-size: 13px;
-    line-height: 1.5;
+    font-size: 12px;
+    line-height: 1.6;
     background: white;
     color: #222;
     position: relative;
@@ -181,6 +181,29 @@ h2 span {
     padding-bottom: 8px;
 }
 #header-banner { position: absolute; top: 0; left: 171px; }
+#top-menu {
+    list-style-type: none;
+    margin: 0; padding: 0;
+    position: relative;
+    height: 33px;
+}
+#top-menu li { margin: 0; padding: 0; position: absolute; }
+#top-menu li.item2 { left: 171px; }
+#top-menu li.item3 { left: 342px; }
+#top-menu a {
+    display: block; width: 122px; height: 25px;
+    position: absolute; left: 33px; top: 0;
+    padding-left: 8px;
+    line-height: 25px;
+    background: white; color: black;
+    text-decoration: none;
+    border-bottom: 8px solid #e3e3e3;
+}
+#top-menu a:hover, #top-menu a.selected {
+    color: #cf0f0c;
+    border-bottom: 8px solid white;
+}
+
 #footer {
     /*sno*/background: #e29191;
 }
@@ -209,6 +232,7 @@ h2 span {
     top: 0;
     left: 815px;
 }
+#main-content { background: white; color: #222; padding: 8px; }
 
 /* global RTE fields */
 div.rte {
