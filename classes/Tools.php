@@ -365,7 +365,7 @@ class Tools
 	{
 		if (is_array($string))
 			return array_map(array('Tools', 'htmlentitiesUTF8'), $string);
-		return htmlentities($string, $type, 'utf-8');
+		return htmlspecialchars($string, $type, 'utf-8');
 	}
 
 	static public function htmlentitiesDecodeUTF8($string)
