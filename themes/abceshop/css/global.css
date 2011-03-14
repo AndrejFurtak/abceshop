@@ -168,7 +168,6 @@ h2 span {
 
 /* global layout */
 #page {
-    /*sno*/border: 1px solid red;
     width: 978px;
     margin: 25px auto;
     padding: 0;
@@ -204,7 +203,7 @@ h2 span {
 }
 
 #footer {
-    /*sno*/background: #e29191;
+
 }
 #left_column, #center_column, #right_column {
     margin: 0;
@@ -213,7 +212,6 @@ h2 span {
     /*sno*/overflow: visible;
 }
 #left_column {
-    /*sno*/background: #ffc273;
 	clear: left;
 }
 #left_column, #right_column {
@@ -224,7 +222,6 @@ h2 span {
     padding: 0 8px;
 }
 #right_column {
-    /*sno*/background: #c1beff;
     float: none;
     position: absolute;
     top: 0;
@@ -757,29 +754,22 @@ ul#header_links {
 
 /* Default block style */
 div.block {
-    /*sno*/ background: #364059;
 	margin-bottom: 1em;
 }
 #left_column div.block, #right_column div.block {
 	padding-bottom: 5px;
-	/*sno vlastný obrázok? background: transparent url('../img/block_footer.gif') no-repeat bottom left;*/
 }
 div.block h4 {
-    color: white;
-    background: #5d6590;
     font-size: 120%;
 	padding: 5px;
     margin: 0;
-	border-bottom: 2px solid black;
-    /*sno vlastný obrázok? background: transparent url('../img/block_header.gif') no-repeat top left;*/
 }
-div.block, div.block a { color: #eee; text-decoration: none; }
+div.block, div.block a { color: #222; text-decoration: none; }
 div.block a:hover { text-decoration: underline }
 div.block .block_content {
 	border-left: 1px #d0d3d8;
 	border-right: 1px #d0d3d8;
 	padding: 0 5px;
-	/*sno vlastný obrázok? background: #f1f2f4 url('../img/block_bg.jpg') repeat-x bottom left; */
 	min-height: 16px
 }
 
@@ -787,7 +777,6 @@ div.block .block_content {
 /* block exclusive */
 div.exclusive li { margin-top: 0 }
 div.exclusive .block_content {
-	/*sno vlastný obrázok? background: #bdc2c9 url('../img/block_exclusive_bg.jpg') repeat-x bottom left;*/
 }
 
 /* block myaccount */
@@ -1057,7 +1046,32 @@ ul#order_step { background-color: white }
 
 
 /* Special style for block cart*/
-#cart_block .block_content { padding: 5px; }
+#cart_block {
+    background: white;
+    height: 190px;
+    padding: 0;
+    margin: 0;
+}
+div#cart_block.block, div#cart_block.exclusive {
+    padding: 0;
+    margin: 0;
+}
+#cart_block .icon {
+    background: yellow;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-right: 8px solid #e3e3e3;
+    border-bottom: 8px solid #e3e3e3;
+}
+#cart_block h4 {
+    height: 25px;
+    margin: 0;
+    margin-bottom: 16px;
+    padding: 0;
+    padding-left: 41px;
+
+}
 #cart_block h4 span {
 	font-size: 0.8em;
 	cursor: pointer;
