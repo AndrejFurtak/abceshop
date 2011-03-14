@@ -1,5 +1,12 @@
 {if !$content_only}
                 </div> <!-- main-content -->
+
+
+                <!-- Footer -->
+                <div id="footer">
+                    {$HOOK_FOOTER}
+                </div> <!-- footer -->
+
             </div> <!-- center_column -->
 
         </div> <!-- columns -->
@@ -11,10 +18,6 @@
         </div> <!-- right_column -->
 
 
-<!-- Footer -->
-        <div id="footer">
-            {$HOOK_FOOTER}
-        </div> <!-- footer -->
     </div> <!-- page -->
 {/if}
 </body>

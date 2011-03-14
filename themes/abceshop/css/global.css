@@ -202,9 +202,6 @@ h2 span {
     border-bottom: 8px solid white;
 }
 
-#footer {
-
-}
 #left_column, #center_column, #right_column {
     margin: 0;
     float: left;
@@ -734,20 +731,21 @@ ul#header_links {
 
 /* Footer */
 #footer {
-	border-top: 1px solid #d0d3d8;
-	padding: 0.5em 0;
-	clear: both
+    background: white;
+    height: 25px;
+    margin-top: 8px;
+	padding: 0 8px;
+	clear: both;
 }
-#footer .block_various_links { list-style: none }
-#footer .block_various_links li a { text-decoration: none }
+#footer .block_various_links, #footer .block_various_links li { margin: 0; padding: 0; }
+#footer .block_various_links { list-style: none; line-height: 25px; }
+#footer .block_various_links li a { text-decoration: none; }
 #footer .block_various_links li {
 	display: inline;
-	border-left: 1px solid #888;
-	padding: 0 2px 0 4px
 }
 #footer .block_various_links li.first_item {
 	border: none;
-	padding-left: 0
+	padding-left: 0;
 }
 
 
