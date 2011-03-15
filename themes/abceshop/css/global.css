@@ -17,7 +17,7 @@ body {
     color: #222;
     position: relative;
 }
-body, input, select, h1, h2, h3, h4, a { font-family: Verdana, "Geneva CE", lucida, sans-serif; }
+body, input, select, h1, h2, h3, h4, a { font-family: Calibri, Verdana, "Geneva CE", lucida, sans-serif; }
 
 
 /* Useful */
@@ -188,19 +188,15 @@ h2 span {
 #top-menu li { margin: 0; padding: 0; position: absolute; }
 #top-menu li.item2 { left: 171px; }
 #top-menu li.item3 { left: 342px; }
-#top-menu a {
-    display: block; width: 122px; height: 25px;
-    position: absolute; left: 33px; top: 0;
-    padding-left: 8px;
-    line-height: 25px;
-    background: white; color: black;
-    text-decoration: none;
-    border-bottom: 8px solid #eeeef0;
-}
+#top-menu a { border-bottom: 8px solid #eeeef0; }
 #top-menu a:hover, #top-menu a.selected {
     color: #cf0f0c;
+    background: white;
+    font-weight: bold;
     border-bottom: 8px solid white;
 }
+
+
 
 #left_column, #center_column, #right_column {
     margin: 0;
@@ -225,6 +221,46 @@ h2 span {
     left: 815px;
 }
 #main-content { background: white; color: #222; padding: 8px; }
+
+
+ul.icon-list { list-style: none; }
+ul.icon-list, ul.icon-list li { margin: 0; padding: 0; }
+ul.icon-list li { width: 163px; height: 25px; margin-bottom: 8px; position: relative; }
+ul.icon-list .icon {
+    display: block;
+    width: 25px;
+    height: 25px;
+    background: white;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+ul.icon-list a {
+    display: block;
+    text-decoration: none;
+    font-size: 10px;
+    margin-left: 33px;
+    padding-left: 8px;
+    line-height: 25px;
+    height: 25px;
+    color: #222;
+    background: white;
+}
+ul.icon-list a.selected,
+ul.icon-list a:hover {
+    text-decoration: none !important;
+    background: black;
+    color: white;
+}
+
+
+#block-links .kontakt .icon { background: #92278f; }
+#block-links .facebook .icon { background: #25408f; }
+#block-links .twitter .icon { background: #6ccff6; }
+
+#block-pages { margin-top: 32px; }
+
+
 
 /* global RTE fields */
 div.rte {
@@ -970,50 +1006,8 @@ div.paiement_logo_block img { margin: 0 0.5em }
 
 
 /* Block categories */
-#categories_block_left ul a.selected { font-weight: bold }
 #categories_block_left .block_content { margin: 0; padding: 0; }
-#categories_block_left ul.tree, #categories_block_left ul.tree li {
-    margin: 0;
-}
-#categories_block_left ul.tree,
-#categories_block_left ul.tree ul,
-#categories_block_left ul.tree li,
-#categories_block_left ul.tree li.last,
-#categories_block_left .tree_top {
-    background-image: none;
-    border: none;
-    margin: 0;
-    padding: 0;
-}
-#categories_block_left ul a {
-    display: block;
-    padding: 6px 5px;
-    border-bottom: 1px solid black;
-}
-#categories_block_left ul a:hover,
-#categories_block_left ul a.selected {
-    background: #818dbf;
-    color: white;
-    text-decoration: none;
-}
-#categories_block_left ul.tree li li a { padding-left: 20px; }
-#categories_block_left ul.tree li li li a { padding-left: 40px; }
-
-#categories_block_left span.grower {
-	display: block;
-	float: left;
-	background-position: 0 3px;
-	background-repeat: no-repeat;
-	width: 9px;
-	height: 15px;
-	margin: 0 0 0 -12px!important;
-	margin: 0 0 0 -8px;
-	padding: 0
-}
-div#categories_block_left span.OPEN { background-image: url('../img/icon/less.gif'); }
-div#categories_block_left span.CLOSE { background-image: url('../img/icon/more.gif'); }
-
-
+#categories_block_left h4 { display: none; }
 
 /* steps (like order step) */
 ul.step {
@@ -1049,10 +1043,12 @@ ul#order_step { background-color: white }
     height: 190px;
     padding: 0;
     margin: 0;
+    margin-bottom: 8px;
 }
 div#cart_block.block, div#cart_block.exclusive {
     padding: 0;
     margin: 0;
+    margin-bottom: 8px;
 }
 #cart_block .icon {
     background: yellow;
