@@ -1,18 +1,13 @@
 {if !$content_only}
                 </div> <!-- main-content -->
 
-
-                <!-- Footer -->
-                <div id="footer">
-                    {$HOOK_FOOTER}
-                </div> <!-- footer -->
-
             </div> <!-- center_column -->
 
+            <div class="clear"></div>
         </div> <!-- columns -->
 
 
-<!-- Right -->
+        <!-- Right -->
         <div id="right_column" class="column">
 
             {$HOOK_RIGHT_COLUMN}
@@ -40,6 +35,12 @@
             </div>
         </div> <!-- right_column -->
 
+
+        <!-- Footer -->
+        <div id="footer">
+            <hr />
+            {$HOOK_FOOTER}
+        </div> <!-- footer -->
 
     </div> <!-- page -->
 {/if}

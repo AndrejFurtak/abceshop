@@ -770,16 +770,15 @@ ul#header_links {
 #footer {
     background: white;
     height: 25px;
-    margin-top: 8px;
+    margin: 8px 171px;
 	padding: 0 8px;
 	clear: both;
 }
+#footer hr { display: none; }
 #footer .block_various_links, #footer .block_various_links li { margin: 0; padding: 0; }
 #footer .block_various_links { list-style: none; line-height: 25px; }
 #footer .block_various_links li a { text-decoration: none; }
-#footer .block_various_links li {
-	display: inline;
-}
+#footer .block_various_links li { display: inline; }
 #footer .block_various_links li.first_item {
 	border: none;
 	padding-left: 0;
