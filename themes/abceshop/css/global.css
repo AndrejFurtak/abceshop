@@ -174,11 +174,12 @@ h2 span {
     position: relative;
 }
 #header {
-    width: 815px;
     font-size: 0;
     padding-bottom: 8px;
 }
 #header-banner { position: absolute; top: 0; left: 171px; }
+
+
 #top-menu {
     list-style-type: none;
     margin: 0; padding: 0;
@@ -213,12 +214,6 @@ h2 span {
 #center_column {
 	width: 636px;
     padding: 0 8px;
-}
-#right_column {
-    float: none;
-    position: absolute;
-    top: 0;
-    left: 815px;
 }
 #main-content { background: white; color: #222; padding: 8px; }
 
@@ -694,19 +689,6 @@ form#productsSortForm p {
 form#productsSortForm p label, form#productsSortForm p select { float: right }
 form#productsSortForm p select { font-size: 1em }
 
-/* Header */
-#header_right ul { list-style: none }
-#header_right form {
-	border: none;
-	margin-bottom: 0!important;
-	display: inline
-}
-#header_right label {
-	margin: 0;
-	float: none
-}
-
-
 
 
 /* top links */
@@ -1044,6 +1026,8 @@ ul#order_step { background-color: white }
     padding: 0;
     margin: 0;
     margin-bottom: 8px;
+    position: absolute;
+    top: 0;
 }
 div#cart_block.block, div#cart_block.exclusive {
     padding: 0;
