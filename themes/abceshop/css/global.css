@@ -258,6 +258,7 @@ ul.icon-list a:hover {
 #block-links .facebook .icon { background: #25408f; }
 #block-links .twitter .icon { background: #6ccff6; }
 
+#block-links h4, #block-pages h4 { display: none; }
 #block-pages { margin-top: 32px; }
 
 
