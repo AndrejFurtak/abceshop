@@ -19,6 +19,7 @@ var removingLinkText = '{l s='remove this product from my cart' mod='blockcart' 
 <!-- MODULE Block cart -->
 <div id="cart_block" class="block exclusive">
 	<h4>
+        <img class="icon" src="{$img_ps_dir}transparent-icon.gif" width="25 "height="25" />
 		<a href="{$base_dir_ssl}order.php">{l s='Cart' mod='blockcart'}</a>
 		{if $ajax_allowed}
 		<span id="block_cart_expand" {if $colapseExpandStatus eq 'expanded'}class="hidden"{/if}>&nbsp;</span>

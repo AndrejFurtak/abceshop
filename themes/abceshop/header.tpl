@@ -44,6 +44,7 @@
         <!-- Header -->
         <div id="header">
             <div id="logo"><a href="{$base_dir}" title="{$shop_name|escape:'htmlall':'UTF-8'}"><img src="{$img_ps_dir}logo.jpg" alt="{$shop_name|escape:'htmlall':'UTF-8'}" /></a></div>
+            <div id="header-banner"><img src="{$img_ps_dir}banner.jpg" alt="Najlepšia cena u nás v e-shope." width="636" height="190" /></div>
             <div id="header_right">
                 {$HOOK_TOP}
             </div>
@@ -57,4 +58,10 @@
 
             <!-- Center -->
             <div id="center_column">
+                <ul id="top-menu" class="icon-list">
+                    <li class="item1"><span class="icon"></span><a {if $script_name=='new-products'}class="selected"{/if}href="{$base_dir}new-products.php" title="Nové produkty">Nové produkty</a></li>
+                    <li class="item2"><span class="icon"></span><a {if $script_name=='prices-drop'}class="selected"{/if}href="{$base_dir}prices-drop.php" title="Zľavené produkty">Zľavené produkty</a></li>
+                    <li class="item3"><span class="icon"></span><a {if ($script_name=='category') AND ($category->id==1)}class="selected"{/if}href="{$base_dir}category.php?id_category=1" title="Top produkty">Top produkty</a></li>
+                </ul>
+                <div id="main-content">
 {/if}
