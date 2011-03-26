@@ -1,8 +1,9 @@
 {if !$content_only}
-                </div> <!-- main-content -->
+                </div>
+                <!-- Main content -->
 
-            </div> <!-- center_column -->
-
+            </div>
+            <!-- Center -->
 
 
             <!-- Right -->
@@ -10,16 +11,19 @@
 
                 {$HOOK_RIGHT_COLUMN}
 
+                <!-- Block odkazy -->
                 <div id="block-links">
                     <h4>Odkazy</h4>
                     <ul class="icon-list">
-                        <li><span class="icon"></span><a href="#" title="Vyhľadávanie">Vyhľadávanie</a></li>
                         <li class="kontakt"><span class="icon"></span><a href="#" title="Kontakt">Kontakt</a></li>
                         <li class="facebook"><span class="icon"></span><a href="http://facebook.com/" title="Facebook">Facebook</a></li>
                         <li class="twitter"><span class="icon"></span><a href="http://twitter.com/" title="Twitter">Twitter</a></li>
+                        <li class="myspace"><span class="icon"></span><a href="http://myspace.com/" title="Myspace">Myspace</a></li>
                     </ul>
                 </div>
+                <!-- Block odkazy -->
 
+                <!-- Block information -->
                 <div id="block-pages">
                     <h4>Informácie</h4>
                     <ul class="icon-list">
@@ -31,21 +35,26 @@
                         <li><span class="icon"></span><a href="http://localhost/abceshop.sk/www/cms.php?id_cms=4" title="O nás">O nás</a></li>
                     </ul>
                 </div>
-            </div> <!-- right_column -->
+                <!-- Block information -->
 
+            </div>
+            <!-- Right -->
 
             <div class="clear"></div>
-        </div> <!-- columns -->
 
+        </div>
+        <!-- Columns -->
 
 
         <!-- Footer -->
         <div id="footer">
             <hr />
             {$HOOK_FOOTER}
-        </div> <!-- footer -->
+        </div>
+        <!-- Footer -->
 
-    </div> <!-- page -->
+    </div>
+    <!-- Page -->
 {/if}
 </body>
 </html>
