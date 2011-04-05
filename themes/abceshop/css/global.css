@@ -177,7 +177,6 @@ h2 span {
     font-size: 0;
     padding-bottom: 8px;
 }
-#header-banner { position: absolute; top: 0; left: 171px; }
 
 
 #top-menu {
@@ -216,6 +215,102 @@ h2 span {
     padding: 0 8px;
 }
 #main-content { background: white; color: #222; padding: 8px; }
+
+
+
+/* Logo */
+
+#logo {
+    width: 163px;
+}
+
+
+/* BANNER */
+
+/* Zakla */
+/* Obsahuje zakladne nastavenie objektov ako triedy */
+
+.banner{
+    position: absolute;
+    overflow: hidden;
+}
+
+
+.banner_slider{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: inherit;
+    height: inherit;
+    overflow: hidden;
+}
+
+.banner_slider ul,
+.banner_slider ul li{
+    width: inherit;
+    height: inherit;
+}
+
+.banner_slider ul{
+    list-style: none;
+    padding: 0px;
+}
+
+
+.banner_list{
+    position: absolute;
+}
+
+.banner_list ul{
+    margin: 0px;
+}
+
+.banner_list ul li{
+     cursor: pointer;
+     width: 8px;
+     height: 8px;
+}
+
+
+/* Konkretny banner */
+/* Obsahuje nastavenie podla kokretnych umiestnenia, rozmerov,... */
+
+#top_banner_block{
+    top: 0px;
+    left: 171px;
+    width: 636px;
+    height: 190px;
+}
+
+
+#top_banner_block .banner_slider{
+    white-space: nowrap;
+}
+
+#top_banner_block .banner_slider ul li{
+    display: inline;
+    margin-right: 318px;
+}
+
+#top_banner_block .banner_list{
+    bottom: 0px;
+    right: 0px;
+}
+
+#top_banner_block .banner_list ul{
+    margin-bottom: 10px;
+}
+
+#top_banner_block .banner_list ul li{
+    display: inline;
+    margin-right: 15px;
+}
+
+#top_banner_block .banner_slider ul li img{
+    width: inherit;
+    height: inherit;
+}
+/* BANNER - KONIEC */
 
 
 ul.icon-list { list-style: none; }
@@ -279,6 +374,8 @@ ul.icon-list a:hover {
     margin-bottom: 0px;
     padding-bottom: 0px !important;
 }
+
+
 
 
 /* global RTE fields */
