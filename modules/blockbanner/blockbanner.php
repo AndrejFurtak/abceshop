@@ -208,8 +208,7 @@ class BlockBanner extends Module
     private function handleAddedImage(){
         if (Tools::isSubmit('submitAddImage'))
         {
-            if (!isset($_FILES["imageFile"]) OR
-                    empty($_FILES["imageFile"])){
+            if (!isset($_FILES["imageFile"])){
                 return $this->l('No file uploaded');
             }
             
