@@ -126,7 +126,7 @@ class BlockBanner extends Module
 
     // zobrazenie hlavnej casti konfiguracie
     private function displayImgForm(array $bannerItems){
-        $ret = '<form><fieldset><legend>' . $this->l('images') . '</legend>';
+        $ret = '<fieldset><legend>' . $this->l('images') . '</legend>';
 
         // vypise existujuce
         $ret .= '<table border="1px" style="background-color:transparent">
@@ -172,7 +172,7 @@ class BlockBanner extends Module
             <td style="text-align:center;"><input type="submit" name="submitAddImage" value="' . $this->l('Add') . '" /></td>
         </tr>
         </form>';
-        $ret .= '</table></fieldset></form>';
+        $ret .= '</table></fieldset>';
 
         return $ret;
     }
