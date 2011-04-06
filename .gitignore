@@ -2,6 +2,7 @@ admin/backups/*
 !admin/backups/.htaccess
 !admin/backups/index.php
 config/settings-local.inc.php
+img/banner/*
 nbproject/private
 tools/smarty/compile/*
 !tools/smarty/compile/index.php
