@@ -1,5 +1,7 @@
 <?php
 
+require_once _PS_THEME_DIR_ . 'classes/Utils.php';
+
 if (!defined('_CAN_LOAD_FILES_'))
 	exit;
 
@@ -86,7 +88,6 @@ class BlockBanner extends Module
     public function getContent(){
         $output = '<h2>' . $this->displayName . '</h2>';
 
-
         // handlovanie
 
         // ak doslo k pridaniu noveho obrazku
@@ -137,6 +138,11 @@ class BlockBanner extends Module
                     <th style="padding-left:10px; padding-right:10px; text-align:center; font-weight: bold;">' . $this->l('Action') . '</th>
                 </tr>';
         $pos = 1;
+        $deleteUrlParams = array(
+            'configure' => 'blockbanner',
+            'submitDeleteImage' => 1,
+            'order' => 0,
+        );
         foreach($bannerItems as $item){
             $ret .= '<tr>
                         <td>
@@ -154,12 +160,14 @@ class BlockBanner extends Module
             }else{
                 $ret .= '<form method="post" action="' . $_SERVER['REQUEST_URI'] . '"><input type="hidden" name="order" value="' . $item['order'] . '" /><input type="image" name="submitMoveDown" src="../img/admin/down.gif" /></form>';
             }
+            $deleteUrlParams['order'] = $item['order'];
+            $deleteUrl = Utils::getAdminCurrentTabUrl($deleteUrlParams);
             $ret .= '</li>
                             </ul>
                         </td>
                         <td style="text-align:center;">' . $item['order'] . '</td>
                         <td style="padding-left:3px;">' . $item['name'] . '</td>
-                        <td style="text-align:center;"><form method="post" action="' . $_SERVER['REQUEST_URI'] . '"><input type="hidden" name="order" value="' . $item['order'] . '" /><input type="image" name="submitDeleteImage" src="../img/admin/delete.gif" /></form></td>
+                        <td style="text-align:center;"><a href="' . $deleteUrl . '" title="Vymaž obrázok."><img src="../img/admin/delete.gif" /></a></td>
                      </tr>';
             $pos += 1;
         }
@@ -234,8 +242,8 @@ class BlockBanner extends Module
 
         if (Tools::isSubmit('submitDeleteImage'))
         {
-            if (isset($_POST['order'])){
-                $order = intval($_POST['order']);
+            if (isset($_REQUEST['order'])){
+                $order = intval($_REQUEST['order']);
                 $bannerItems = $this->getBannerItems();
 
                 // vyhodi obrazok z pozicie
@@ -265,7 +273,10 @@ class BlockBanner extends Module
             else{
                 return $this->l('File delete error');
             }
+
+            Utils::redirectToAdminCurrentTab(array('configure' => 'blockbanner'));
         }
+
         return '';
     }
     // spracuje priapdne presunutie obrazka

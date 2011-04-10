@@ -19,6 +19,9 @@ header('Expires: Sat, 26 Jul 1997 05:00:00 GMT');
 
 require_once(dirname(__FILE__).'/init.php');
 
+$currentAdminMainTab = NULL;
+$currentAdminTab = NULL;
+
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $iso; ?>" lang="<?php echo $iso; ?>">
@@ -134,12 +137,18 @@ require_once(dirname(__FILE__).'/init.php');
 			<ul id="menu" style="margin-top:20px">
 				<?php
 					global $cookie;
+                    global $currentAdminMainTab;
+                    global $currentAdminTab;
 
 					/* Get current tab informations */
 					$id_parent_tab_current = intval(Tab::getCurrentParentId());
 					$tabs = Tab::getTabs(intval($cookie->id_lang), 0);
 					foreach ($tabs AS $t)
 					{
+                        if (($t['class_name'] == $tab) || ($t['id_tab'] == $id_parent_tab_current)) {
+                            $currentAdminMainTab = $t;
+                        }
+                        
 						if ($t['class_name'] == $tab)
 							$id_parent = $t['id_tab'];
 						if (checkTabRights($t['id_tab']) === true)
@@ -159,13 +168,18 @@ require_once(dirname(__FILE__).'/init.php');
 				<ul id="submenu">
 				<?php
 					global $cookie;
+                    global $currentAdminMainTab;
+                    global $currentAdminTab;
 
 					/* Display tabs belonging to opened tab */
 					$id_parent = isset($id_parent) ? $id_parent : $id_parent_tab_current;
 					if (isset($id_parent) AND $id_parent != -1)
 					{
 					 	$subTabs = Tab::getTabs(intval($cookie->id_lang), intval($id_parent));
-						foreach ($subTabs AS $t)
+						foreach ($subTabs AS $t) {
+                            if ($t['class_name'] == $tab) {
+                                $currentAdminTab = $t;
+                            }
 							if (checkTabRights($t['id_tab']) === true)
 							{
 								$img = '../img/t/'.$t['class_name'].'.gif';
@@ -176,6 +190,10 @@ require_once(dirname(__FILE__).'/init.php');
 									<a href="index.php?tab='.$t['class_name'].'&token='.Tools::getAdminToken($t['class_name'].intval($t['id_tab']).intval($cookie->id_employee)).'"><img src="'.$img.'" alt="" style="width:16px;height:16px" /></a> <a href="index.php?tab='.$t['class_name'].'&token='.Tools::getAdminToken($t['class_name'].intval($t['id_tab']).intval($cookie->id_employee)).'">'.$t['name'].'</a>
 								</li>';
 							}
+                        }
+                        if ($currentAdminTab === NULL) {
+                            $currentAdminTab = $currentAdminMainTab;
+                        }
 					}
 				?>
 				</ul>
