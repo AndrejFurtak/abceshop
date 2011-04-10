@@ -11,13 +11,13 @@
 body, html { margin: 0; padding: 0; }
 
 body {
-    font-size: 12px;
+    font-size: 15px;
     line-height: 1.6;
     background: #eeeef0;
     color: #222;
     position: relative;
 }
-body, input, select, h1, h2, h3, h4, a { font-family: Calibri, Verdana, "Geneva CE", lucida, sans-serif; }
+body, input, select, h1, h2, h3, h4, a { font-family: "Trebuchet MS", Calibri, Verdana, "Geneva CE", lucida, sans-serif; }
 
 
 /* Useful */
@@ -338,7 +338,7 @@ ul.icon-list #search_query {
     padding-left: 8px;
     line-height: 25px;
 }
-
+ul.icon-list a { font-size: 11px; font-weight: bold; }
 ul.icon-list #search_query {
     border-style: solid;
     border-width: 5px;
@@ -377,78 +377,6 @@ ul.icon-list a:hover {
 }
 
 
-
-
-/* global RTE fields */
-div.rte {
-	text-align: left;
-	background: white;
-	color: black;
-}
-div.rte html, div.rte div, div.rte span, div.rte applet, div.rte object, div.rte iframe, div.rte h1, div.rte h2, div.rte h3, div.rte h4, div.rte h5, div.rte h6, div.rte p, div.rte blockquote, div.rte pre, div.rte a, div.rte abbr, div.rte acronym, div.rte address, div.rte big, div.rte cite, div.rte code, div.rte del, div.rte dfn, div.rte em, div.rte font, div.rte img, div.rte ins, div.rte kbd, div.rte q, div.rte s, div.rte samp, div.rte small, div.rte strike, div.rte strong, div.rte sub, div.rte sup, div.rte tt, div.rte var, div.rte dl, div.rte dt, div.rte dd, div.rte ol, div.rte ul, div.rte li, div.rte fieldset, div.rte form, div.rte label, div.rte legend, div.rte table, div.rte caption, div.rte tbody, div.rte tfoot, div.rte thead, div.rte tr, div.rte th, div.rte td {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	outline: 0;
-	font-weight: inherit;
-	font-style: inherit;
-	font-size: 100%;
-	font-family: inherit;
-	vertical-align: baseline;
-}
-div.rte h1, div.rte h2, div.rte h3, div.rte h4, div.rte h5, div.rte h6 {
-	margin: 0.75em 0 0.3em 0;
-	color: #374853;
-}
-div.rte h1 {
-	font-size: 25px;
-	font-weight: bold;
-}
-div.rte h2 {
-	font-size: 20px;
-	background: none;
-	text-transform: none;
-	height: auto;
-}
-div.rte h3 { font-size: 16px; }
-div.rte h4 { font-size: 14px; }
-div.rte h5 { font-size: 12px; }
-div.rte h6, div.rte h6 { font-size: 8px; }
-div.rte ol, div.rte ol { padding-left: 2em; }
-div.rte ul {
-	list-style-type: square;
-	margin-left: 10px;
-}
-div.rte strong { font-weight: bold; }
-div.rte em { font-style: italic; }
-
-/* tables still need 'cellspacing="0"' in the markup */
-div.rte table {
-	border-collapse: separate;
-	border-spacing: 1px;
-	width: auto;
-}
-div.rte caption, div.rte th, div.rte td, div.rte table {
-	text-align: left;
-	font-weight: normal;
-	background: none;
-	height: inherit;
-	border: 1px #e5e6e7 solid;
-	text-align: center;
-}
-div.rte th {
-	padding-left: 1em;
-	padding-right: 1em;
-	background: #e5e6e7;
-}
-#center_column div.rte p { padding-left: 0; margin: 0.5em 0 }
-div.rte ol {
-	list-style-type: decimal;
-	margin-left: 10px;
-}
-
-
-/* /global RTE fields */
 
 /* global table style */
 div.table_block {

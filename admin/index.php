@@ -69,7 +69,7 @@ else /* Else display homepage */
 	$isoDefault = Language::getIsoById(intval(Configuration::get('PS_LANG_DEFAULT')));
 	$isoUser = Language::getIsoById(intval($cookie->id_lang));
 	echo '<div id="adminHeader">
-	<img src="../img/logo.jpg" alt="Logo" title="Logo" /><br /><br />
+	<img src="../img/logo.png" alt="Logo" title="Logo" /><br /><br />
 	<h2>'.translate('Welcome to your Back Office').'</h2>
 	'.translate('Click the tabs to navigate.').'
 	<br /><br /><br />';
