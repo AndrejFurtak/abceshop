@@ -314,8 +314,9 @@ h2 span {
 
 
 ul.icon-list { list-style: none; }
+ul.icon-list ul { list-style: none; margin: 0; padding: 0; margin-top: 8px; }
 ul.icon-list, ul.icon-list li { margin: 0; padding: 0; }
-ul.icon-list li { width: 163px; height: 25px; margin-bottom: 8px; position: relative; }
+ul.icon-list li { width: 163px; margin-bottom: 8px; position: relative; }
 ul.icon-list .icon,
 ul.icon-list #search_button {
     display: block;
