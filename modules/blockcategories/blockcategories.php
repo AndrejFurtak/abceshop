@@ -83,9 +83,22 @@ class BlockCategories extends Module
 				$children[] = $this->getTree($resultParents, $resultIds, $maxDepth, $subcat['id_category'], $currentDepth + 1);
 		if (!isset($resultIds[$id_category]))
 			return false;
-		return array('id' => $id_category, 'link' => $link->getCategoryLink($id_category, $resultIds[$id_category]['link_rewrite']),
-					 'name' => Category::hideCategoryPosition($resultIds[$id_category]['name']), 'desc'=> $resultIds[$id_category]['description'],
-					 'children' => $children);
+
+		$category = array(
+            'id' => $id_category,
+            'link' => $link->getCategoryLink($id_category, $resultIds[$id_category]['link_rewrite']),
+            'name' => Category::hideCategoryPosition($resultIds[$id_category]['name']),
+            'desc'=> $resultIds[$id_category]['description'],
+            'children' => $children,
+        );
+
+        $imgFile = $category['id'] . '.jpg';
+        if (file_exists(_PS_CAT_IMG_DIR_ . $imgFile)) {
+            $category['imgLink'] = _THEME_CAT_DIR_ . $imgFile;
+        } else {
+            $category['imgLink'] = _PS_IMG_ . 'empty-icon.jpg';
+        }
+        return $category;
 	}
 
 	function hookLeftColumn($params)
@@ -140,7 +153,7 @@ class BlockCategories extends Module
 					$cookie->last_visited_category = intval($product->id_category_default);
 			}
 			$smarty->assign('currentCategoryId', intval($cookie->last_visited_category));
-		}	
+		}
 		$smarty->assign('blockCategTree', $blockCategTree);
 		
 		if (file_exists(_PS_THEME_DIR_.'modules/blockcategories/blockcategories.tpl'))

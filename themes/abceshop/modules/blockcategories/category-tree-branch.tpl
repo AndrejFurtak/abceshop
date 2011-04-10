@@ -1,5 +1,5 @@
 <li {if $last == 'true'}class="last"{/if}>
-    <img class="icon" src="{$img_cat_dir}/{$node.id}.jpg" width="25" height="25" alt="Ikonka kategórie." />
+    <img class="icon" src="{$node.imgLink}" width="25" height="25" alt="Ikonka kategórie." />
     <a href="{$node.link|escape:html:'UTF-8'}" {if $node.id == $currentCategoryId}class="selected"{/if} title="{$node.desc|escape:html:'UTF-8'}">{$node.name|escape:html:'UTF-8'}</a>
 	{if $node.children|@count > 0}
     <ul>
