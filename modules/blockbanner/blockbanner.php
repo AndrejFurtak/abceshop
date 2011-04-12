@@ -7,7 +7,7 @@ if (!defined('_CAN_LOAD_FILES_'))
 
 class BlockBanner extends Module
 {
-    // pattern suborov: banner_<poradie>_<nazov>.<extension>
+    // pattern suborov: banner_<poradie>_<nazov>
 
     protected $bannerImgDir;
     protected $bannerImgPresentationDir;
@@ -118,7 +118,7 @@ class BlockBanner extends Module
         $output .= $this->displayImgForm($bannerItems);
 
         
-        $output .= '<p style="font-weight: bold; color:red;">' . $handleInfo . '</p>';
+        //$output .= '<p style="font-weight: bold; color:red;">' . $handleInfo . '</p>';
 
 
         return $output;
@@ -137,12 +137,8 @@ class BlockBanner extends Module
                     <th style="padding-left:10px; padding-right:10px; text-align:center; font-weight: bold;">' . $this->l('Image') . '</th>
                     <th style="padding-left:10px; padding-right:10px; text-align:center; font-weight: bold;">' . $this->l('Action') . '</th>
                 </tr>';
+
         $pos = 1;
-        $deleteUrlParams = array(
-            'configure' => 'blockbanner',
-            'submitDeleteImage' => 1,
-            'order' => 0,
-        );
         foreach($bannerItems as $item){
             $ret .= '<tr>
                         <td>
@@ -151,23 +147,25 @@ class BlockBanner extends Module
             if ($pos == 1){
                 $ret .= '<img src="../img/admin/up_d.gif" alt="" />';
             }else{
-                $ret .= '<form method="post" action="' . $_SERVER['REQUEST_URI'] . '"><input type="hidden" name="order" value="' . $item['order'] . '" /><input type="image" name="submitMoveUp" src="../img/admin/up.gif" /></form>';
+                $url = Utils::getAdminCurrentTabUrl(array('order' => $item['order'], 'configure' => $this->name, 'submitMoveUp' => 1));
+                $ret .= '<a href="' . $url . '"><img src="../img/admin/up.gif" alt="" /></a>';
             }
             $ret .= '</li>
                      <li style="text-align:center;">';
             if ($pos == count($bannerItems)){
                 $ret .= '<img src="../img/admin/down_d.gif" alt="" />';
             }else{
-                $ret .= '<form method="post" action="' . $_SERVER['REQUEST_URI'] . '"><input type="hidden" name="order" value="' . $item['order'] . '" /><input type="image" name="submitMoveDown" src="../img/admin/down.gif" /></form>';
+                $url = Utils::getAdminCurrentTabUrl(array('order' => $item['order'], 'configure' => $this->name, 'submitMoveDown' => 1));
+                $ret .= '<a href="' . $url . '"><img src="../img/admin/down.gif" alt="" /></a>';
             }
-            $deleteUrlParams['order'] = $item['order'];
-            $deleteUrl = Utils::getAdminCurrentTabUrl($deleteUrlParams);
+
+            $url = Utils::getAdminCurrentTabUrl(array('order' => $item['order'], 'configure' => $this->name, 'submitDeleteImage' => 1));
             $ret .= '</li>
                             </ul>
                         </td>
                         <td style="text-align:center;">' . $item['order'] . '</td>
                         <td style="padding-left:3px;">' . $item['name'] . '</td>
-                        <td style="text-align:center;"><a href="' . $deleteUrl . '" title="Vymaž obrázok."><img src="../img/admin/delete.gif" /></a></td>
+                        <td style="text-align:center;"><a href="' . $url . '" title="Vymaž obrázok."><img src="../img/admin/delete.gif" /></a></td>
                      </tr>';
             $pos += 1;
         }
@@ -217,23 +215,22 @@ class BlockBanner extends Module
         if (Tools::isSubmit('submitAddImage'))
         {
             if (!isset($_FILES["imageFile"])){
-                return $this->l('No file uploaded');
+                $error = $this->l('No file uploaded');
             }
-            
-            // kontrola chyby pri presune
-            if ($_FILES["imageFile"]["error"] > 0)
-            {
-                return $this->l('File upload error') . ': ' . $_FILES["imageFile"]["error"];
+            elseif ($_FILES["imageFile"]["error"] > 0){
+                $error = $this->l('File upload error') . ': ' . $_FILES["imageFile"]["error"];
             }
 
-            $bannerItemName = $this->getNewBannerItemName($_FILES["imageFile"]["name"]);
+            if (!isset($error)){
+                $bannerItemName = $this->getNewBannerItemName($_FILES["imageFile"]["name"]);
 
-            if (!move_uploaded_file($_FILES["imageFile"]["tmp_name"], $this->bannerImgDir . $bannerItemName)){
-                return $this->l('File upload error');
+                if (!move_uploaded_file($_FILES["imageFile"]["tmp_name"], $this->bannerImgDir . $bannerItemName)){
+                    $error = $this->l('File upload error');
+                }
+                //return $this->l('File uploaded OK');
             }
-            else{
-                return $this->l('File uploaded OK');
-            }
+
+            Utils::redirectToAdminCurrentTab(array('configure' => $this->name));
         }
         return '';
     }
@@ -250,31 +247,35 @@ class BlockBanner extends Module
                 foreach($bannerItems as $item){
                     if ($item['order'] == $order){
                         if (!unlink($item['path'])){
-                            return $this->l('File delete error');
+                            $error = $this->l('File delete error');
                         }
+                        break;
                     }
                 }
 
-                // posunie ostatne obrazky
-                foreach($bannerItems as $item){
-                    if ($item['order'] > $order){
-                        // ziska novy nazov suboru zohladnujuci nove poradie
-                        $newFileName = self::createBannerItemFileName($item['order'] - 1, $item['name']);
-                        $newPath = $this->bannerImgDir . $newFileName;
+                if (!isset($error)){
+                    // posunie ostatne obrazky
+                    foreach($bannerItems as $item){
+                        if ($item['order'] > $order){
+                            // ziska novy nazov suboru zohladnujuci nove poradie
+                            $newFileName = self::createBannerItemFileName($item['order'] - 1, $item['name']);
+                            $newPath = $this->bannerImgDir . $newFileName;
 
-                        // premenuje subor
-                        if (!rename($item['path'], $newPath)){
-                            // problem pri premenovani
+                            // premenuje subor
+                            if (!rename($item['path'], $newPath)){
+                                // problem pri premenovani
+                                $error = $this->l('File rename error');
+                            }
                         }
                     }
                 }
 
             }
             else{
-                return $this->l('File delete error');
+                $error = $this->l('File delete error');
             }
 
-            Utils::redirectToAdminCurrentTab(array('configure' => 'blockbanner'));
+            Utils::redirectToAdminCurrentTab(array('configure' => $this->name));
         }
 
         return '';
@@ -289,7 +290,7 @@ class BlockBanner extends Module
             $bannerItems = $this->getBannerItems();
 
             // pozicia obrazku a nova pozicia obrazku
-            $oldOrder = intval($_POST['order']);
+            $oldOrder = intval($_REQUEST['order']);
             $newOrder = $oldOrder;
             if ((Tools::isSubmit('submitMoveUp')) and (1 < $oldOrder)){
                 $newOrder = $oldOrder - 1;
@@ -325,11 +326,10 @@ class BlockBanner extends Module
                 if(isset($newItem)){
                     rename($newItem['path'], $this->bannerImgDir . self::createBannerItemFileName($oldOrder, $newItem['name']));
                 }
-                
             }
-        }
 
-        
+            Utils::redirectToAdminCurrentTab(array('configure' => $this->name));
+        }
 
         return '';
     }
@@ -343,6 +343,8 @@ class BlockBanner extends Module
             $values[self::getConfigurationSlideIntervalKey()] = $_POST['slideInterval'];
 
             $this->setConfiguration($values);
+
+            Utils::redirectToAdminCurrentTab(array('configure' => $this->name));
         }
 
         return '';
@@ -356,6 +358,7 @@ class BlockBanner extends Module
 
         global $smarty;
 
+        $smarty->assign('bannerItemsCount', count($bannerItems));
         $smarty->assign('bannerItems', $bannerItems);
         $smarty->assign('bannerSlideSpeed', $configuration[self::getConfigurationSlideSpeedKey()]);
         $smarty->assign('bannerSlideInterval', $configuration[self::getConfigurationSlideIntervalKey()]);

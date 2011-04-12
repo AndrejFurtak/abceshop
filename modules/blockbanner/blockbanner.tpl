@@ -1,6 +1,7 @@
 <!-- Block banner -->
 <div id="top_banner_block" class="block banner">
     <div class="banner_slider">
+        {if $bannerItemsCount > 0}
         <ul>
             {foreach from=$bannerItems item=bannerItem}
                 <li id="banner_slider_item_{$bannerItem.order}">
@@ -8,7 +9,9 @@
                 </li>
             {/foreach}
         </ul>
+        {/if}
     </div>
+    {if $bannerItemsCount > 1}
     <div class="banner_list">
         <ul>
             {foreach from=$bannerItems item=bannerItem}
@@ -16,8 +19,11 @@
             {/foreach}
         </ul>
     </div>
+    {/if}
 </div>
 
+
+{if $bannerItemsCount > 1}
 <script type="text/javascript">
 // <![CDATA[
 {literal}    $currentBannerListItem = false;
@@ -67,4 +73,5 @@
     });{/literal}
 // ]]>
 </script>
+{/if}
 <!-- Block banner -->
