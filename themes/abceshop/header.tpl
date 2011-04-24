@@ -68,9 +68,9 @@
 
                 <!-- Top menu -->
                 <ul id="top-menu" class="icon-list">
-                    <li class="item1"><span class="icon"></span><a {if $script_name=='new-products'}class="selected"{/if}href="{$base_dir}new-products.php" title="Nové produkty">Nové produkty</a></li>
-                    <li class="item2"><span class="icon"></span><a {if $script_name=='prices-drop'}class="selected"{/if}href="{$base_dir}prices-drop.php" title="Zľavené produkty">Zľavené produkty</a></li>
-                    <li class="item3"><span class="icon"></span><a {if ($script_name=='category') AND ($category->id==1)}class="selected"{/if}href="{$base_dir}category.php?id_category=1" title="Top produkty">Top produkty</a></li>
+                    <li class="item1"><img class="icon" src="{$img_dir}icon-new.jpg" width="25" height="25" alt="Ikonka." /><a {if $script_name=='new-products'}class="selected"{/if}href="{$base_dir}new-products.php" title="Nové produkty">Nové produkty</a></li>
+                    <li class="item2"><img class="icon" src="{$img_dir}icon-zlava.jpg" width="25" height="25" alt="Ikonka." /><a {if $script_name=='prices-drop'}class="selected"{/if}href="{$base_dir}prices-drop.php" title="Zľavené produkty">Zľavené produkty</a></li>
+                    <li class="item3"><img class="icon" src="{$img_dir}icon-top.jpg" width="25" height="25" alt="Ikonka." /><a {if ($script_name=='category') AND ($category->id==1)}class="selected"{/if}href="{$base_dir}category.php?id_category=1" title="Top produkty">Top produkty</a></li>
                 </ul>
                 <!-- Top menu -->
 
