@@ -1,9 +1,0 @@
-Dobrý deň!
-
-{firstname} {lastname} by vám rád/rada odporučil svoj zoznam prianí "{wishlist}" :
-
-{message}
-
-
-------------------
-Internetový obchod {shop_name} - {shop_url}

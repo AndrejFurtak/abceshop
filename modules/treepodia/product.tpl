@@ -1,1 +1,0 @@
-<div style="width: 100%; text-align: {$position}"><img id="trpd-img-btn"  style="display: none;" src="{$img_src}" onclick="showVideoDialog(video);"></div>

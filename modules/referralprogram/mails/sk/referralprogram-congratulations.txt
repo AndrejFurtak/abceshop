@@ -1,9 +1,0 @@
-Gratulujeme vám!
-
-Vami sponzorovaný známy, {sponsored_firstname} {sponsored_lastname} vytvoril v obchode {shop_url} svoju prvú objednávku!
-
-Radi by sme vám preto ponúkli kupón na zľavu v hodnote {discount_display} (kupón č. {discount_name}), ktorý môžete použiť pri najbližšom nákupe v našom obchode.
-
-
-------------------
-Internetový obchod {shop_name} - {shop_url}

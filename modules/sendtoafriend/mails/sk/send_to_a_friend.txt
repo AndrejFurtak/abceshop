@@ -1,9 +1,0 @@
-Dobrý deň {name}!
-
-{customer} vám odporúča produkt, ktorý by vás mohol zaujímať.
-
-{product}: {product_link}
-
-
-------------------
-Internetový obchod {shop_name} - {shop_url}
