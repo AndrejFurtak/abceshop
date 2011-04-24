@@ -15,10 +15,9 @@
                 <div id="block-links">
                     <h4>Odkazy</h4>
                     <ul class="icon-list">
-                        <li class="kontakt"><span class="icon"></span><a href="#" title="Kontakt">Kontakt</a></li>
-                        <li class="facebook"><span class="icon"></span><a href="http://facebook.com/" title="Facebook">Facebook</a></li>
-                        <li class="twitter"><span class="icon"></span><a href="http://twitter.com/" title="Twitter">Twitter</a></li>
-                        <li class="myspace"><span class="icon"></span><a href="http://myspace.com/" title="Myspace">Myspace</a></li>
+                        <li class="kontakt"><img class="icon" src="{$img_dir}icon-kontakt.jpg" width="25" height="25" alt="Ikonka." /><a href="#" title="Kontakt">Kontakt</a></li>
+                        <li class="facebook"><img class="icon" src="{$img_dir}icon-facebook.jpg" width="25" height="25" alt="Ikonka." /><a href="http://facebook.com/" title="Facebook">Facebook</a></li>
+                        <li class="twitter"><img class="icon" src="{$img_dir}icon-twitter.jpg" width="25" height="25" alt="Ikonka." /><a href="http://twitter.com/" title="Twitter">Twitter</a></li>
                     </ul>
                 </div>
                 <!-- Block odkazy -->
@@ -27,12 +26,12 @@
                 <div id="block-pages">
                     <h4>Informácie</h4>
                     <ul class="icon-list">
-                        <li><span class="icon"></span><a href="http://localhost/abceshop.sk/www/cms.php?id_cms=9" title="Splátkový systém">Splátkový systém</a></li>
-                        <li><span class="icon"></span><a href="http://localhost/abceshop.sk/www/cms.php?id_cms=8" title="Platby">Platby</a></li>
-                        <li><span class="icon"></span><a href="http://localhost/abceshop.sk/www/cms.php?id_cms=7" title="Doprava">Doprava</a></li>
-                        <li><span class="icon"></span><a href="http://localhost/abceshop.sk/www/cms.php?id_cms=6" title="Reklamácia">Reklamácia</a></li>
-                        <li><span class="icon"></span><a href="http://localhost/abceshop.sk/www/cms.php?id_cms=3" title="Obchodné podmienky">Obchodné podmienky</a></li>
-                        <li><span class="icon"></span><a href="http://localhost/abceshop.sk/www/cms.php?id_cms=4" title="O nás">O nás</a></li>
+                        <li><img class="icon" src="{$img_dir}icon-splatkovy-system.jpg" width="25" height="25" alt="Ikonka." /><a href="http://localhost/abceshop.sk/www/cms.php?id_cms=9" title="Splátkový systém">Splátkový systém</a></li>
+                        <li><img class="icon" src="{$img_dir}icon-platby.jpg" width="25" height="25" alt="Ikonka." /><a href="http://localhost/abceshop.sk/www/cms.php?id_cms=8" title="Platby">Platby</a></li>
+                        <li><img class="icon" src="{$img_dir}icon-doprava.jpg" width="25" height="25" alt="Ikonka." /><a href="http://localhost/abceshop.sk/www/cms.php?id_cms=7" title="Doprava">Doprava</a></li>
+                        <li><img class="icon" src="{$img_dir}icon-reklamacia.jpg" width="25" height="25" alt="Ikonka." /><a href="http://localhost/abceshop.sk/www/cms.php?id_cms=6" title="Reklamácia">Reklamácia</a></li>
+                        <li><img class="icon" src="{$img_dir}icon-obchodne-podmienky.jpg" width="25" height="25" alt="Ikonka." /><a href="http://localhost/abceshop.sk/www/cms.php?id_cms=3" title="Obchodné podmienky">Obchodné podmienky</a></li>
+                        <li><img class="icon" src="{$img_dir}icon-o-nas.jpg" width="25" height="25" alt="Ikonka." /><a href="http://localhost/abceshop.sk/www/cms.php?id_cms=4" title="O nás">O nás</a></li>
                     </ul>
                 </div>
                 <!-- Block information -->
