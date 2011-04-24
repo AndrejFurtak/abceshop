@@ -4,11 +4,7 @@
 	<div class="block_content">
 		<ul class="icon-list">
 		{foreach from=$blockCategTree.children item=child name=blockCategTree}
-			{if $smarty.foreach.blockCategTree.last}
-                {include file=$branche_tpl_path node=$child last='true'}
-			{else}
-                {include file=$branche_tpl_path node=$child}
-			{/if}
+            {include file=$branche_tpl_path node=$child first=$smarty.foreach.blockCategTree.first last=$smarty.foreach.blockCategTree.last}
 		{/foreach}
 		</ul>
 	</div>

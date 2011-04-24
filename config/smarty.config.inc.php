@@ -12,6 +12,32 @@ $smarty->compile_check	= false;
 //$smarty->debugging		= true;
 $smarty->debug_tpl		= _PS_ALL_THEMES_DIR_ . 'debug.tpl';
 
+
+function categoryClasses($params, &$smarty) {
+    $categoryBranchIds = $smarty->get_template_vars('categoryBranchIds');
+    $node = isset($params['node']) ? $params['node'] : NULL;
+    $first = isset($params['first']) ? $params['first'] : FALSE;
+    $last = isset($params['last']) ? $params['last'] : FALSE;
+    $classes = array();
+    if (($categoryBranchIds !== NULL) && ($node !== NULL) && (isset($categoryBranchIds[$node['id']]))) {
+        $classes[] = 'selected';
+    }
+    if ($first) {
+        $classes[] = 'first';
+    }
+    if ($last) {
+        $classes[] = 'last';
+    }
+
+    return trim(implode(' ', $classes));
+}
+
+$smarty->register_function('categoryClasses', 'categoryClasses');
+
+
+
+
+
 function smartyTranslate($params, &$smarty)
 {
 	/*

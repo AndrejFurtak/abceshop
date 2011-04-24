@@ -90,6 +90,7 @@ class BlockCategories extends Module
             'name' => Category::hideCategoryPosition($resultIds[$id_category]['name']),
             'desc'=> $resultIds[$id_category]['description'],
             'children' => $children,
+            'level' => $currentDepth,
         );
 
         $imgFile = $category['id'] . '.jpg';
@@ -156,6 +157,18 @@ class BlockCategories extends Module
 		}
 		$smarty->assign('blockCategTree', $blockCategTree);
 		
+        $categoryBranchIds = array();
+        $parentId = $smarty->get_template_vars('currentCategoryId');
+        if (!isset($resultIds[$parentId])) {
+            $parentId = 0;
+        }
+        while ($parentId != 0) {
+            $parentCategory = $resultIds[$parentId];
+            $categoryBranchIds[$parentId] = TRUE;//$parentCategory;
+            $parentId = $parentCategory['id_parent'];
+        }
+        $smarty->assign('categoryBranchIds', $categoryBranchIds);
+
 		if (file_exists(_PS_THEME_DIR_.'modules/blockcategories/blockcategories.tpl'))
 			$smarty->assign('branche_tpl_path', _PS_THEME_DIR_.'modules/blockcategories/category-tree-branch.tpl');
 		else
