@@ -30,9 +30,18 @@ if (isset($_GET['logout'])) {
 	$cookie->logout();
 }
 
+session_start();
+
 /* logged or not */
-if (!$cookie->isLoggedBack())
-	Tools::redirectLink('login.php'.$url_redirect);
+if (!$cookie->isLoggedBack()) {
+    unset($_SESSION['KCFINDER']);
+    Tools::redirectLink('login.php'.$url_redirect);
+} else {
+    $_SESSION['KCFINDER'] = array();
+    $_SESSION['KCFINDER']['disabled'] = false;
+    $_SESSION['KCFINDER']['uploadURL'] = __PS_BASE_URI__ . "upload";
+    $_SESSION['KCFINDER']['uploadDir'] = _PS_PROD_PIC_DIR_;
+}
 
 /* Current tab and current URL */
 $tab = Tools::getValue('tab');

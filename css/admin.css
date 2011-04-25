@@ -130,17 +130,17 @@ h3.blue {
 
 /* FORMS */
 
-form {
+#content form {
 	margin: 0;
 	padding: 0;
 }
 
-form p {
+#content form p {
 	margin: 0.5em 0 0 0;
 	padding: 0 0 0.5em 0;
 }
 
-form sup {
+#content form sup {
 	color: #CC0000;
 	font-weight: bold;
 	vertical-align: text-top;
@@ -152,11 +152,11 @@ form sup {
 	font-size: 0.85em;
 }
 
-fieldset.width1 .margin-form {
+#content fieldset.width1 .margin-form {
 	margin: 0 0 1em 130px;
 }
 
-fieldset {
+#content fieldset {
 	margin: 0;
 	padding: 1em;
 	border: 1px solid #DFD5C3;
@@ -164,12 +164,12 @@ fieldset {
 	font-size: 1.1em;
 }
 
-fieldset img {
+#content fieldset img {
 	padding: 0 4px 0 0;
 	vertical-align: bottom;
 }
-  
-legend {
+
+#content legend {
 	margin: 0;
 	padding: 0.2em 0.5em;
 	border: 1px solid #DFD5C3;
@@ -178,7 +178,7 @@ legend {
 	text-align: left;
 }
 
-label {
+#content label {
 	float: left;
 	width: 180px;
 	padding: 0.2em 0 0 0;
@@ -194,7 +194,7 @@ label {
 	width:270px;
 }
 
-label.t {
+#content label.t {
 	float: none;
 	clear: none;
 	padding: 0px;
@@ -202,7 +202,7 @@ label.t {
 	font-weight: normal;
 	font-size: 12px;
 }
-label.std {
+#content label.std {
 	float: none;
 	margin: 0px;
 	width: 170px;
@@ -211,19 +211,21 @@ label.std {
 	text-align: right;
 	font-weight: bold;
 }
-form div.std {
+#content form div.std {
 	margin-top: -2em;
 }
 
-fieldset.width1 label {
+#content fieldset.width1 label {
 	width: 110px;
 }
 
-label:after {
+#content label:after {
 	clear: both;
 }
 
-input, textarea, option {
+#content input,
+#content textarea,
+#content option {
 	color: #000;
 	font-family: Verdana, Arial, Helvetica, sans-serif;
 	font-size: 12px;
@@ -231,39 +233,50 @@ input, textarea, option {
 	padding: 0;
 }
 
-input[type="text"], input[type="password"], input[type="file"], textarea {
+#content input[type="text"],
+#content input[type="password"],
+#content input[type="file"],
+#content textarea {
 	padding: 2px 4px;
 	border: 1px solid #E0D0B1;
 }
 
-input[type="text"], input[type="password"], input[type="file"], input[type="radio"], input[type="checkbox"], textarea, select, option {
+#content input[type="text"],
+#content input[type="password"],
+#content input[type="file"],
+#content input[type="radio"],
+#content input[type="checkbox"],
+#content textarea,
+#content select,
+#content option {
 	background-color: white;
 }
 
-select {
+#content select {
 	font-family: Verdana, Arial, Helvetica, sans-serif;
 	border: 1px solid #E0D0B1;
 }
 
-input:focus, textarea:focus {
+#content input:focus,
+#content textarea:focus {
 	background-color: #F0EBD6;
 }
 
-fieldset {
+#content fieldset {
  	_position: relative;
 }
 
-legend {
+#content legend {
 	_position: relative;
 	_top: -2em;
 	_margin-top: 12px;
 }
-select optgroup { 
+#content select optgroup {
 	background: #fff;
 	padding: 2px;
 	color: #000
 }
-select optgroup option {
+#content select optgroup option {
 	padding: 0 9px;
 	color: #000
 }
@@ -912,6 +925,3 @@ p.fail{
 	text-align: center;
 }
 
-/* TinyMCE */
-span.defaultSkin .mceToolbar { height: auto }
-span.defaultSkin table.mceLayout tr.mceFirst td { float: left }
