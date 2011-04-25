@@ -26,12 +26,12 @@
                 <div id="block-pages">
                     <h4>Informácie</h4>
                     <ul class="icon-list">
-                        <li><img class="icon" src="{$img_dir}icon-splatkovy-system.jpg" width="25" height="25" alt="Ikonka." /><a href="http://localhost/abceshop.sk/www/cms.php?id_cms=9" title="Splátkový systém">Splátkový systém</a></li>
-                        <li><img class="icon" src="{$img_dir}icon-platby.jpg" width="25" height="25" alt="Ikonka." /><a href="http://localhost/abceshop.sk/www/cms.php?id_cms=8" title="Platby">Platby</a></li>
-                        <li><img class="icon" src="{$img_dir}icon-doprava.jpg" width="25" height="25" alt="Ikonka." /><a href="http://localhost/abceshop.sk/www/cms.php?id_cms=7" title="Doprava">Doprava</a></li>
-                        <li><img class="icon" src="{$img_dir}icon-reklamacia.jpg" width="25" height="25" alt="Ikonka." /><a href="http://localhost/abceshop.sk/www/cms.php?id_cms=6" title="Reklamácia">Reklamácia</a></li>
-                        <li><img class="icon" src="{$img_dir}icon-obchodne-podmienky.jpg" width="25" height="25" alt="Ikonka." /><a href="http://localhost/abceshop.sk/www/cms.php?id_cms=3" title="Obchodné podmienky">Obchodné podmienky</a></li>
-                        <li><img class="icon" src="{$img_dir}icon-o-nas.jpg" width="25" height="25" alt="Ikonka." /><a href="http://localhost/abceshop.sk/www/cms.php?id_cms=4" title="O nás">O nás</a></li>
+                        <li><img class="icon" src="{$img_dir}icon-splatkovy-system.jpg" width="25" height="25" alt="Ikonka." /><a href="{$base_dir}cms.php?id_cms=9" title="Splátkový systém">Splátkový systém</a></li>
+                        <li><img class="icon" src="{$img_dir}icon-platby.jpg" width="25" height="25" alt="Ikonka." /><a href="{$base_dir}cms.php?id_cms=8" title="Platby">Platby</a></li>
+                        <li><img class="icon" src="{$img_dir}icon-doprava.jpg" width="25" height="25" alt="Ikonka." /><a href="{$base_dir}cms.php?id_cms=7" title="Doprava">Doprava</a></li>
+                        <li><img class="icon" src="{$img_dir}icon-reklamacia.jpg" width="25" height="25" alt="Ikonka." /><a href="{$base_dir}cms.php?id_cms=6" title="Reklamácia">Reklamácia</a></li>
+                        <li><img class="icon" src="{$img_dir}icon-obchodne-podmienky.jpg" width="25" height="25" alt="Ikonka." /><a href="{$base_dir}cms.php?id_cms=3" title="Obchodné podmienky">Obchodné podmienky</a></li>
+                        <li><img class="icon" src="{$img_dir}icon-o-nas.jpg" width="25" height="25" alt="Ikonka." /><a href="{$base_dir}?id_cms=4" title="O nás">O nás</a></li>
                     </ul>
                 </div>
                 <!-- Block information -->
