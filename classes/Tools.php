@@ -357,7 +357,7 @@ class Tools
 	static public function safeOutput($string, $html = false)
 	{
 	 	if (!$html)
-			$string = @htmlentities(strip_tags($string), ENT_QUOTES, 'utf-8');
+			$string = @htmlspecialchars(strip_tags($string), ENT_QUOTES, 'utf-8');
 		return $string;
 	}
 
