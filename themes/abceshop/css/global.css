@@ -313,6 +313,26 @@ h2 span {
 /* BANNER - KONIEC */
 
 
+
+
+
+/* ADVERTISING */
+
+.block.advertising,
+.block.advertising a,
+.block.advertising a *{
+    width: inherit;
+}
+.block.advertising a *{
+    height: 163px;
+}
+
+/* ADVERTISING - KONIEC */
+
+
+
+
+
 ul.icon-list { list-style: none; }
 ul.icon-list, ul.icon-list li { margin: 0; padding: 0; }
 ul.icon-list li { width: 163px; margin-bottom: 8px; position: relative; }
