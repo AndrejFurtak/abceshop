@@ -19,7 +19,7 @@ class BlockBanner extends Module
         return 'banner_';
     }
     protected static function getBannerItemFilePattern(){
-        return self::getBannerItemFilePrefix() . '*_*.*';
+        return self::getBannerItemFilePrefix() . '*_*';
     }
 
     protected  static function getConfigurationSlideSpeedKey(){
@@ -63,7 +63,6 @@ class BlockBanner extends Module
             return true;
     }
     private function createBannerRepository(){
-        echo $this->bannerImgDir;
         // vytvori zakladny adresar pre bannre
         if (!file_exists($this->bannerImgDir)){
             if (!mkdir($this->bannerImgDir)){
