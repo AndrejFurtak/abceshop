@@ -4,6 +4,8 @@ admin/backups/*
 config/settings-local.inc.php
 img/banner/*
 !img/banner/index.php
+img/p/*
+!img/p/index.php
 img/tmp/*
 !img/tmp/index.php
 nbproject/private
