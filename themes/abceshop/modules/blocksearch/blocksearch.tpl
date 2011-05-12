@@ -5,7 +5,7 @@
                 <input type="hidden" name="orderby" value="position" />
                 <input type="hidden" name="orderway" value="desc" />
 		<ul class="icon-list">                        
-			<li><span class="icon"></span><input type="text" id="search_query" name="search_query" value="{if isset($smarty.get.search_query)}{$smarty.get.search_query|htmlentities:$ENT_QUOTES:'utf-8'|stripslashes}{/if}" /></li>
+			<li><img class="icon" src="{$img_dir}icon-hladaj.jpg" alt="Ikonka." width="25" height="25" /> <input type="text" id="search_query" name="search_query" value="{if isset($smarty.get.search_query)}{$smarty.get.search_query|htmlentities:$ENT_QUOTES:'utf-8'|stripslashes}{/if}" /></li>
 		</ul>
 	</form>
 </div>
