@@ -2,6 +2,8 @@ admin/backups/*
 !admin/backups/.htaccess
 !admin/backups/index.php
 config/settings-local.inc.php
+img/p/*
+!img/p/index.php
 img/banner/*
 !img/banner/index.php
 img/tmp/*
