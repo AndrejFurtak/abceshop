@@ -214,10 +214,11 @@ h2 span {
 	width: 636px;
     padding: 0 8px;
 }
-#main-content { 
+#main-content {
     background: white;
     color: #222;
     padding: 8px;
+    padding-bottom: 5px;
 }
 
 
@@ -743,8 +744,9 @@ ul.pagination{
 }
 
 ul.pagination li {
-    line-height: 1;
     float: left;
+    padding: 0;
+    margin: 0;
 }
 
 ul.pagination li,
@@ -754,7 +756,8 @@ ul.pagination span {
 }
 
 ul.pagination a,
-ul.pagination span {
+ul.pagination span,
+ul.pagination li.truncate {
     padding: 0px 3px;
     cursor: pointer;
 }
@@ -765,10 +768,6 @@ ul.pagination a {
 
 ul.pagination li.current span {
     color: red;
-}
-
-ul.pagination li.truncate {
-    padding: 3px;
 }
 
 ul.pagination li.disabled span {
@@ -1402,7 +1401,7 @@ ul#product_list li div.right_block{
     top: 0px;
     left: 161px;
     right: 0px;
-    height: inherit;    
+    height: inherit;
     overflow: hidden;
 }
 
