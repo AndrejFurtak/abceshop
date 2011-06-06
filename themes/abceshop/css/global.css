@@ -1431,13 +1431,13 @@ ul#product_list li div.right_block{
     float: left;
     height: inherit;
     overflow: hidden;
-    width: 460px;
+    width: 462px;
 }
 
 
 /* miesto pre kratky popis produktu */
 ul#product_list li div.right_block div.description{
-    width: 328px;
+    width: 315px;
     overflow: hidden;
     margin-left: 8px;
     margin-top: 8px;
@@ -1461,23 +1461,37 @@ ul#product_list li div.right_block div.action_block{
     right: 8px;
     top: 8px;
     bottom: 8px;
-    width: 100px;
+    width: 118px;
     overflow: hidden;
     line-height: 1;
+    font-size: 12px;
 }
-
-/* v mieste pre dalsie akcie vlastnosti prvkov */
-ul#product_list li div.right_block div.action_block *{
-    display: block;
-    left: 0px;
-    right: 0px;
-    height: 20px;
-    margin-top: 8px;
-    margin-bottom: 0px;
+ul#product_list li div.right_block div.action_block ul{
+    margin: 0px;
+    padding: 0px;
+    padding-top: 8px;
+}
+ul#product_list li div.right_block div.action_block ul li{
+    height: 24px;
+    margin-top: 0px;
+    margin-bottom: 8px;
     white-space: nowrap;
-    background-color: white;/*ado*/
-    background-image: none;/*ado*/
-    color: black;/*ado*/
+    background-color: white;
+    line-height: 24px;
+    font-size: 12px;
+}
+ul#product_list li div.right_block div.action_block ul li *{
+    margin-left: 8px;
+}
+ul#product_list li div.right_block div.action_block ul li.on_sale,
+ul#product_list li div.right_block div.action_block ul li.discount,
+ul#product_list li div.right_block div.action_block ul li.outOfStock{
+    color: #ef332c;
+    font-weight: bold;
+}
+ul#product_list li div.right_block div.action_block ul li.available {
+    color: #50b252;
+    font-weight: bold;
 }
 
 
