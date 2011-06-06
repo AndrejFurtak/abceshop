@@ -742,42 +742,41 @@ ul.pagination{
     padding: 0px;
     list-style: none;
     float: right;
+    font-size: 12px;
     font-weight: bold;
 }
-
 ul.pagination li {
     float: left;
     padding: 0;
     margin: 0;
+    margin-left: 6px;
 }
-
 ul.pagination li,
 ul.pagination a,
 ul.pagination span {
     color: black;
 }
-
 ul.pagination a,
 ul.pagination span,
 ul.pagination li.truncate {
     padding: 0px 3px;
     cursor: pointer;
 }
-
 ul.pagination a {
     text-decoration: none
 }
-
 ul.pagination li.current span {
     color: red;
 }
-
 ul.pagination li.disabled span {
     color: grey;
     cursor: default;
 }
 
-
+ul.pagination li#pagination_previous,
+ul.pagination li#pagination_next {
+    font-weight: normal;
+}
 
 
 
