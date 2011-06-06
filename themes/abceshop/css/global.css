@@ -1302,11 +1302,47 @@ td.discount_value { white-space: nowrap }
 
 
 
+
 /* category.tpl */
-h2.category_title { font-size: 1.3em; }
-body#category #subcategories li { margin-right: 10px; }
-div.cat_desc { margin: 0 1em; }
-body#category div#subcategories ul.inline_list li a img { display: inline; }
+div#subcategories ul{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    line-height: 1;
+}
+div#subcategories ul li {
+    background-color: #EEEEF0;
+    margin-right: 13px;
+    margin-bottom: 8px;
+    float: left;
+    width: 145px;
+    height: 150px;
+}
+div#subcategories ul li.inLineLast {
+    margin-right: 0px;
+}
+div#subcategories ul li div.subcategory_image,
+div#subcategories ul li div.subcategory_image a,
+div#subcategories ul li div.subcategory_image a img {
+    width: inherit;
+}
+div#subcategories ul li div.subcategory_image a img {
+    height: 100px;
+    display: block;
+}
+div#subcategories ul li *{
+    text-decoration: none;
+    color: black;
+}
+div#subcategories ul li div.subcategory_info {
+    padding-top: 6px;
+    padding-left: 8px;
+    line-height: 1.2;
+    font-size: 12px;
+    overflow: hidden;
+ }
+div#subcategories ul li div.subcategory_info *{
+}
 
 
 
@@ -1347,18 +1383,15 @@ ul#product_list li div.right_block {
 
 /* lavy stlpec s obrazkom, nazvom a cenou */
 ul#product_list li div.left_block{
-    position: absolute;
-    left: 0px;
-    top: 0px;
+    float: left;
+    margin-right: 13px;
     width: 145px;
     height: inherit;
     overflow: hidden;
 }
-
 ul#product_list li div.left_block a{
     width: inherit;
 }
-
 ul#product_list li div.left_block a img{
     display: block;
     width: inherit;
@@ -1387,34 +1420,28 @@ ul#product_list li div.left_block div.overview_block p.category{
     line-height: 1.3;
 }
 ul#product_list li div.left_block div.overview_block p.price{
-    display: block;
-    position: absolute;
-    right: 0px;
-    bottom: 0px;
     padding-right: 8px;
     padding-bottom: 7px;
     font-size: 12px;
+    text-align: right;
 }
 
 
 /* pravy stlpec s popisom */
 ul#product_list li div.right_block{
-    position: absolute;
-    top: 0px;
-    left: 161px;
-    right: 0px;
+    float: left;
     height: inherit;
     overflow: hidden;
+    width: 460px;
 }
+
 
 /* miesto pre kratky popis produktu */
 ul#product_list li div.right_block div.description{
-    position: absolute;
-    left: 8px;
-    top: 8px;
-    bottom: 8px;
     width: 328px;
     overflow: hidden;
+    margin-left: 8px;
+    margin-top: 8px;
 }
 ul#product_list li div.right_block div.description h2{
     line-height: 1;
@@ -1428,6 +1455,7 @@ ul#product_list li div.right_block div.description p{
     line-height: 1.2;
 }
 
+
 /* miesto pre dalsie akcie nad produktom */
 ul#product_list li div.right_block div.action_block{
     position: absolute;
@@ -1438,6 +1466,7 @@ ul#product_list li div.right_block div.action_block{
     overflow: hidden;
     line-height: 1;
 }
+
 /* v mieste pre dalsie akcie vlastnosti prvkov */
 ul#product_list li div.right_block div.action_block *{
     display: block;
