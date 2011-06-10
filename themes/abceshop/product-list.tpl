@@ -23,7 +23,7 @@
                     </div>
                     <div class="right_block">
                         <div class="description">
-                            <h2>{l s='DESCRIPTION'}</h2>
+                            <h2>{l s='Description'}</h2>
                             <p>
                                 {$product.description_short|strip_tags:'UTF-8'|truncate:350:' <a href="#">(more)</a>'}
                             </p>
