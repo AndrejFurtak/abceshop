@@ -1119,6 +1119,9 @@ ul#order_step { background-color: white }
 
 
 
+
+
+
 /* Special style for block cart*/
 #cart_block {
     background: white;
@@ -1231,6 +1234,11 @@ div#cart_block.block, div#cart_block.exclusive {
 	font-size: 0.9em;
 	height: 2em
 }
+
+
+
+
+
 
 /* authentication.tpl */
 #authentication #create-account_form,
