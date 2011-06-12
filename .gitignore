@@ -1,3 +1,5 @@
+.htaccess
+robots.txt
 admin/backups/*
 !admin/backups/.htaccess
 !admin/backups/index.php
