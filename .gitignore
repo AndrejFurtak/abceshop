@@ -17,7 +17,7 @@ img/p/*
 !img/p/sk*
 img/tmp/*
 !img/tmp/index.php
-nbproject/private
+nbproject/*
 tools/smarty/compile/*
 !tools/smarty/compile/index.php
 upload/*
