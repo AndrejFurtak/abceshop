@@ -24,7 +24,7 @@ if (!defined('_DB_PASSWD_')) {
    define('_DB_PASSWD_', '');
 }
 if (!defined('_DB_PREFIX_')) {
-   define('_DB_PREFIX_', 'ps_');
+   define('_DB_PREFIX_', 'abceshop_');
 }
 define('_COOKIE_KEY_', 'NjgoRefgVwkoJSHnBaQZw8DYXEXIvgS4nVR76C08s2bi0knUzr4yMe3x');
 define('_COOKIE_IV_', '7qcFPhFT');
