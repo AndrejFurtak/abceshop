@@ -7,8 +7,14 @@ config/settings.inc.php
 config/settings-local.inc.php
 img/banner/*
 !img/banner/index.php
+img/c/*
+!img/c/index.php
+!img/c/en*
+!img/c/sk*
 img/p/*
 !img/p/index.php
+!img/p/en*
+!img/p/sk*
 img/tmp/*
 !img/tmp/index.php
 nbproject/private
