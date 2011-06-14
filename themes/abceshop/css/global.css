@@ -573,12 +573,6 @@ a.exclusive_mini, a.exclusive_small, a.exclusive, a.exclusive_large,
 span.button_mini, span.button_small, span.button, span.button_large,
 span.exclusive_mini, span.exclusive_small, span.exclusive, span.exclusive_large {
 	background-repeat: no-repeat;
-	background-position: top left;
-	border: none;
-	color: black!important;
-	font-weight: bold;
-	font-size: 10px!important;
-	text-align: center;
 	text-decoration: none!important;
 	cursor: pointer;
 	display: block;
@@ -586,73 +580,8 @@ span.exclusive_mini, span.exclusive_small, span.exclusive, span.exclusive_large 
 	height: 18px;
 }
 
-/* input button */
-input.button_mini, input.button_small, input.button, input.button_large,
-input.button_mini_disabled, input.button_small_disabled, input.button_disabled, input.button_large_disabled,
-input.exclusive_mini, input.exclusive_small, input.exclusive, input.exclusive_large,
-input.exclusive_mini_disabled, input.exclusive_small_disabled, input.exclusive_disabled, input.exclusive_large_disabled {
-	padding-bottom: 2px;
-}
 
-/* disabled button */
-input.button_mini_disabled, input.button_small_disabled, input.button_disabled, input.button_large_disabled,
-input.exclusive_mini_disabled, input.exclusive_small_disabled, input.exclusive_disabled, input.exclusive_large_disabled,
-span.button_mini, span.button_small, span.button, span.button_large,
-span.exclusive_mini, span.exclusive_small, span.exclusive, span.exclusive_large {
-	background-position: left -36px;
-	cursor: default;
-	color: #888 !important;
-}
 
-/* exclusive button */
-input.exclusive_mini, input.exclusive_small, input.exclusive, input.exclusive_large,
-input.exclusive_mini_disabled, input.exclusive_small_disabled, input.exclusive_disabled, input.exclusive_large_disabled,
-a.exclusive_mini, a.exclusive_small, a.exclusive, a.exclusive_large,
-span.exclusive_mini, span.exclusive_small, span.exclusive, span.exclusive_large {
-	color: white !important;
-}
-
-/* exclusive disabled button */
-input.exclusive_mini_disabled, input.exclusive_small_disabled, input.exclusive_disabled, input.exclusive_large_disabled, span.exclusive_mini, span.exclusive_small, span.exclusive, span.exclusive_large {
-	color: #488c40 !important;
-}
-
-/* hover button */
-input.button_mini:hover, input.button_small:hover, input.button:hover, input.button_large:hover,
-input.exclusive_mini:hover, input.exclusive_small:hover, input.exclusive:hover, input.exclusive_large:hover,
-a.button_mini:hover, a.button_small:hover, a.button:hover, a.button_large:hover,
-a.exclusive_mini:hover, a.exclusive_small:hover, a.exclusive:hover, a.exclusive_large:hover {
-	background-position: left -18px;
-}
-
-/* exclusive hover button */
-input.exclusive_mini:hover, input.exclusive_small:hover, input.exclusive:hover, input.exclusive_large:hover, a.exclusive_mini:hover, a.exclusive_small:hover, a.exclusive:hover, a.exclusive_large:hover {
-	color: white !important;
-}
-
-/* classic buttons */
-input.button_mini, input.button_mini_disabled, input.exclusive_mini, input.exclusive_mini_disabled, a.button_mini, a.exclusive_mini, span.button_mini, span.exclusive_mini {
-	width: 30px;
-	background-image: url('../img/button-mini.gif');
-}
-input.button_small, input.button_small_disabled, input.exclusive_small, input.exclusive_small_disabled, a.button_small, a.exclusive_small, span.button_small, span.exclusive_small {
-	width: 60px;
-	background-image: url('../img/button-small.gif');
-}
-input.button, input.button_disabled, input.exclusive, input.exclusive_disabled, a.button, a.exclusive, span.button, span.exclusive {
-	width: 120px;
-	background-image: url('../img/button-medium.gif');
-}
-input.button_large, input.button_large_disabled, input.exclusive_large, input.exclusive_large_disabled, a.button_large, a.exclusive_large, span.button_large, span.exclusive_large {
-	width: 180px;
-	background-image: url('../img/button-large.gif');
-}
-
-/* exclusive button */
-input.exclusive, input.exclusive_disabled, a.exclusive, span.exclusive { background-image: url('../img/button-medium_exclusive.gif') }
-input.exclusive_mini, input.exclusive_mini_disabled, a.exclusive_mini, span.exclusive_mini { background-image: url('../img/button-mini_exclusive.gif') }
-input.exclusive_small, input.exclusive_small_disabled, a.exclusive_small, span.exclusive_small { background-image: url('../img/button-small_exclusive.gif') }
-input.exclusive_large, input.exclusive_large_disabled, a.exclusive_large, span.exclusive_large { background-image: url('../img/button-large_exclusive.gif') }
 
 /* id_state field in managed via JS and is firstly hidden */
 form p.id_state { display: none; }
@@ -1123,119 +1052,63 @@ ul#order_step { background-color: white }
 
 
 /* Special style for block cart*/
-#cart_block {
-    background: white;
+div#cart_block.block {
+    position: absolute;
+    top: 0px;
+    width: 163px;
     height: 190px;
+    background: white;
     padding: 0;
     margin: 0;
-    margin-bottom: 8px;
-    position: absolute;
-    top: 0;
-}
-div#cart_block.block, div#cart_block.exclusive {
-    padding: 0;
-    margin: 0;
-    margin-bottom: 8px;
-}
-#cart_block .icon {
-    background: yellow;
-    position: absolute;
-    left: 0;
-    top: 0;
-    border-right: 8px solid #eeeef0;
-    border-bottom: 8px solid #eeeef0;
 }
 #cart_block h4 {
     height: 25px;
-    margin: 0;
     margin-bottom: 16px;
-    padding: 0;
-    padding-left: 41px;
-
+    padding-top: 8px;
+    padding-left: 8px;
+    line-height: 25px;
 }
-#cart_block h4 span {
-	font-size: 0.8em;
-	cursor: pointer;
-	background-repeat: no-repeat;
-	background-position: center center;
-	padding-left: 10px
+#cart_block h4 a {
+    text-decoration: none;
 }
-#cart_block h4 span#block_cart_collapse { background-image: url('../img/icon/sort_asc_white.gif'); }
-#cart_block h4 span#block_cart_expand { background-image: url('../img/icon/sort_desc_white.gif'); }
-#cart_block #cart_block_no_products { margin: 0.5em 0; }
-#cart_block a.ajax_cart_block_remove_link {
-	width: 11px;
-	height: 13px;
-	margin-left: 6px;
-	float: right;
-	font-size: 0;
-	display: block;
-	background: transparent url('../img/icon/delete.gif') no-repeat left bottom;
+div#cart_block h4 .icon {
+    background-color: yellow;
 }
-#cart_block a.ajax_cart_block_remove_link:hover { text-decoration: none; }
-#cart_block p { clear: both; }
-#cart_block p span {
-	clear: right;
-	float: left;
-	text-align: right;
+div#cart_block ul {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    width: 124px;
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
 }
-#cart_block_wrapping_cost,
-#cart_block_shipping_cost,
-#cart_block_total {
-    padding-right: 1.3em;
+div#cart_block ul li {
+    background-color: #e7e7e8;
+    height: 25px;
+    line-height: 25px;
+    margin-top: 8px;
+    font-size: 11px;
+    text-indent: 8px;
+    white-space: nowrap;
 }
-#cart_block table#vouchers {
-	margin-top: 0.5em;
-	border-top: 1px solid white;
-	height: 3em;
-	padding-top: 0.4em;
-	margin-bottom: 0.5em;
-	clear: both
+div#cart_block ul li,
+div#cart_block ul li span.price {
+    color: #222222;
+    overflow: hidden;
 }
- #cart_block p#cart-prices {
-	clear: both;
-	margin-top: 8px;
-	margin-bottom: 0.5em;
-	padding-top: 0.4em;
-	height: 3em;
-	border-top: 1px solid white
+div#cart_block ul li span.price{
+    font-weight: bold;
+    font-size: 12px;
 }
-#cart_block table#vouchers td {
-	padding: 0;
-	border: 0;
-	height: 1.5em
+div#cart_block ul li a {
+    display: block;
+    text-decoration: none;
 }
-#cart_block table#vouchers td.price {
-	color: white;
-	font-size: 1em;
-	font-weight: normal;
-	width: 37%;
-	text-align: right
+div#cart_block ul li a:hover {
+    color: white;
+    background-color: #222222;
 }
-#cart_block table#vouchers td.delete {
-	width: 9%;
-	text-align: right
-}
-#cart_block table#vouchers td.delete img { margin: 0 }
-#cart_block p#cart-buttons {
-	height: 20px;
-	margin: 5px 0 0 0;
-}
-#cart_block p#cart-buttons a { float: left }
-#cart_block p#cart-buttons a#button_order_cart { float: right }
-#cart_block .cart_block_customizations {
-	margin-left: 6px;
-	list-style-type: square
-}
-#cart_block #cart-price-precisions {
-	margin-top: 0.5em;
-	padding-top: 0.4em;
-	border-top: 1px solid white;
-	font-size: 0.9em;
-	height: 2em
-}
-
-
 
 
 

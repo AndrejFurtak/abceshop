@@ -13,6 +13,7 @@ foreach ($cartDiscounts AS $k => $cartDiscount)
 
 $add = Tools::getIsset('add') ? 1 : 0;
 $delete = Tools::getIsset('delete') ? 1 : 0;
+$cancel = Tools::getIsset('cancel') ? 1 : 0;
 
 if (Configuration::get('PS_TOKEN_ENABLE') == 1 &&
 	strcasecmp(Tools::getToken(false), strval(Tools::getValue('token'))) &&
@@ -20,8 +21,12 @@ if (Configuration::get('PS_TOKEN_ENABLE') == 1 &&
 	$errors[] = Tools::displayError('invalid token');
 
 //update the cart...
-if ($add OR Tools::getIsset('update') OR $delete)
-{
+if ($cancel){
+
+    $cart->delete();
+    
+}elseif ($add OR Tools::getIsset('update') OR $delete){
+
 	//get the values
  	$idProduct = intval(Tools::getValue('id_product', NULL));
 	$idProductAttribute = intval(Tools::getValue('id_product_attribute', Tools::getValue('ipa')));
@@ -126,14 +131,17 @@ if (Tools::getValue('ajax') == 'true')
 	require_once(_PS_MODULE_DIR_.'/blockcart/blockcart-ajax.php');
 else
 {
-	if (sizeof($errors))
-	{
-		require_once(dirname(__FILE__).'/header.php');
-		$smarty->assign('errors', $errors);
-		$smarty->display(_PS_THEME_DIR_.'errors.tpl');
-		require_once(dirname(__FILE__).'/footer.php');
+	if (sizeof($errors)){
+            require_once(dirname(__FILE__).'/header.php');
+            $smarty->assign('errors', $errors);
+            $smarty->display(_PS_THEME_DIR_.'errors.tpl');
+            require_once(dirname(__FILE__).'/footer.php');
 	}
-	else
-		Tools::redirect('order.php?'.(isset($idProduct) ? 'ipa='.intval($idProduct) : ''));
+        elseif ($cancel && Tools::getIsset('page')) {
+            Tools::redirect(Tools::getValue('page'));
+        }
+        else{
+            Tools::redirect('order.php?'.(isset($idProduct) ? 'ipa='.intval($idProduct) : ''));
+        }
 }
 ?>
