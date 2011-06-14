@@ -85,7 +85,7 @@ class BlockBanner extends Module
 
     // spracovanie poziadavok a vytvorenie vystupu
     public function getContent(){
-        $output = '<h2>' . $this->displayName . '</h2>';
+        $output = '<h2>' . $this->l($this->displayName) . '</h2>';
 
         // handlovanie
 
@@ -115,10 +115,6 @@ class BlockBanner extends Module
         $output .= $this->displayConfigForm($config);
         // zobrazi form s obrazkami
         $output .= $this->displayImgForm($bannerItems);
-
-        
-        //$output .= '<p style="font-weight: bold; color:red;">' . $handleInfo . '</p>';
-
 
         return $output;
     }
@@ -189,16 +185,16 @@ class BlockBanner extends Module
             <legend>' . $this->l('configuration') . '</legend>
             <table border="0px" style="margin-bottom:15px">
                 <tr>
-                    <td style="padding-left:5px; padding-right:5px; font-weight: bold;">' . $this->l('slideSpeed') . '</td>
+                    <td style="padding-left:5px; padding-right:5px; font-weight: bold;">' . $this->l('Slide speed') . '</td>
                     <td><input type="text" name="slideSpeed" value="' . $config[self::getConfigurationSlideSpeedKey()] .'" style="margin-right:5px" />ms</td>
                 <tr>
                 <tr>
-                    <td style="padding-left:5px; padding-right:5px; font-weight: bold;">' . $this->l('slideInterval') . '</td>
+                    <td style="padding-left:5px; padding-right:5px; font-weight: bold;">' . $this->l('Slide interval') . '</td>
                     <td><input type="text" name="slideInterval" value="' . $config[self::getConfigurationSlideIntervalKey()] .'" style="margin-right:5px" />ms</td>
                 </tr>
                 <tr>
                     <td>&nbsp;</td>
-                    <td><input type="submit" name="submitChangeConfiguration" value="' . $this->l('change') . '" /></td>
+                    <td><input type="submit" name="submitChangeConfiguration" value="' . $this->l('Change') . '" /></td>
                 <tr>
             </table>
             </fieldset>
