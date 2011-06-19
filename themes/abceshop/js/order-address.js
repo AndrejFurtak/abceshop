@@ -1,70 +1,53 @@
 $(document).ready(function()
 {
-	updateAddressesDisplay(true);
+        updateAddressDisplay('delivery', true);
+	updateAddressDisplay('invoice', true);
 });
 
-//update the display of the addresses
-function updateAddressesDisplay(first_view)
-{
-	// update content of delivery address
-	updateAddressDisplay('delivery');
-
-	// update content of invoice address
-	//if addresses have to be equals...
-	var txtInvoiceTitle = $('ul#address_invoice li.address_title').html();	
-	if ($('input[type=checkbox]#addressesAreEquals:checked').length == 1)
-	{
-		$('#address_invoice_form:visible').hide('fast');
-		$('ul#address_invoice').html($('ul#address_delivery').html());
-		$('ul#address_invoice li.address_title').html(txtInvoiceTitle);
-	}
-	else
-	{
-		$('#address_invoice_form:hidden').show('fast');
-		if ($('select#id_address_invoice').val())
-			updateAddressDisplay('invoice');
-		else
-		{
-			$('ul#address_invoice').html($('ul#address_delivery').html());
-			$('ul#address_invoice li.address_title').html(txtInvoiceTitle);
-		}	
-	}
-	
-	if(!first_view)
-		updateAddresses();
-		
-	return true;
+function updateAddress(addressType, onLoad){
+    updateAddressDisplay(addressType);
+    
+    if (!onLoad){
+        updateAddresses();
+    }
 }
 
 function updateAddressDisplay(addressType)
 {
 	var idAddress = $('select#id_address_' + addressType + '').val();
-	$('ul#address_' + addressType + ' li.address_company').html(addresses[idAddress][0]);
+        var baseAddressPath = 'div#address_' + addressType + ' table ';
+
+        // update address
+	$(baseAddressPath + 'tr.address_company td.value').html(addresses[idAddress][0]);
+
 	if(addresses[idAddress][0] == '')
-		$('ul#address_' + addressType + ' li.address_company').hide();
+		$(baseAddressPath + 'tr.address_company').hide();
 	else
-		$('ul#address_' + addressType + ' li.address_company').show();
-	$('ul#address_' + addressType + ' li.address_name').html(addresses[idAddress][1] + ' ' + addresses[idAddress][2]);
-	$('ul#address_' + addressType + ' li.address_address1').html(addresses[idAddress][3]);
-	$('ul#address_' + addressType + ' li.address_address2').html(addresses[idAddress][4]);
+		$(baseAddressPath + 'tr.address_company').show();
+	$(baseAddressPath + 'tr.address_name td.value').html(addresses[idAddress][1] + ' ' + addresses[idAddress][2]);
+	$(baseAddressPath + 'tr.address_address1 td.value').html(addresses[idAddress][3]);
+	$(baseAddressPath + 'tr.address_address2 td.value').html(addresses[idAddress][4]);
 	if(addresses[idAddress][4] == '')
-		$('ul#address_' + addressType + ' li.address_address2').hide();
+		$(baseAddressPath + 'tr.address_address2').hide();
 	else
-		$('ul#address_' + addressType + ' li.address_address2').show();
-	$('ul#address_' + addressType + ' li.address_city').html(addresses[idAddress][5] + ' ' + addresses[idAddress][6]);
-	$('ul#address_' + addressType + ' li.address_country').html(addresses[idAddress][7] + (addresses[idAddress][8] != '' ? ' (' + addresses[idAddress][8] +')' : ''));
+		$(baseAddressPath + 'tr.address_address2').show();
+	$(baseAddressPath + 'tr.address_city td.value').html(addresses[idAddress][5] + ' ' + addresses[idAddress][6]);
+	$(baseAddressPath + 'tr.address_country td.value').html(addresses[idAddress][7] + (addresses[idAddress][8] != '' ? ' (' + addresses[idAddress][8] +')' : ''));
+        
 	// change update link
-	var link = $('ul#address_' + addressType + ' li.address_update a').attr('href');
+	var link = $('div#address_' + addressType + ' a.modifyAddress').attr('href');
 	var expression = /id_address=\d+/;
-	link = link.replace(expression, 'id_address='+idAddress);
-	$('ul#address_' + addressType + ' li.address_update a').attr('href', link);
+
+	link = link.replace(expression, 'id_address=' + idAddress);
+        
+	$('div#address_' + addressType + ' a.modifyAddress').attr('href', link);
 }
 
 function updateAddresses()
 {
 	var idAddress_delivery = $('select#id_address_delivery').val();
-	var idAddress_invoice = $('input[type=checkbox]#addressesAreEquals:checked').length == 1 ? idAddress_delivery : $('select#id_address_invoice').val();
-   
+	var idAddress_invoice = $('select#id_address_invoice').val();
+
    $.ajax({
            type: 'POST',
            url: baseDir + 'order.php',

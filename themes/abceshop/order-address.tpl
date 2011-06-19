@@ -12,73 +12,114 @@
 {capture name=path}{l s='Addresses'}{/capture}
 {include file=$tpl_dir./breadcrumb.tpl}
 
-<h2>{l s='Addresses'}</h2>
-
 {assign var='current_step' value='address'}
 {include file=$tpl_dir./order-steps.tpl}
 
 {include file=$tpl_dir./errors.tpl}
 
-<form action="{$base_dir_ssl}order.php" method="post">
-	<div class="addresses">
-		<p class="address_delivery select">
-			<label for="id_address_delivery">{l s='Choose a delivery address:'}</label>
-			<select name="id_address_delivery" id="id_address_delivery" class="address_select" onchange="updateAddressesDisplay();">
-			{foreach from=$addresses key=k item=address}
-				<option value="{$address.id_address|intval}" {if $address.id_address == $cart->id_address_delivery}selected="selected"{/if}>{$address.alias|escape:'htmlall':'UTF-8'}</option>
-			{/foreach}
-			</select>
-		</p>
-		<p class="checkbox">
-			<input type="checkbox" name="same" id="addressesAreEquals" value="1" onclick="updateAddressesDisplay();" {if $cart->id_address_invoice == $cart->id_address_delivery || $addresses|@count == 1}checked="checked"{/if} />
-			<label for="addressesAreEquals">{l s='Use the same address for billing.'}</label>
-		</p>
-		<p id="address_invoice_form" class="select" {if $cart->id_address_invoice == $cart->id_address_delivery}style="display: none;"{/if}>
-		{if $addresses|@count > 1}
-			<label for="id_address_invoice" class="strong">{l s='Choose a billing address:'}</label>
-			<select name="id_address_invoice" id="id_address_invoice" class="address_select" onchange="updateAddressesDisplay();">
-			{section loop=$addresses step=-1 name=address}
-				<option value="{$addresses[address].id_address|intval}" {if $addresses[address].id_address == $cart->id_address_invoice && $cart->id_address_delivery != $cart->id_address_invoice}selected="selected"{/if}>{$addresses[address].alias|escape:'htmlall':'UTF-8'}</option>
-			{/section}
-			</select>
-			{else}
-				<a style="margin-left: 221px;" href="{$base_dir_ssl}address.php?back=order.php&amp;step=1&select_address=1{if $back}&mod={$back}{/if}" title="{l s='Add'}" class="button_large">{l s='Add a new address'}</a>
-			{/if}
-		</p>
-		<div class="clear"></div>
-		<ul class="address item" id="address_delivery">
-			<li class="address_title">{l s='Your delivery address'}</li>
-			<li class="address_company"></li>
-			<li class="address_name"></li>
-			<li class="address_address1"></li>
-			<li class="address_address2"></li>
-			<li class="address_city"></li>
-			<li class="address_country"></li>
-			<li class="address_update"><a href="{$base_dir_ssl}address.php?id_address={$address.id_address|intval}&amp;back=order.php&amp;step=1{if $back}&mod={$back}{/if}" title="{l s='Update'}">{l s='Update'}</a></li>
-		</ul>
-		<ul class="address alternate_item" id="address_invoice">
-			<li class="address_title">{l s='Your billing address'}</li>
-			<li class="address_company"></li>
-			<li class="address_name"></li>
-			<li class="address_address1"></li>
-			<li class="address_address2"></li>
-			<li class="address_city"></li>
-			<li class="address_country"></li>
-			<li class="address_update"><a href="{$base_dir_ssl}address.php?id_address={$address.id_address|intval}&amp;back=order.php&amp;step=1{if $back}&mod={$back}{/if}" title="{l s='Update'}">{l s='Update'}</a></li>
-		</ul>
-		<br class="clear" />
-		<p class="address_add submit">
-			<a href="{$base_dir_ssl}address.php?back=order.php&amp;step=1{if $back}&mod={$back}{/if}" title="{l s='Add'}" class="button_large">{l s='Add a new address'}</a>
-		</p>
-		<div id="ordermsg">
-			<p>{l s='If you want to leave us comment about your order, please write it below.'}</p>
-			<p class="textarea"><textarea cols="60" rows="3" name="message">{$oldMessage}</textarea></p>
-		</div>
-	</div>
-	<p class="cart_navigation submit">
-		<input type="hidden" class="hidden" name="step" value="2" />
-		<input type="hidden" name="back" value="{$back}" />
-		<a href="{$base_dir_ssl}order.php?step=0{if $back}&back={$back}{/if}" title="{l s='Previous'}" class="button">&laquo; {l s='Previous'}</a>
-		<input type="submit" name="processAddress" value="{l s='Next'} &raquo;" class="exclusive" />
-	</p>
+<form name="addressForm" action="{$base_dir_ssl}order.php?" method="post">
+
+    <div>
+            
+        <div class="addresses">
+
+            <div id="address_delivery" class="address">
+                <h4>
+                    {l s='Your delivery address'}
+                    <select name="id_address_delivery" id="id_address_delivery" class="address_select" onchange="updateAddress('delivery');">
+                        {foreach from=$addresses key=k item=address}
+                            <option value="{$address.id_address|intval}" {if $address.id_address == $cart->id_address_delivery}selected="selected"{/if}>{$address.alias|escape:'htmlall':'UTF-8'}</option>
+                        {/foreach}
+                    </select>
+                </h4>
+                <table>
+                    <tr class="address_company">
+                        <td class="name">{l s='Company'}</td>
+                        <td class="value"></td>
+                    </tr>
+                    <tr class="address_name">
+                        <td class="name">{l s='Name'}</td>
+                        <td class="value"></td>
+                    </tr>
+                    <tr class="address_address1">
+                        <td class="name">{l s='Address'}</td>
+                        <td class="value"></td>
+                    </tr>
+                    <tr class="address_address2">
+                        <td class="name">{l s='Address 2'}</td>
+                        <td class="value"></td>
+                    </tr>
+                    <tr class="address_city">
+                        <td class="name">{l s='City'}</td>
+                        <td class="value"></td>
+                    </tr>
+                    <tr class="address_country">
+                        <td class="name">{l s='Country'}</td>
+                        <td class="value"></td>
+                    </tr>
+                </table>
+                <a class="modifyAddress" href="{$base_dir_ssl}address.php?id_address={$cart->id_address_delivery|intval}&amp;back=order.php&amp;step=1{if $back}&mod={$back}{/if}" title="{l s='Update'}">{l s='Modify'}</a>
+            </div>
+
+            <div id="address_invoice" class="address">
+                <h4>
+                    {l s='Your billing address'}
+                    <select name="id_address_invoice" id="id_address_invoice" class="address_select" onchange="updateAddress('invoice');">
+                        {foreach from=$addresses key=k item=address}
+                            <option value="{$address.id_address|intval}" {if $address.id_address == $cart->id_address_invoice}selected="selected"{/if}>{$address.alias|escape:'htmlall':'UTF-8'}</option>
+                        {/foreach}
+                    </select>
+                </h4>
+                <table>
+                    <tr class="address_company">
+                        <td class="name">{l s='Company'}</td>
+                        <td class="value"></td>
+                    </tr>
+                    <tr class="address_name">
+                        <td class="name">{l s='Name'}</td>
+                        <td class="value"></td>
+                    </tr>
+                    <tr class="address_address1">
+                        <td class="name">{l s='Address'}</td>
+                        <td class="value"></td>
+                    </tr>
+                    <tr class="address_address2">
+                        <td class="name">{l s='Address 2'}</td>
+                        <td class="value"></td>
+                    </tr>
+                    <tr class="address_city">
+                        <td class="name">{l s='City'}</td>
+                        <td class="value"></td>
+                    </tr>
+                    <tr class="address_country">
+                        <td class="name">{l s='Country'}</td>
+                        <td class="value"></td>
+                    </tr>
+                </table>
+                <a class="modifyAddress" href="{$base_dir_ssl}address.php?id_address={$cart->id_address_invoice|intval}&amp;back=order.php&amp;step=1{if $back}&mod={$back}{/if}" title="{l s='Update'}">{l s='Modify'}</a>
+            </div>
+            <a class="address_add" href="{$base_dir_ssl}address.php?back=order.php&amp;step=1{if $back}&mod={$back}{/if}" title="{l s='Add'}">{l s='Add a new address'}</a>
+        </div>
+
+        <div class="checkbox hidden">
+            <label for="addressesAreEquals">{l s='Use the same address for billing.'}</label>
+            <input type="checkbox" name="same" id="addressesAreEquals" value="1" onclick="updateAddress('delivery');" {if $cart->id_address_invoice == $cart->id_address_delivery}checked="checked"{/if} />
+        </div>
+
+        <div id="ordermsg">
+            <p class="ordermsgLabel">{l s='If you want to leave us comment about your order, please write it below.'}</p>
+            <textarea class="ordermsgText" name="message">{$oldMessage}</textarea>
+        </div>
+
+    </div>
+
+    <p class="cart_navigation">
+        <input type="hidden" class="hidden" name="step" value="2" />
+        <input type="hidden" name="back" value="{$back}" />
+        <input type="hidden" name="processAddress" value="" />
+
+        <a class="back" href="{$base_dir_ssl}order.php?step=0{if $back}&back={$back}{/if}" title="{l s='Back'}">{l s='Back'}</a>
+        <a class="next" href="javascript: document.addressForm.submit();" title="">{l s='Next'}</a>
+    </p>
+
 </form>
