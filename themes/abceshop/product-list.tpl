@@ -8,13 +8,11 @@
                             <img src="{$link->getImageLink($product.link_rewrite, $product.id_image, 'home')}" alt="{$product.legend|escape:'htmlall':'UTF-8'}" />
                         </a>
                         <div class="overview_block">
-                            <p class="name">
-                                <a href="{$product.link|escape:'htmlall':'UTF-8'}" title="{$product.name|escape:'htmlall':'UTF-8'}">
-                                    {$product.name|truncate:35:'...'|escape:'htmlall':'UTF-8'}
-                                </a>
+                            <p class="name" title="{$product.name|escape:'htmlall':'UTF-8'}">
+                                    {$product.name|truncate:20:'...'|escape:'htmlall':'UTF-8'}
                             </p>
-                            <p class="category">
-                                {$category->name|escape:'htmlall':'UTF-8'}
+                            <p class="category" title="{$category->name|escape:'htmlall':'UTF-8'}">
+                                {$category->name|truncate:20:'...'|escape:'htmlall':'UTF-8'}
                             </p>
                             <p class="price">
                                 {if !$priceDisplay}{convertPrice price=$product.price}{else}{convertPrice price=$product.price_tax_exc}{/if}
@@ -23,9 +21,11 @@
                     </div>
                     <div class="right_block">
                         <div class="description">
-                            <h2>{l s='Description'}</h2>
+                            <h2><a href="{$product.link|escape:'htmlall':'UTF-8'}" title="{$product.name|escape:'htmlall':'UTF-8'}">
+                                    {$product.name|escape:'htmlall':'UTF-8'}
+                            </a></h2>
                             <p>
-                                {$product.description_short|strip_tags:'UTF-8'|truncate:350:' <a href="#">(more)</a>'}
+                                {$product.description_short|strip_tags:'UTF-8'}
                             </p>
                         </div>
                         <div class="action_block">
@@ -43,10 +43,10 @@
                                     <li class="addToCart disabled"><span>{l s='Add to cart'}</span></li>
                                 {/if}
                             </ul>
-                            
+
                         </div>
                     </div>
-		</li>
+        </li>
 	{/foreach}
 	</ul>
 	<!-- /Products list -->

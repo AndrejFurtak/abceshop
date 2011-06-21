@@ -1337,6 +1337,7 @@ ul#product_list li div.left_block div.overview_block p.price{
     padding-right: 8px;
     padding-bottom: 7px;
     font-size: 12px;
+    font-weight: bold;
     text-align: right;
 }
 
@@ -1344,9 +1345,12 @@ ul#product_list li div.left_block div.overview_block p.price{
 /* pravy stlpec s popisom */
 ul#product_list li div.right_block{
     float: left;
-    height: inherit;
     overflow: hidden;
     width: 462px;
+    height: 142px;
+    /* Táto čiara slúži ako vizuálny "padding" v prípade, že popis produktu je veľmi dlhý.
+       Výška sa mení s hrúbkou čiary. Dokopy dávajú požadovanú výšku 150 px. */
+    border-bottom: 8px solid #EEEEF0;
 }
 
 
@@ -1499,7 +1503,7 @@ table#cart_summary tfoot tr td:first-child {
     font-size: 12px;
     line-height: 25px;
 }
-.cart_navigation a.back, 
+.cart_navigation a.back,
 .cart_navigation a.next{
     background-color: #3dae48;
     color: white;
@@ -1802,7 +1806,7 @@ div.categTree {
 
 /* form */
 #primary_block #product_order_top{
-    
+
 }
 #primary_block #product_order_top p#availability_statut{
     margin-top: 11px;
