@@ -141,13 +141,6 @@ ul.idTabsShort li a.selected {
 div.sheets {
 	clear: both;
 }
-div.sheets ul{
-    list-style-position: inside;
-}
-div#more_info_sheets ul li {
-	background-position: 6px 4px;
-	margin-bottom: 0.4em;
-}
 
 /* global style */
 a {
@@ -158,7 +151,10 @@ a {
 img { border: none; }
 h1, h2, h3, h4 { font-weight: bold; }
 h1 { font-size: 180%; }
-h2 { font-size: 150%; }
+h2 {
+    font-size: 150%;
+    margin: 1em 0 0.3em 0;
+}
 h3 { font-size: 130% }
 h4 { font-size: 110% }
 h2 span {
@@ -166,6 +162,17 @@ h2 span {
 	text-transform: none;
 	font-weight: normal;
 	font-style: italic;
+}
+p {
+    line-height: 1.3em;
+    margin: 0.5em 0;
+}
+
+ul {
+    margin: 1em 2em;
+}
+li {
+    margin: 0.5em 0;
 }
 
 /* global layout */
@@ -587,12 +594,6 @@ span.exclusive_mini, span.exclusive_small, span.exclusive, span.exclusive_large 
 form p.id_state { display: none; }
 
 /* generic style */
-ul.bullet li, .block ul.bullet li {
-	padding-left: 2em;
-	background: transparent url('../img/bullet.gif') no-repeat 6px 6px;
-	list-style-type: none;
-}
-
 .price-discount { text-decoration: line-through; }
 .price-pretax { color: gray; }
 img.icon { margin-right: 0.5em; vertical-align: middle; }
@@ -1053,6 +1054,7 @@ ul.step {
 ul.step li {
     float: left;
     height: inherit;
+    margin: 0;
     margin-right: 10px;
     color: #222222;
 }
@@ -1106,6 +1108,7 @@ div#cart_block ul li {
     background-color: #e7e7e8;
     height: 25px;
     line-height: 25px;
+    margin: 0;
     margin-top: 8px;
     font-size: 11px;
     text-indent: 8px;
@@ -1280,10 +1283,14 @@ ul#product_list a{
 
 
 /* jedna polocka produktu */
+ul#product_list {
+    margin: 0;
+}
 ul#product_list li{
     display: block;
     position: relative;
     height: 150px;
+    margin: 0;
     margin-bottom: 8px;
     overflow: hidden;
 }
@@ -1681,6 +1688,7 @@ div.categTree {
     overflow: hidden;
 }
 #thumbs_list ul {
+    margin: 0;
     height: inherit;
     width: 10000px;
     list-style-type: none;
@@ -1689,6 +1697,7 @@ div.categTree {
     width: 80px;
     height: inherit;
     float: left;
+    margin: 0;
     margin-right: 8px;
 }
 #thumbs_list ul li a img{
@@ -1822,8 +1831,10 @@ div.categTree {
 }
 #primary_block form#buy_block ul {
     list-style: none;
+    margin: 0;
 }
 #primary_block form#buy_block ul li{
+    margin: 0;
     margin-top: 8px;
 }
 #primary_block form#buy_block ul li > *{
