@@ -1817,10 +1817,13 @@ div.categTree {
 #primary_block #product_order_top{
 
 }
-#primary_block #product_order_top p#availability_statut{
+#primary_block #product_order_top p#availability_statut,
+#pQuantityAvailable {
     margin-top: 11px;
     margin-left: 12px;
     font-size: 12px;
+}
+#primary_block #product_order_top p#availability_statut {
     color: red;
 }
 #primary_block form#buy_block {

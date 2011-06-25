@@ -190,7 +190,8 @@ var fieldRequired = '{l s='Please fill all required fields' js=1}';
                 {if ($product->reduction_price != 0 || $product->reduction_percent != 0) && ($product->reduction_from == $product->reduction_to OR ($product->reduction_from <= $smarty.now|date_format:'%Y-%m-%d %H:%M:%S' && $smarty.now|date_format:'%Y-%m-%d %H:%M:%S' <= $product->reduction_to))}
                     <p id="old_price">
                         {if !$priceDisplay || $priceDisplay == 2}
-                            <span id="old_price_display">{convertPrice price=$product->getPriceWithoutReduct()}</span>
+                            <!-- // TODO: L10N -->
+                            Pôvodne: <span id="old_price_display">{convertPrice price=$product->getPriceWithoutReduct()}</span>
                             {if $tax_enabled}{l s='tax incl.'}{/if}
                         {/if}
                         {if $priceDisplay == 1}
@@ -225,13 +226,6 @@ var fieldRequired = '{l s='Please fill all required fields' js=1}';
                     </p>
                 {/if}
 
-                <!-- number of item in stock -->
-                <p id="pQuantityAvailable"{if $display_qties != 1} style="display:none;"{/if}>
-                    <span id="quantityAvailable">{$product->quantity|intval}</span>
-                    <span{if $product->quantity != 1} style="display:none;"{/if} id="quantityAvailableTxt">{l s='item in stock'}</span>
-                    <span{if $product->quantity == 1} style="display:none;"{/if} id="quantityAvailableTxtMultiple">{l s='items in stock'}</span>
-                </p>
-
                 {if $HOOK_EXTRA_RIGHT}
                     {$HOOK_EXTRA_RIGHT}
                 {/if}
@@ -258,6 +252,11 @@ var fieldRequired = '{l s='Please fill all required fields' js=1}';
                                 Dodanie: {$product->available_now}
                             {/if}
                         </span>
+                    </p>
+
+                    <!-- number of item in stock -->
+                    <p id="pQuantityAvailable"{if $display_qties != 1} style="display:none;"{/if}>
+                        {l s='items in stock'}: {$product->quantity|intval}
                     </p>
 
                     <!-- Out of stock hook -->
