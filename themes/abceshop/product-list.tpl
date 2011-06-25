@@ -25,7 +25,7 @@
                                     {$product.name|escape:'htmlall':'UTF-8'}
                             </a></h2>
                             <p>
-                                {$product.description_short|strip_tags:'UTF-8'}
+                                {$product.description_short}
                             </p>
                         </div>
                         <div class="action_block">
