@@ -349,8 +349,8 @@ var fieldRequired = '{l s='Please fill all required fields' js=1}';
         <li id="productTabDetails" class="active"><a href="javascript:setTab('details');">{l s='Details'}</a></li>
         <li id="productTabVideo"><a href="javascript:setTab('video');">{l s='Video'}</a></li>
         <li id="productTabPhotos"><a href="javascript:setTab('photos');">{l s='More photos'}</a></li>
+        <li id="printReference"><a href="javascript:print();">{l s='Print'}</a></li>
     </ul>
-    <a id="printReference" href="javascript:print();">{l s='Print'}</a>
 </div>
 
 <div id="more_info_block" class="clear">

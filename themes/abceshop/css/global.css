@@ -1886,7 +1886,7 @@ div.categTree {
 }
 #pb_middle_block ul#productTabs li {
     float: left;
-    min-width: 149px;
+    width: 149px;
     margin-right: 8px;
     background-color: #EEEEF0;
     line-height: 25px;
@@ -1894,12 +1894,12 @@ div.categTree {
 }
 #pb_middle_block ul#productTabs li a {
     display: block;
-    padding-left: 8px;
+    padding: 0 8px;
 }
-#pb_middle_block a#printReference {
-    float: right;
-    line-height: 25px;
-    height: 25px;
+#pb_middle_block ul#productTabs li#printReference {
+    margin-right: 0;
+    background: white;
+    text-align: right;
 }
 #pb_middle_block ul#productTabs li.active{
     background-color: #222222;
