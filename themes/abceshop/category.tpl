@@ -1,8 +1,9 @@
-{include file=$tpl_dir./breadcrumb.tpl} 
+{include file=$tpl_dir./breadcrumb.tpl}
 {include file=$tpl_dir./errors.tpl}
 
 {if $category->id AND $category->active}
 
+{*
     {if isset($subcategories)}
         <!-- Subcategories -->
         <div id="subcategories">
@@ -27,6 +28,7 @@
             <br class="clear"/>
         </div>
     {/if}
+*}
 
 
     {if $products}

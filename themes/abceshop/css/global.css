@@ -141,13 +141,6 @@ ul.idTabsShort li a.selected {
 div.sheets {
 	clear: both;
 }
-div.sheets ul{
-    list-style-position: inside;
-}
-div#more_info_sheets ul li {
-	background-position: 6px 4px;
-	margin-bottom: 0.4em;
-}
 
 /* global style */
 a {
@@ -158,7 +151,10 @@ a {
 img { border: none; }
 h1, h2, h3, h4 { font-weight: bold; }
 h1 { font-size: 180%; }
-h2 { font-size: 150%; }
+h2 {
+    font-size: 150%;
+    margin: 1em 0 0.3em 0;
+}
 h3 { font-size: 130% }
 h4 { font-size: 110% }
 h2 span {
@@ -166,6 +162,17 @@ h2 span {
 	text-transform: none;
 	font-weight: normal;
 	font-style: italic;
+}
+p {
+    line-height: 1.3em;
+    margin: 0.5em 0;
+}
+
+ul {
+    margin: 1em 2em;
+}
+li {
+    margin: 0.5em 0;
 }
 
 /* global layout */
@@ -587,12 +594,6 @@ span.exclusive_mini, span.exclusive_small, span.exclusive, span.exclusive_large 
 form p.id_state { display: none; }
 
 /* generic style */
-ul.bullet li, .block ul.bullet li {
-	padding-left: 2em;
-	background: transparent url('../img/bullet.gif') no-repeat 6px 6px;
-	list-style-type: none;
-}
-
 .price-discount { text-decoration: line-through; }
 .price-pretax { color: gray; }
 img.icon { margin-right: 0.5em; vertical-align: middle; }
@@ -1053,6 +1054,7 @@ ul.step {
 ul.step li {
     float: left;
     height: inherit;
+    margin: 0;
     margin-right: 10px;
     color: #222222;
 }
@@ -1106,6 +1108,7 @@ div#cart_block ul li {
     background-color: #e7e7e8;
     height: 25px;
     line-height: 25px;
+    margin: 0;
     margin-top: 8px;
     font-size: 11px;
     text-indent: 8px;
@@ -1280,10 +1283,14 @@ ul#product_list a{
 
 
 /* jedna polocka produktu */
+ul#product_list {
+    margin: 0;
+}
 ul#product_list li{
     display: block;
     position: relative;
     height: 150px;
+    margin: 0;
     margin-bottom: 8px;
     overflow: hidden;
 }
@@ -1337,6 +1344,7 @@ ul#product_list li div.left_block div.overview_block p.price{
     padding-right: 8px;
     padding-bottom: 7px;
     font-size: 12px;
+    font-weight: bold;
     text-align: right;
 }
 
@@ -1344,9 +1352,12 @@ ul#product_list li div.left_block div.overview_block p.price{
 /* pravy stlpec s popisom */
 ul#product_list li div.right_block{
     float: left;
-    height: inherit;
     overflow: hidden;
     width: 462px;
+    height: 142px;
+    /* Táto čiara slúži ako vizuálny "padding" v prípade, že popis produktu je veľmi dlhý.
+       Výška sa mení s hrúbkou čiary. Dokopy dávajú požadovanú výšku 150 px. */
+    border-bottom: 8px solid #EEEEF0;
 }
 
 
@@ -1499,7 +1510,7 @@ table#cart_summary tfoot tr td:first-child {
     font-size: 12px;
     line-height: 25px;
 }
-.cart_navigation a.back, 
+.cart_navigation a.back,
 .cart_navigation a.next{
     background-color: #3dae48;
     color: white;
@@ -1677,6 +1688,7 @@ div.categTree {
     overflow: hidden;
 }
 #thumbs_list ul {
+    margin: 0;
     height: inherit;
     width: 10000px;
     list-style-type: none;
@@ -1685,6 +1697,7 @@ div.categTree {
     width: 80px;
     height: inherit;
     float: left;
+    margin: 0;
     margin-right: 8px;
 }
 #thumbs_list ul li a img{
@@ -1802,12 +1815,15 @@ div.categTree {
 
 /* form */
 #primary_block #product_order_top{
-    
+
 }
-#primary_block #product_order_top p#availability_statut{
+#primary_block #product_order_top p#availability_statut,
+#pQuantityAvailable {
     margin-top: 11px;
     margin-left: 12px;
     font-size: 12px;
+}
+#primary_block #product_order_top p#availability_statut {
     color: red;
 }
 #primary_block form#buy_block {
@@ -1818,8 +1834,10 @@ div.categTree {
 }
 #primary_block form#buy_block ul {
     list-style: none;
+    margin: 0;
 }
 #primary_block form#buy_block ul li{
+    margin: 0;
     margin-top: 8px;
 }
 #primary_block form#buy_block ul li > *{
@@ -1868,7 +1886,7 @@ div.categTree {
 }
 #pb_middle_block ul#productTabs li {
     float: left;
-    min-width: 149px;
+    width: 149px;
     margin-right: 8px;
     background-color: #EEEEF0;
     line-height: 25px;
@@ -1876,12 +1894,12 @@ div.categTree {
 }
 #pb_middle_block ul#productTabs li a {
     display: block;
-    padding-left: 8px;
+    padding: 0 8px;
 }
-#pb_middle_block a#printReference {
-    float: right;
-    line-height: 25px;
-    height: 25px;
+#pb_middle_block ul#productTabs li#printReference {
+    margin-right: 0;
+    background: white;
+    text-align: right;
 }
 #pb_middle_block ul#productTabs li.active{
     background-color: #222222;

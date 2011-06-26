@@ -121,7 +121,7 @@ var fieldRequired = '{l s='Please fill all required fields' js=1}';
                 <span class="view_scroll_spacer"><a id="view_scroll_right" title="{l s='Other views'}" href="javascript:{ldelim}{rdelim}">{l s='Next'}</a></span>
             </div>
         {/if}
-        
+
     </div>
 
 
@@ -184,13 +184,14 @@ var fieldRequired = '{l s='Please fill all required fields' js=1}';
                     </span>
                     {if $priceDisplay == 2}
                         <span id="pretaxe_price"><span id="pretaxe_price_display">{convertPrice price=$product->getPrice(false, $smarty.const.NULL)}</span>&nbsp;{l s='tax excl.'}</span>
-                    {/if}                    
+                    {/if}
                 </p>
 
                 {if ($product->reduction_price != 0 || $product->reduction_percent != 0) && ($product->reduction_from == $product->reduction_to OR ($product->reduction_from <= $smarty.now|date_format:'%Y-%m-%d %H:%M:%S' && $smarty.now|date_format:'%Y-%m-%d %H:%M:%S' <= $product->reduction_to))}
                     <p id="old_price">
                         {if !$priceDisplay || $priceDisplay == 2}
-                            <span id="old_price_display">{convertPrice price=$product->getPriceWithoutReduct()}</span>
+                            <!-- // TODO: L10N -->
+                            Pôvodne: <span id="old_price_display">{convertPrice price=$product->getPriceWithoutReduct()}</span>
                             {if $tax_enabled}{l s='tax incl.'}{/if}
                         {/if}
                         {if $priceDisplay == 1}
@@ -225,13 +226,6 @@ var fieldRequired = '{l s='Please fill all required fields' js=1}';
                     </p>
                 {/if}
 
-                <!-- number of item in stock -->
-                <p id="pQuantityAvailable"{if $display_qties != 1} style="display:none;"{/if}>
-                    <span id="quantityAvailable">{$product->quantity|intval}</span>
-                    <span{if $product->quantity != 1} style="display:none;"{/if} id="quantityAvailableTxt">{l s='item in stock'}</span>
-                    <span{if $product->quantity == 1} style="display:none;"{/if} id="quantityAvailableTxtMultiple">{l s='items in stock'}</span>
-                </p>
-                
                 {if $HOOK_EXTRA_RIGHT}
                     {$HOOK_EXTRA_RIGHT}
                 {/if}
@@ -254,9 +248,15 @@ var fieldRequired = '{l s='Please fill all required fields' js=1}';
                                     {l s='This product is no longer in stock'}
                                 {/if}
                             {else}
-                                {$product->available_now}
+                                <!-- // TODO: L10N -->
+                                Dodanie: {$product->available_now}
                             {/if}
                         </span>
+                    </p>
+
+                    <!-- number of item in stock -->
+                    <p id="pQuantityAvailable"{if $display_qties != 1} style="display:none;"{/if}>
+                        {l s='items in stock'}: {$product->quantity|intval}
                     </p>
 
                     <!-- Out of stock hook -->
@@ -304,10 +304,10 @@ var fieldRequired = '{l s='Please fill all required fields' js=1}';
 
                         <li id="add_to_cart"{if !$allow_oosp && $product->quantity == 0} style="display:none;"{/if}>
                             <input type="submit" name="Submit" value="{l s='Add to cart'}" />
-                        </li>                        
+                        </li>
                     </ul>
                 </form>
-            </div>            
+            </div>
         </div>
     </div>
 </div>
@@ -329,7 +329,7 @@ var fieldRequired = '{l s='Please fill all required fields' js=1}';
             case 'details':
                 $('#productTabDetails').addClass('active');
                 $('#more_info_sheets').removeClass('hidden');
-                break;            
+                break;
             case 'video':
                 $('#productTabVideo').addClass('active');
                 $('#more_videos_sheets').removeClass('hidden');
@@ -349,8 +349,8 @@ var fieldRequired = '{l s='Please fill all required fields' js=1}';
         <li id="productTabDetails" class="active"><a href="javascript:setTab('details');">{l s='Details'}</a></li>
         <li id="productTabVideo"><a href="javascript:setTab('video');">{l s='Video'}</a></li>
         <li id="productTabPhotos"><a href="javascript:setTab('photos');">{l s='More photos'}</a></li>
+        <li id="printReference"><a href="javascript:print();">{l s='Print'}</a></li>
     </ul>
-    <a id="printReference" href="javascript:print();">{l s='Print'}</a>
 </div>
 
 <div id="more_info_block" class="clear">
@@ -395,6 +395,8 @@ var fieldRequired = '{l s='Please fill all required fields' js=1}';
         {/if}
         {if $features}
             <!-- product's features -->
+            <!-- // TODO: L10N -->
+            <h2 class="product_subheader">Vlastnosti</h2>
             <ul id="idTab2" class="bullet">
             {foreach from=$features item=feature}
                 <li><span>{$feature.name|escape:'htmlall':'UTF-8'}</span> {$feature.value|escape:'htmlall':'UTF-8'}</li>
@@ -402,6 +404,8 @@ var fieldRequired = '{l s='Please fill all required fields' js=1}';
             </ul>
         {/if}
         {if $attachments}
+            <!-- // TODO: L10N -->
+            <h2 class="product_subheader">Prílohy</h2>
             <ul id="idTab9" class="bullet">
             {foreach from=$attachments item=attachment}
                 <li><a href="{$base_dir}attachment.php?id_attachment={$attachment.id_attachment}">{$attachment.name|escape:'htmlall':'UTF-8'}</a><br />{$attachment.description|escape:'htmlall':'UTF-8'}</li>
@@ -420,7 +424,7 @@ var fieldRequired = '{l s='Please fill all required fields' js=1}';
                                 <h5><a href="{$accessoryLink|escape:'htmlall':'UTF-8'}">{$accessory.name|truncate:22:'...':true|escape:'htmlall':'UTF-8'}</a></h5>
                                 <p class="product_desc">
                                     <a href="{$accessoryLink|escape:'htmlall':'UTF-8'}" title="{$accessory.legend|escape:'htmlall':'UTF-8'}" class="product_image"><img src="{$link->getImageLink($accessory.link_rewrite, $accessory.id_image, 'medium')}" alt="{$accessory.legend|escape:'htmlall':'UTF-8'}" /></a>
-                                    <a href="{$accessoryLink|escape:'htmlall':'UTF-8'}" title="{l s='More'}" class="product_description">{$accessory.description_short|strip_tags|truncate:100:'...'}</a>
+                                    <a href="{$accessoryLink|escape:'htmlall':'UTF-8'}" title="{l s='More'}" class="product_description">{$accessory.description_short|truncate:100:'...'}</a>
                                 </p>
                                 <p class="product_accessories_price">
                                     <span class="price">{displayWtPrice p=$accessory.price}</span>
@@ -444,7 +448,7 @@ var fieldRequired = '{l s='Please fill all required fields' js=1}';
     <div id="more_videos_sheets" class="sheets hidden">
     </div>
     <div id="more_photos_sheets" class="sheets hidden">
-    </div>    
+    </div>
 </div>
 
 <!-- Customizable products -->

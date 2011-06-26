@@ -8,7 +8,7 @@ CKEDITOR.config.format_tags = 'p;h1;h2';
 CKEDITOR.editorConfig = function(config)
 {
 
-    config.removePlugins = 'about,a11yhelp,bidi,blockquote,button,clipboard,colorbutton,colordialog,dialogadvtab,' +
+    config.removePlugins = 'about,a11yhelp,bidi,blockquote,button,clipboard,dialogadvtab,' +
         'div,entities,find,flash,font,forms,iframe,justify,maximize,newpage,pagebreak,pastefromword,pastetext,' +
         'preview,print,removeformat,save,scayt,showblocks,smiley,sourcearea,tab,table,tabletools,templates,wsc';
     config.contentsCss = CKEDITOR.basePath + '../../themes/abceshop/css/default.css';
@@ -22,7 +22,7 @@ CKEDITOR.editorConfig = function(config)
 
     config.toolbar_AbcEshop = [
         ['Undo', 'Redo'],
-        ['Format', 'Bold', 'Italic', 'Underline', 'Strike', '-', 'Subscript', 'Superscript'],
+        ['Format', 'Bold', 'Italic', 'Underline', 'Strike', '-', 'Subscript', 'Superscript', '-', 'TextColor'],
         ['NumberedList', 'BulletedList', 'Outdent', 'Indent'],
         ['Link','Unlink'],
         ['Image', 'SpecialChar'],
