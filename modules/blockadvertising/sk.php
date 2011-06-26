@@ -2,13 +2,11 @@
 
 global $_MODULE;
 $_MODULE = array();
-$_MODULE['<{blockadvertising}prestashop>blockadvertising_fd4c71c948857cce596a69fbaea7426b'] = 'Blok: Reklamný banner';
-$_MODULE['<{blockadvertising}prestashop>blockadvertising_2c6706322b2b9f670251533d907d2bbc'] = 'Zobrazenie bloku s grafickou reklamou';
-$_MODULE['<{blockadvertising}prestashop>blockadvertising_226ed577d0eff50725be6447bcd5a2f0'] = 'Chyba - nahratý súbor bol presunutý';
-$_MODULE['<{blockadvertising}prestashop>blockadvertising_6e7be6d836003f069c00cd217660913b'] = 'Konfigurácia modulu reklamného bannera';
-$_MODULE['<{blockadvertising}prestashop>blockadvertising_2ce5fc289845ce826261032b9c6749ea'] = 'Reklama';
-$_MODULE['<{blockadvertising}prestashop>blockadvertising_93d5113a3d56b880522391fd049128f6'] = 'Obrázok reklamy';
-$_MODULE['<{blockadvertising}prestashop>blockadvertising_706bebc78ad992a07e4c1ce0f39def81'] = 'žiadny obrázok';
-$_MODULE['<{blockadvertising}prestashop>blockadvertising_8c38cf08a0d0a01bd44c682479432350'] = 'Nahrať nový obrázok';
-$_MODULE['<{blockadvertising}prestashop>blockadvertising_9ce38727cff004a058021a6c7351a74a'] = 'URL z obrázka';
-$_MODULE['<{blockadvertising}prestashop>blockadvertising_f9ab05454998236921a6b0e281fae632'] = 'potvrdiť';
+$_MODULE['<{blockadvertising}prestashop>blockadvertising_c82a22098d5133b18bfb64b60b66048d'] = 'reklamy';
+$_MODULE['<{blockadvertising}prestashop>blockadvertising_52f5e0bc3859bc5f5e25130b6c7e8881'] = 'Umiestnenie';
+$_MODULE['<{blockadvertising}prestashop>blockadvertising_41a0c9c430b3f274e1f12a0200280742'] = 'Reklamný banner';
+$_MODULE['<{blockadvertising}prestashop>blockadvertising_02a3a357710cc2a5dfdfb74ed012fb59'] = 'URL';
+$_MODULE['<{blockadvertising}prestashop>blockadvertising_004bf6c9a40003140292e97330236c53'] = 'Akcia';
+$_MODULE['<{blockadvertising}prestashop>blockadvertising_ec211f7c20af43e742bf2570c3cb84f9'] = 'Pridať';
+$_MODULE['<{blockadvertising}prestashop>blockadvertising_811882fecd5c7618d7099ebbd39ea254'] = 'ľavý stĺpec';
+$_MODULE['<{blockadvertising}prestashop>blockadvertising_7c4f29407893c334a6cb7a87bf045c0d'] = 'pravý stĺpec';
