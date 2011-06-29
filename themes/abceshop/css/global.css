@@ -197,7 +197,6 @@ li {
 #top-menu li { margin: 0; padding: 0; position: absolute; }
 #top-menu li.item2 { left: 171px; }
 #top-menu li.item3 { left: 342px; }
-#top-menu a { border-bottom: 8px solid #eeeef0; }
 #top-menu a:hover, #top-menu a.selected {
     color: #cf0f0c;
     background: white;
@@ -1044,7 +1043,6 @@ div.paiement_logo_block img { margin: 0 0.5em }
 
 /* Block categories */
 #categories_block_left,
-#categories_block_left ul,
 #categories_block_left .block_content {
     margin: 0;
     padding: 0;
