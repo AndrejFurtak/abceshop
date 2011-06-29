@@ -357,8 +357,7 @@ li {
 ul.icon-list { list-style: none; }
 ul.icon-list, ul.icon-list li { margin: 0; padding: 0; }
 ul.icon-list li { width: 163px; margin-bottom: 8px; position: relative; }
-ul.icon-list a,
-ul.icon-list #search_query {
+ul.icon-list a {
     display: block;
     text-decoration: none;
     font-size: 11px;
@@ -410,8 +409,7 @@ ul.icon-list ul ul li {
 }
 
 /* iné */
-ul.icon-list .icon,
-ul.icon-list #search_button {
+ul.icon-list .icon {
     display: block;
     width: 25px;
     height: 25px;
@@ -437,15 +435,6 @@ ul.icon-list li.selected ul a:hover {
     background: white;
 }
 
-ul.icon-list #search_query {
-    border-style: solid;
-    border-width: 5px;
-    border-color: #404041;
-    height: 15px;
-    width: 117px;
-    padding-left: 3px;
-}
-
 
 
 #block-links {
@@ -460,11 +449,40 @@ ul.icon-list #search_query {
 #block-links .myspace .icon { background: #000000; }
 #block-links h4 { display: none; }
 
-#search_block_left.block {
-    margin-bottom: 0px;
-    padding-bottom: 0px !important;
+#search_block_left,
+#search_block_left form,
+#search_button {
+    margin: 0;
+    padding: 0;
 }
-
+#search_block_left {
+    position: relative;
+    height: 33px;
+    font-size: 0;
+}
+#search_query {
+    display: block;
+    height: 15px;
+    width: 117px;
+    border: 5px solid #404041;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-size: 11px;
+    line-height: 25px;
+}
+#search_button {
+    background: white url('../img/icon-hladaj.jpg') no-repeat;
+    display: block;
+    border: none;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+}
 
 
 /* global table style */

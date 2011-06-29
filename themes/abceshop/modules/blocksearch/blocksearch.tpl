@@ -1,13 +1,11 @@
-
 <!-- Block search module -->
-<div id="search_block_left" class="block">	
-	<form id="search_form" method="get" action="{$base_dir_ssl}search.php" id="searchbox">
-                <input type="hidden" name="orderby" value="position" />
-                <input type="hidden" name="orderway" value="desc" />
-		<ul class="icon-list">                        
-			<li><img class="icon" src="{$img_dir}icon-hladaj.jpg" alt="Ikonka." width="25" height="25" /> <input type="text" id="search_query" name="search_query" value="{if isset($smarty.get.search_query)}{$smarty.get.search_query|htmlentities:$ENT_QUOTES:'utf-8'|stripslashes}{/if}" /></li>
-		</ul>
-	</form>
+<div id="search_block_left">
+    <form id="search_form" method="get" action="{$base_dir_ssl}search.php" id="searchbox">
+        <input type="hidden" name="orderby" value="position" />
+        <input type="hidden" name="orderway" value="desc" />
+        <input type="text" id="search_query" name="search_query" value="{if isset($smarty.get.search_query)}{$smarty.get.search_query|htmlentities:$ENT_QUOTES:'utf-8'|stripslashes}{/if}" />
+        <input type="submit" id="search_button" value="" />
+    </form>
 </div>
 <script type="text/javascript">
 {literal}
@@ -22,7 +20,7 @@
 {if $ajaxsearch}
 	<script type="text/javascript">
 		{literal}
-		
+
 		function formatSearch(row) {
 			return row[2] + ' > ' + row[1];
 		}
@@ -31,7 +29,7 @@
 			$('#search_query').val(data[1]);
 			document.location.href = data[3];
 		}
-		
+
 		$('document').ready( function() {
 			$("#search_query").autocomplete(
 				'{/literal}{if $search_ssl == 1}{$base_dir_ssl}{else}{$base_dir}{/if}{literal}search.php', {
