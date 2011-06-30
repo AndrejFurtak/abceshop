@@ -52,7 +52,7 @@ class QuantityDiscount extends ObjectModel
 		if ($id_discount_type == 1)
 		{
 			$percentage = $value / 100;
-			return $percentage * floatval($product_price);		
+			return $percentage * floatval($product_price);
 		}
 		elseif ($id_discount_type == 2)
 			return !$usetax ? (Tools::convertPrice($value, $currency) / (1 + ($taxrate / 100))) : Tools::convertPrice($value, $currency);
@@ -64,7 +64,7 @@ class QuantityDiscount extends ObjectModel
 		global $cookie;
 
 		$result = Db::getInstance()->ExecuteS('
-		SELECT *
+		SELECT dq.*
 		FROM '._DB_PREFIX_.'discount_quantity dq
 		LEFT JOIN `'._DB_PREFIX_.'discount_type_lang` dtl ON (dq.`id_discount_type` = dtl.`id_discount_type` AND dtl.`id_lang` = '.intval($cookie->id_lang).')
 		WHERE dq.`id_product` = '.intval($id_product).' ORDER BY dq.`quantity` ASC');
