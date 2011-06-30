@@ -11,7 +11,7 @@
 body, html { margin: 0; padding: 0; }
 
 body {
-    font-size: 15px;
+    font-size: 13px;
     line-height: 1.6;
     background: #6c6d6f url('../img/bg.jpg') repeat-x; /* #dcdcde; */
     color: #222;
@@ -155,10 +155,10 @@ h2 {
     font-size: 150%;
     margin: 1em 0 0.3em 0;
 }
+h2:first-child { margin-top: 0; }
 h3 { font-size: 130% }
 h4 { font-size: 110% }
 h2 span {
-	font-size: 0.9em;
 	text-transform: none;
 	font-weight: normal;
 	font-style: italic;
@@ -471,7 +471,7 @@ ul.icon-list li.selected ul a:hover {
     line-height: 25px;
 }
 #search_button {
-    background: white url('../img/icon-hladaj.jpg') no-repeat;
+    background: white url('../img/icon-ok.jpg') no-repeat;
     display: block;
     border: none;
     width: 25px;
@@ -527,7 +527,6 @@ table.std tfoot td {
 form.std { clear: both; }
 form.std h3 {
 	color: #555;
-	font-size: 1.4em;
 	font-weight: normal;
 	border-bottom: 1px solid #d0d1d5;
 	padding: 0.5em;
@@ -696,7 +695,6 @@ ul.pagination{
     padding: 0px;
     list-style: none;
     float: right;
-    font-size: 12px;
     font-weight: bold;
 }
 ul.pagination li {
@@ -788,7 +786,6 @@ ul#header_links {
 	margin-left: 0.5em;
 	white-space: nowrap
 }
-#header_user #shopping_cart, #header_user #your_account { font-size: 0.9em }
 #header_user li#your_account { margin-left: 0 }
 #header_user #shopping_cart a, #header_user #your_account a {
 	background-repeat: no-repeat;
@@ -799,6 +796,36 @@ ul#header_links {
 }
 #header_user #shopping_cart a { background-image: url('../img/icon/cart.gif') }
 #header_user #your_account a { background-image: url('../img/icon/my-account.gif') }
+
+
+#quantityDiscount { margin-bottom: 30px; }
+#quantityDiscount table {
+    border-collapse: collapse;
+}
+#quantityDiscount th,
+#quantityDiscount td {
+    text-align: left;
+    font-weight: normal;
+    background: #eeeef0;
+    margin: 0;
+    padding: 0 8px;
+    width: 133px;
+    height: 25px;
+    line-height: 25px;
+    border: none;
+}
+#quantityDiscount th,
+#quantityDiscount td {
+    border-right: 8px solid white;
+}
+#quantityDiscount th {
+    border-bottom: 8px solid white;
+}
+#quantityDiscount th.last,
+#quantityDiscount td.last {
+     border-right: none;
+}
+
 
 
 
@@ -830,7 +857,6 @@ div.block {
 	padding-bottom: 5px;
 }
 div.block h4 {
-    font-size: 120%;
 	padding: 5px;
     margin: 0;
 }
@@ -890,11 +916,9 @@ div.myaccount .block_content {
 }
 .products_block li h5 {
 	display: inline;
-	font-size: 0.9em
 }
 .products_block li p a {
 	font-weight: bold;
-	font-size: 0.8em
 }
 .products_block dl {
 	clear: both;
@@ -948,7 +972,6 @@ div.myaccount .block_content {
 }
 #center_column div.products_block h5 a {
 	color: #374853;
-	font-size: 1.1em
 }
 #center_column div.products_block ul li p {
 	margin: 0;
@@ -986,7 +1009,6 @@ div.myaccount .block_content {
 #center_column div.products_block ul li p.product_desc a { font-weight: normal }
 #center_column .products_block span.price {
 	text-align: center;
-	font-size: 1.5em;
 	padding: 0.5em 0;
 	/*display: block;*/
 }
@@ -1146,7 +1168,6 @@ div#cart_block ul li {
     line-height: 25px;
     margin: 0;
     margin-top: 8px;
-    font-size: 11px;
     text-indent: 8px;
     white-space: nowrap;
 }
@@ -1157,7 +1178,6 @@ div#cart_block ul li span.price {
 }
 div#cart_block ul li span.price{
     font-weight: bold;
-    font-size: 12px;
 }
 div#cart_block ul li a {
     display: block;
@@ -1180,7 +1200,6 @@ div#cart_block ul li a:hover {
 #authentication form#create-account_form,
 #authentication form#login_form {
     width: 302px;
-    font-size: 12px;
 }
 #authentication form#login_form{
     position: absolute;
@@ -1192,7 +1211,6 @@ div#cart_block ul li a:hover {
 #authentication form#login_form h3{
     margin: 0px;
     margin-bottom: 8px;
-    font-size: 12px;
     line-height: 25px;
     padding-left: 8px;
     background-color: #f3f3f4;
@@ -1291,7 +1309,6 @@ div#subcategories ul li div.subcategory_info {
     padding-top: 6px;
     padding-left: 8px;
     line-height: 1.2;
-    font-size: 12px;
     overflow: hidden;
  }
 div#subcategories ul li div.subcategory_info *{
@@ -1370,16 +1387,14 @@ ul#product_list li div.left_block div.overview_block p.category{
 }
 ul#product_list li div.left_block div.overview_block p.name{
     padding-top: 6px;
-    font-size: 12px;
 }
 ul#product_list li div.left_block div.overview_block p.category{
-    font-size: 9px;
     line-height: 1.3;
+    font-size: 9px;
 }
 ul#product_list li div.left_block div.overview_block p.price{
     padding-right: 8px;
     padding-bottom: 7px;
-    font-size: 12px;
     font-weight: bold;
     text-align: right;
 }
@@ -1408,12 +1423,10 @@ ul#product_list li div.right_block div.description h2{
     line-height: 1;
     margin-top: -2px;
     margin-bottom: 0px;
-    font-size: 18px;
     text-transform: uppercase;
 }
 ul#product_list li div.right_block div.description p{
     margin-top: 16px;
-    font-size: 12px;
     line-height: 1.2;
 }
 
@@ -1427,7 +1440,6 @@ ul#product_list li div.right_block div.action_block{
     width: 118px;
     overflow: hidden;
     line-height: 1;
-    font-size: 12px;
 }
 ul#product_list li div.right_block div.action_block ul{
     margin: 0px;
@@ -1441,7 +1453,6 @@ ul#product_list li div.right_block div.action_block ul li{
     white-space: nowrap;
     background-color: white;
     line-height: 24px;
-    font-size: 12px;
 }
 ul#product_list li div.right_block div.action_block ul li *{
     margin-left: 8px;
@@ -1468,7 +1479,6 @@ ul#product_list li div.right_block div.action_block ul li.available {
 /* shopping cart */
 table#cart_summary {
     width: 100%;
-    font-size: 12px;
     border-spacing: 0px;
     margin-bottom: 15px;
 }
@@ -1543,7 +1553,6 @@ table#cart_summary tfoot tr td:first-child {
     height: inherit;
     width: 130px;
     text-indent: 8px;
-    font-size: 12px;
     line-height: 25px;
 }
 .cart_navigation a.back,
@@ -1612,7 +1621,6 @@ form.std p.desc_contact span.like_input {
 	padding-right: 0
 }
 
-#block-history #block-order-detail h4 { font-size: 1.4em }
 #block-history #block-order-detail #sendOrderMessage p { padding: 0 4px 0 1px }
 #block-history #block-order-detail textarea {
 	margin: 0 auto;
@@ -1779,11 +1787,9 @@ div.categTree {
 #short_description_block h2{
     margin-top: 8px;
     margin-bottom: 8px;
-    font-size: 20px;
 }
 #short_description_block div p{
     line-height: 1.2;
-    font-size: 13px;
     text-align: justify;
 }
 
@@ -1793,7 +1799,6 @@ div.categTree {
 #product_details{
     position: relative;
     line-height: 1;
-    font-size: 12px;
 }
 #product_details > *{
     margin-top: 6px;
@@ -1807,7 +1812,6 @@ div.categTree {
 }
 #product_details p.price{
     margin-top: 8px;
-    font-size: 18px;
     font-weight: bold;
     color: #222222;
 }
@@ -1839,7 +1843,6 @@ div.categTree {
 #product_details p.on_sale,
 #product_details p.discount {
     font-weight: bold;
-    font-size: 15px;
     color: red;
     text-transform: uppercase;
 }
@@ -1857,7 +1860,6 @@ div.categTree {
 #pQuantityAvailable {
     margin-top: 11px;
     margin-left: 12px;
-    font-size: 12px;
 }
 #primary_block #product_order_top p#availability_statut {
     color: red;
@@ -1912,9 +1914,6 @@ div.categTree {
 }
 
 
-#pb_middle_block {
-    font-size: 14px;
-}
 #pb_middle_block ul#productTabs {
     list-style: none;
     padding: 0px;
@@ -2031,8 +2030,6 @@ ul#suppliers_list .logo, ul#manufacturers_list .logo {
 	float: left;
 	margin-right: 0.6em
 }
-ul#suppliers_list li p.description,
- ul#manufacturers_list li p.description { font-size: 0.92em }
 ul#suppliers_list li .right_side,
  ul#manufacturers_list li .right_side {
 	float: right;
@@ -2040,7 +2037,6 @@ ul#suppliers_list li .right_side,
 }
 ul#suppliers_list .right_side span,
  ul#manufacturers_list .right_side span {
-	font-size: 1.7em;
 	color: #da0f00
 }
 ul#suppliers_list li a.button,
@@ -2075,7 +2071,6 @@ ul#suppliers_list li a.button,
 }
 
 #order div.addresses div.address{
-    font-size: 12px;
     font-weight: normal;
     margin-bottom: 8px;
 }
@@ -2124,7 +2119,6 @@ ul#suppliers_list li a.button,
     display: block;
     background-color: #f3f3f4;
     line-height: 25px;
-    font-size: 12px;
 }
 #order a.address_add:hover,
 #order div.addresses div.address a.modifyAddress:hover{
@@ -2141,7 +2135,6 @@ ul#suppliers_list li a.button,
     margin: 0px;
     margin-bottom: 8px;
     background-color: #f3f3f4;
-    font-size: 12px;
     line-height: 25px;
     text-indent: 10px;
 }
@@ -2188,7 +2181,6 @@ ul.shop_info li {
 
 /* identity.tpl */
 p#security_informations {
-	font-size: 0.85em;
 	margin: 0 3em
 }
 

@@ -347,8 +347,8 @@ var fieldRequired = '{l s='Please fill all required fields' js=1}';
 <div id="pb_middle_block">
     <ul id="productTabs">
         <li id="productTabDetails" class="active"><a href="javascript:setTab('details');">{l s='Details'}</a></li>
-        <li id="productTabVideo"><a href="javascript:setTab('video');">{l s='Video'}</a></li>
-        <li id="productTabPhotos"><a href="javascript:setTab('photos');">{l s='More photos'}</a></li>
+        <li id="productTabVideo"><!--<a href="javascript:setTab('video');">{l s='Video'}</a>--></li>
+        <li id="productTabPhotos"><!--<a href="javascript:setTab('photos');">{l s='More photos'}</a>--></li>
         <li id="printReference"><a href="javascript:print();">{l s='Print'}</a></li>
     </ul>
 </div>
@@ -360,23 +360,38 @@ var fieldRequired = '{l s='Please fill all required fields' js=1}';
             <!-- quantity discount -->
             <div id="quantityDiscount">
                 <h2 class="product_subheader">{l s='Quantity discount'}</h2>
-                <table class="std">
+                <table>
                     <tr>
                         {foreach from=$quantity_discounts item='quantity_discount' name='quantity_discounts'}
-                            <th>{$quantity_discount.quantity|intval}
-                            {if $quantity_discount.quantity|intval > 1}
+                            {assign var='class' value=''}
+                            {if $smarty.foreach.quantity_discounts.first}
+                                {assign var='class' value='first'}
+                            {elseif $smarty.foreach.quantity_discounts.last}
+                                {assign var='class' value='last'}
+                            {/if}
+                             <th {if $class}class="{$class}"{/if}>{$quantity_discount.quantity|intval}
+                            {if $quantity_discount.quantity|intval == 1}
+                                {l s='quantity'}
+                            {elseif $quantity_discount.quantity|intval >= 2 AND $quantity_discount.quantity|intval <= 4}
                                 {l s='quantities'}
                             {else}
-                                {l s='quantity'}
+                            <!-- // TODO: L10N -->
+                                kusov
                             {/if}
                             </th>
                         {/foreach}
                     </tr>
                     <tr>
                         {foreach from=$quantity_discounts item='quantity_discount' name='quantity_discounts'}
-                            <td>
+                            {assign var='class' value=''}
+                            {if $smarty.foreach.quantity_discounts.first}
+                                {assign var='class' value='first'}
+                            {elseif $smarty.foreach.quantity_discounts.last}
+                                {assign var='class' value='last'}
+                            {/if}
+                            <td {if $class}class="{$class}"{/if}>
                             {if $quantity_discount.id_discount_type|intval == 1}
-                                -{$quantity_discount.value|floatval}%
+                                -{$quantity_discount.value|floatval} %
                             {else}
                                 -{convertPrice price=$quantity_discount.real_value|floatval}
                             {/if}
