@@ -9,7 +9,6 @@ download/*
 !download/.htaccess
 !download/index.php
 img/advert/*
-!img/advert/index.php
 img/banner/*
 !img/banner/index.php
 img/c/*
