@@ -8,13 +8,11 @@
     <div class="block_content">
         <!-- block summary -->
         <ul id="cart_block_list">
-            <li>
-                <span>{l s='Shipping' mod='blockcart'}</span>
-                <span class="price">{$shipping_wrapping_cost}</span>
+            <li class="shipping">
+                {l s='Shipping' mod='blockcart'}: <span class="price">{$shipping_wrapping_cost}</span>
             </li>
-            <li>
-                <span>{l s='Total' mod='blockcart'}</span>
-                <span class="price">{$total}</span>
+            <li class="total">
+                {l s='Total' mod='blockcart'}: <span class="price">{$total}</span>
             </li>
             <li>
                 <a href="{$base_dir_ssl}cart.php?cancel&amp;token={$static_token}&amp;page={$come_from}" title="{l s='Cancel' mod='blockcart'}">{l s='Cancel' mod='blockcart'}</a>
