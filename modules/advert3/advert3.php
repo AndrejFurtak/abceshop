@@ -16,6 +16,7 @@ class Advert3 extends Module
     protected $handled = FALSE;
     protected $advertImgDir;
     protected $advertImgUrl;
+    protected $sourceIndexFilePath;
 
 
 
@@ -32,6 +33,7 @@ class Advert3 extends Module
 
 
     function __construct() {
+        $this->sourceIndexFilePath = dirname(__FILE__) . '/index.res.php';
         $this->advertImgDir = _PS_IMG_DIR_ . 'advert/';
         $this->advertImgUrl = _PS_IMG_ . 'advert/';
 
