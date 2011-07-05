@@ -28,6 +28,10 @@
                 </div>
                 <!-- Block odkazy -->
 
+                {if $HOOK_EXTRA_RIGHT}
+                    {$HOOK_EXTRA_RIGHT}
+                {/if}
+
             </div>
             <!-- Right -->
 

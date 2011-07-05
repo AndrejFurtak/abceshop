@@ -214,10 +214,6 @@ var fieldRequired = '{l s='Please fill all required fields' js=1}';
 
         </div>
 
-        {if $HOOK_EXTRA_RIGHT}
-            {$HOOK_EXTRA_RIGHT}
-        {/if}
-
         {if $HOOK_PRODUCT_ACTIONS}
             {$HOOK_PRODUCT_ACTIONS}
         {/if}

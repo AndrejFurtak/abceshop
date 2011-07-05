@@ -196,20 +196,26 @@ EOF;
 
 
     // vykreslovanie
-    function hookRightColumn($params){
-        return $this->prepareHook('right');
+    function hookRightColumn($params) {
+        return $this->prepareHook();
     }
 
 
 
-    function hookLeftColumn($params){
-        return $this->prepareHook('left');
+    function hookLeftColumn($params) {
+        return $this->prepareHook();
+    }
+
+
+
+    function hookExtraRight($params) {
+        return $this->prepareHook();
     }
 
 
 
     // jadro vykreslovania
-    private function prepareHook($position) {
+    private function prepareHook() {
         global $smarty;
 
         $item = $this->getAdvertItem();
