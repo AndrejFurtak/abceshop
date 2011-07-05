@@ -10,7 +10,7 @@ CKEDITOR.editorConfig = function(config)
 
     config.removePlugins = 'about,a11yhelp,bidi,blockquote,button,clipboard,dialogadvtab,' +
         'div,entities,find,flash,font,forms,iframe,justify,maximize,newpage,pagebreak,pastefromword,pastetext,' +
-        'preview,print,removeformat,save,scayt,showblocks,smiley,sourcearea,tab,table,tabletools,templates,wsc';
+        'preview,print,save,scayt,showblocks,smiley,sourcearea,tab,table,tabletools,templates,wsc';
     config.contentsCss = CKEDITOR.basePath + '../../themes/abceshop/css/default.css';
     config.docType = '<!DOCTYPE html>';
     config.toolbar = 'AbcEshop';
@@ -26,6 +26,7 @@ CKEDITOR.editorConfig = function(config)
         ['NumberedList', 'BulletedList', 'Outdent', 'Indent'],
         ['Link','Unlink'],
         ['Image', 'SpecialChar'],
+        ['RemoveFormat'],
     ];
 
     config.filebrowserBrowseUrl = CKEDITOR.basePath + '../../kcfinder/browse.php?lang=sk&type=files';
