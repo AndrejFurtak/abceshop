@@ -150,6 +150,7 @@ div.sheets {
 a {
 	/*sno zmeniť farbu*/color: #222222;
 }
+a.button { text-decoration: none !important; }
 .input:focus { outline: 0; }
 img { border: none; }
 h1, h2, h3, h4 { font-weight: bold; }
@@ -617,24 +618,6 @@ form.std p.submit {
  * -rule: the span.button is a a.button disabled
 */
 
-/* global button */
-input.button_mini, input.button_small, input.button, input.button_large,
-input.button_mini_disabled, input.button_small_disabled, input.button_disabled, input.button_large_disabled,
-input.exclusive_mini, input.exclusive_small, input.exclusive, input.exclusive_large,
-input.exclusive_mini_disabled, input.exclusive_small_disabled, input.exclusive_disabled, input.exclusive_large_disabled,
-a.button_mini, a.button_small, a.button, a.button_large,
-a.exclusive_mini, a.exclusive_small, a.exclusive, a.exclusive_large,
-span.button_mini, span.button_small, span.button, span.button_large,
-span.exclusive_mini, span.exclusive_small, span.exclusive, span.exclusive_large {
-	background-repeat: no-repeat;
-	text-decoration: none!important;
-	cursor: pointer;
-	display: block;
-	line-height: 18px;
-	height: 18px;
-}
-
-
 
 
 /* id_state field in managed via JS and is firstly hidden */
@@ -952,7 +935,6 @@ div.exclusive .block_content {
 }
 p.price_container { text-align: center }
 #center_column .products_block .featured_price { margin-top: 2.5em }
-#center_column .products_block a.button,
 #center_column .products_block a.exclusive,
 #center_column .products_block span.exclusive { margin: 0.5em auto }
 

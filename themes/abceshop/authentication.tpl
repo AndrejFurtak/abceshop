@@ -49,8 +49,8 @@ countriesNeedIDNumber = new Array();
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td>                        
-                        <a id="submitCreate" href="javascript: document.create_account_form.submit();" title="">{l s='Create your account'}</a>
+                    <td>
+                        <a class="button" id="submitCreate" href="javascript: document.create_account_form.submit();" title="">{l s='Create your account'}</a>
                     </td>
                     <td>&nbsp;</td>
                 </tr>
@@ -74,14 +74,14 @@ countriesNeedIDNumber = new Array();
                 <tr>
                     <td>&nbsp;</td>
                     <td>
-                        <a id="submitLogin" href="javascript: document.login_form.submit();" title="">{l s='Log in'}</a>
+                        <a class="button" id="submitLogin" href="javascript: document.login_form.submit();" title="">{l s='Log in'}</a>
                     </td>
                 </tr>
             </table>
         </form>
 
         <div class="cart_navigation">
-            <a class="back" href="{$base_dir_ssl}order.php" title="">{l s='Back'}</a>
+            <a class="button back" href="{$base_dir_ssl}order.php" title="">{l s='Back'}</a>
         </div>
 
 

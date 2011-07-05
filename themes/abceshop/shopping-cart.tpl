@@ -15,7 +15,7 @@
 {if isset($empty)}
     <p class="warning">{l s='Your shopping cart is empty.'}</p>
 {else}
-   
+
 
     <div id="order-detail-content">
         <table id="cart_summary">
@@ -237,10 +237,10 @@
 
     {$HOOK_SHOPPING_CART}
 
-  
+
     <div class="cart_navigation">
-        <a class="continueShopping" href="{if (isset($smarty.server.HTTP_REFERER) && strstr($smarty.server.HTTP_REFERER, 'order.php')) || !isset($smarty.server.HTTP_REFERER)}{$base_dir}index.php{else}{$smarty.server.HTTP_REFERER|escape:'htmlall':'UTF-8'|secureReferrer}{/if}" title="{l s='Continue shopping'}">{l s='Continue shopping'}</a>
-        <a class="next" href="{$base_dir_ssl}order.php?step=1{if $back}&amp;back={$back}{/if}" title="{l s='Next'}">{l s='Next'}</a>
+        <a class="button continueShopping" href="{if (isset($smarty.server.HTTP_REFERER) && strstr($smarty.server.HTTP_REFERER, 'order.php')) || !isset($smarty.server.HTTP_REFERER)}{$base_dir}index.php{else}{$smarty.server.HTTP_REFERER|escape:'htmlall':'UTF-8'|secureReferrer}{/if}" title="{l s='Continue shopping'}">{l s='Continue shopping'}</a>
+        <a class="button next" href="{$base_dir_ssl}order.php?step=1{if $back}&amp;back={$back}{/if}" title="{l s='Next'}">{l s='Next'}</a>
     </div>
 
     <p class="cart_navigation_extra">
