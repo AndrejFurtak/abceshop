@@ -205,10 +205,16 @@ var fieldRequired = '{l s='Please fill all required fields' js=1}';
                 </p>
             {/if}
 
-            {* // TODO: balíky produktov nie sp rozbehané - nedajú sa mi zadať v administrácii. *}
+            {* // TODO: balíky produktov nie sú rozbehané - nedajú sa mi zadať v administrácii. *}
             {if $packItems|@count}
                 <p class="pack_price">
                     {l s='instead of'} <span style="text-decoration: line-through;">{convertPrice price=$product->getNoPackPrice()}</span>
+                </p>
+            {/if}
+
+            {if $product->reference AND !isset($groups)}
+                <p class="productReference">
+                    {l s='Reference :'} {$product->reference|escape}
                 </p>
             {/if}
 
