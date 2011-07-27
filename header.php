@@ -12,6 +12,7 @@ $css_files[_THEME_CSS_DIR_.'global.css'] = 'all';
 $smarty->assign(array(
     'HOOK_HEADER' => Module::hookExec('header'),
     'HOOK_LEFT_COLUMN' => Module::hookExec('leftColumn'),
+    'HOOK_RIGHT_COLUMN' => Module::hookExec('rightColumn'),
     'HOOK_TOP' => Module::hookExec('top'),
     'HOOK_EXTRA_RIGHT'=> Module::hookExec('extraRight'),
     'static_token' => Tools::getToken(false),

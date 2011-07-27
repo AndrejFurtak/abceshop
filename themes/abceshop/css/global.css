@@ -214,6 +214,7 @@ li {
 
 
 #top-menu {
+    background: transparent url('../img/bg-top-menu.jpg') repeat-x;
     list-style-type: none;
     margin: 0; padding: 0;
     position: relative;
@@ -230,21 +231,25 @@ li {
 }
 
 
-
+#columns {
+    background: transparent url('../img/bg-center-column.jpg') repeat-y;
+    background-position: 50% 33px;
+}
 #left_column, #center_column, #right_column {
     margin: 0;
-    float: left;
 	overflow: hidden;
-    /*sno*/overflow: visible;
 }
 #left_column {
+    float: left;
 	clear: left;
+}
+#right_column {
+    float: right;
 }
 #left_column, #right_column {
 	width: 163px;
 }
 #center_column {
-	width: 636px;
     padding: 0 8px;
 }
 #main-content {
