@@ -321,7 +321,7 @@ function refreshProductImages(id_product_attribute)
 			$('#thumbnail_' + parseInt(combinationImages[id_product_attribute][i])).show();
 	}
 	if (i > 0)
-		$('#thumbs_list_frame').width((parseInt(($('#thumbs_list_frame >li').width())* i) + 3) + 'px'); //  Bug IE6, needs 3 pixels more ?
+		$('#thumbs_list_frame').width((parseInt(($('#thumbs_list_frame >li').outerWidth(true)) * i) + 3) + 'px'); //  Bug IE6, needs 3 pixels more ?
 	$('#thumbs_list').trigger('goto', 0);
 	serialScrollFixLock('', '', '', '', 0);// SerialScroll Bug on goto 0 ?
 }
