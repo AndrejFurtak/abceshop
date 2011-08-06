@@ -121,13 +121,13 @@ else
 		$default_rewrite = $link->getProductLink($product->id, $product->link_rewrite, $product->category, $product->ean13);
 
 		// remove http or https
-		$default_rewrite_pattern = substr($default_rewrite, strpos($default_rewrite, '/')); 
+		$default_rewrite_pattern = substr($default_rewrite, strpos($default_rewrite, '/'));
 		if (Configuration::get('PS_REWRITING_SETTINGS') AND !preg_match('!'.quotemeta($default_rewrite_pattern).'!', Tools::getHttpHost(true).$_SERVER['REQUEST_URI']))
-		{					
+		{
 			header("Status: 301 Moved Permanently", false, 301);
 			header('Location: '.$default_rewrite);
-		}			
-		
+		}
+
 		$smarty->assign('virtual', ProductDownload::getIdFromIdProduct(intval($product->id)));
 
 		/* rewrited url set */
@@ -177,7 +177,7 @@ else
 					$category = new Category(intval($regs[5]), intval($cookie->id_lang));
 			}
 		}
-		
+
 		if (!$category)
 			$category = new Category($product->id_category_default, intval($cookie->id_lang));
 
@@ -195,13 +195,13 @@ else
 			'return_link' => (isset($category->id) AND $category->id) ? Tools::safeOutput($link->getCategoryLink($category)) : 'javascript: history.back();',
 			'path' => ((isset($category->id) AND $category->id) ? Tools::getFullPath(intval($category->id), $product->name) : Tools::getFullPath(intval($product->id_category_default), $product->name))
 		));
-		
+
 		$lang = Configuration::get('PS_LANG_DEFAULT');
 		if (Pack::isPack(intval($product->id), intval($lang)) AND !Pack::isInStock(intval($product->id), intval($lang)))
 			$product->quantity = 0;
 
 		$group_reduction = (100 - Group::getReduction(intval($cookie->id_customer))) / 100;
-			
+
 		/* /Quantity discount management */
 		$smarty->assign(array(
 			'quantity_discounts' => QuantityDiscount::getQuantityDiscounts(intval($product->id), $product->getPriceWithoutReduct(), Product::$_taxCalculationMethod == PS_TAX_INC),
@@ -218,7 +218,6 @@ else
 			'group_reduction' => $group_reduction,
 			'col_img_dir' => _PS_COL_IMG_DIR_,
 			'HOOK_EXTRA_LEFT' => Module::hookExec('extraLeft'),
-			'HOOK_EXTRA_RIGHT' => Module::hookExec('extraRight'),
 			'HOOK_PRODUCT_OOS' => Hook::productOutOfStock($product),
 			'HOOK_PRODUCT_FOOTER' => Hook::productFooter($product, $category),
 			'HOOK_PRODUCT_ACTIONS' => Module::hookExec('productActions'),
@@ -259,7 +258,7 @@ else
 		$tax = floatval(Tax::getApplicableTax(intval($tax_datas['id_tax']), floatval($tax_datas['rate'])));
 		/* Attributes / Groups & colors */
 		if ($product->quantity > 0 OR Product::isAvailableWhenOutOfStock($product->out_of_stock))
-		{	
+		{
 			$colors = array();
 			$attributesGroups = $product->getAttributesGroups(intval($cookie->id_lang));
 
@@ -318,7 +317,7 @@ else
 					'combinationImages' => $combinationImages));
 			}
 		}
-		
+
 		$smarty->assign(array(
 			'no_tax' => Tax::excludeTaxeOption() OR !Tax::getApplicableTax(intval($product->id_tax), 1),
 			'customizationFields' => $product->getCustomizationFields(intval($cookie->id_lang))

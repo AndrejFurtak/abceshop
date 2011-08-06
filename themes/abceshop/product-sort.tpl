@@ -10,17 +10,17 @@
 	{assign var='request' value=$link->getPaginationLink(false, false, false, true)}
 {/if}
 <form id="productsSortForm" action="{$request}">
-	<p class="select">
-		<select id="selectPrductSort" onchange="document.location.href = $(this).val();">
-			<option value="{$link->addSortDetails($request, 'position', $orderwayposition)|escape:'htmlall':'UTF-8'}" {if $orderby eq 'position'}selected="selected"{/if}>{l s='--'}</option>
-			<option value="{$link->addSortDetails($request, 'price', 'asc')|escape:'htmlall':'UTF-8'}" {if $orderby eq 'price'    AND $orderway eq 'ASC' }selected="selected"{/if}>{l s='price: lowest first'}</option>
-			<option value="{$link->addSortDetails($request, 'price', 'desc')|escape:'htmlall':'UTF-8'}" {if $orderby eq 'price'    AND $orderway eq 'DESC'}selected="selected"{/if}>{l s='price: highest first'}</option>
-			<option value="{$link->addSortDetails($request, 'name', 'asc')|escape:'htmlall':'UTF-8'}" {if $orderby eq 'name'     AND $orderway eq 'ASC' }selected="selected"{/if}>{l s='name: A to Z'}</option>
-			<option value="{$link->addSortDetails($request, 'name', 'desc')|escape:'htmlall':'UTF-8'}" {if $orderby eq 'name'     AND $orderway eq 'DESC'}selected="selected"{/if}>{l s='name: Z to A'}</option>
-			<option value="{$link->addSortDetails($request, 'quantity', 'desc')|escape:'htmlall':'UTF-8'}" {if $orderby eq 'quantity' AND $orderway eq 'DESC' }selected="selected"{/if}>{l s='in-stock first'}</option>
-		</select>
-		<label for="selectPrductSort">{l s='sort by'}</label>
-	</p>
+    <p>
+        <label for="selectPrductSort">{l s='sort by'}:</label>
+        <select id="selectPrductSort" id="name" onchange="document.location.href = $(this).val();">
+            <option value="{$link->addSortDetails($request, 'position', $orderwayposition)|escape:'htmlall':'UTF-8'}" {if $orderby == 'position'}selected="selected"{/if}>{l s='--'}</option>
+            <option value="{$link->addSortDetails($request, 'price', 'asc')|escape:'htmlall':'UTF-8'}" {if $orderby == 'price' AND $orderway == 'asc' }selected="selected"{/if}>{l s='price: lowest first'}</option>
+            <option value="{$link->addSortDetails($request, 'price', 'desc')|escape:'htmlall':'UTF-8'}" {if $orderby == 'price' AND $orderway == 'desc'}selected="selected"{/if}>{l s='price: highest first'}</option>
+            <option value="{$link->addSortDetails($request, 'name', 'asc')|escape:'htmlall':'UTF-8'}" {if $orderby == 'name' AND $orderway == 'asc' }selected="selected"{/if}>{l s='name: A to Z'}</option>
+            <option value="{$link->addSortDetails($request, 'name', 'desc')|escape:'htmlall':'UTF-8'}" {if $orderby == 'name' AND $orderway == 'desc'}selected="selected"{/if}>{l s='name: Z to A'}</option>
+            <option value="{$link->addSortDetails($request, 'quantity', 'desc')|escape:'htmlall':'UTF-8'}" {if $orderby == 'quantity' AND $orderway == 'desc' }selected="selected"{/if}>{l s='in-stock first'}</option>
+        </select>
+    </p>
 </form>
 <!-- /Sort products -->
 {/if}

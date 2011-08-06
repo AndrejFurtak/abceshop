@@ -20,7 +20,7 @@
 <form name="addressForm" action="{$base_dir_ssl}order.php?" method="post">
 
     <div>
-            
+
         <div class="addresses">
 
             <div id="address_delivery" class="address">
@@ -118,8 +118,8 @@
         <input type="hidden" name="back" value="{$back}" />
         <input type="hidden" name="processAddress" value="" />
 
-        <a class="back" href="{$base_dir_ssl}order.php?step=0{if $back}&back={$back}{/if}" title="{l s='Back'}">{l s='Back'}</a>
-        <a class="next" href="javascript: document.addressForm.submit();" title="">{l s='Next'}</a>
+        <a class="button back" href="{$base_dir_ssl}order.php?step=0{if $back}&back={$back}{/if}" title="{l s='Back'}">{l s='Back'}</a>
+        <a class="button next" href="javascript: document.addressForm.submit();" title="">{l s='Next'}</a>
     </p>
 
 </form>

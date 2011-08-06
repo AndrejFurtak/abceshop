@@ -5,6 +5,10 @@ admin/backups/*
 !admin/backups/index.php
 config/settings.inc.php
 config/settings-local.inc.php
+download/*
+!download/.htaccess
+!download/index.php
+img/advert/*
 img/banner/*
 !img/banner/index.php
 img/c/*
