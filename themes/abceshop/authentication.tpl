@@ -29,7 +29,6 @@ countriesNeedIDNumber = new Array();
 <div id="authentificationCore">
 
     {if !isset($email_create)}
-
         <form name="create_account_form" id="create-account_form" action="{$base_dir_ssl}authentication.php" method="post">
             {if isset($back)}<input type="hidden" class="hidden" name="back" value="{$back|escape:'htmlall':'UTF-8'}" />{/if}
             <input type="hidden" class="hidden" name="SubmitCreate" value="{l s='Create your account'}" />
@@ -54,6 +53,9 @@ countriesNeedIDNumber = new Array();
                     </td>
                     <td>&nbsp;</td>
                 </tr>
+                <tr>
+                    <td colspan="2">&nbsp;</td>
+                </tr>
             </table>
         </form>
 
@@ -70,12 +72,15 @@ countriesNeedIDNumber = new Array();
                 <tr>
                     <td>{l s='Password'}</td>
                     <td><input type="password" id="passwd" name="passwd" value="{if isset($smarty.post.passwd)}{$smarty.post.passwd|escape:'htmlall'|stripslashes}{/if}" /></td>
-                </tr>
+                </tr>                
                 <tr>
                     <td>&nbsp;</td>
                     <td>
                         <a class="button" id="submitLogin" href="javascript: document.login_form.submit();" title="">{l s='Log in'}</a>
                     </td>
+                </tr>
+                <tr>
+                    <td colspan="2"><a class="lostPassword" href="{$base_dir}password.php" title="">{l s='Lost your password?'}</a></td>
                 </tr>
             </table>
         </form>

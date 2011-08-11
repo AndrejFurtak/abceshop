@@ -93,6 +93,7 @@ $_LANG['authentication_0ba7583639a274c434bbe6ef797115a4'] = 'Registrovať';
 $_LANG['authentication_19f823c6453c2b1ffd09cb715214813d'] = 'Povinné pole';
 $_LANG['authentication_0557fa923dcee4d0f86b1409f5c2167f'] = 'Späť';
 $_LANG['authentication_300225ee958b6350abc51805dab83c24'] = 'Pokračovať v nákupe';
+$_LANG['authentication_03c61302b065977ac5b1108ee12a49f6'] = 'Zabudli ste heslo?';
 $_LANG['best-sales_3cb29f0ccc5fd220a97df89dafe46290'] = 'Najpredávanejšie';
 $_LANG['best-sales_32af07c9205de16855c50c3d20a51698'] = 'Žiadne najpredávanejšie.';
 $_LANG['breadcrumb_157f518779095e8206908ff1268f10a7'] = 'Späť na';

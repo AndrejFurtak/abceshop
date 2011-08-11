@@ -151,6 +151,9 @@ a {
 	/*sno zmeniť farbu*/color: #222222;
 }
 a.button { text-decoration: none !important; }
+input.button {
+    cursor: pointer;
+}
 .input:focus { outline: 0; }
 img { border: none; }
 h1, h2, h3, h4 { font-weight: bold; }
@@ -1180,6 +1183,16 @@ div#cart_block ul li a:hover {
 #authentication form#create-account_form table tr.firstRow td{
     height: 32px;
     padding-left: 8px;
+}
+
+#authentication form#login_form a.lostPassword{
+    font-weight: bold;
+    color: green;
+    text-decoration: none;
+}
+
+#authentication form#login_form a.lostPassword:hover{
+    text-decoration: underline;
 }
 
 
