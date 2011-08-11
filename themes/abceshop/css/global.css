@@ -383,7 +383,27 @@ li {
 /* ADVERTISING - KONIEC */
 
 
+/* BLOCKVIEWED */
 
+div#viewed-products_block_left{
+    background-color: white;
+}
+
+
+
+div#viewed-products_block_left h4{
+    padding: 0px;
+}
+div#viewed-products_block_left div.block_content{
+    padding: 0px;
+}
+div#viewed-products_block_left ul{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+/* BLOCKVIEWED - KONIEC */
 
 
 ul.icon-list { list-style: none; }
@@ -1363,14 +1383,18 @@ ul#product_list li div.right_block div.description{
 ul#product_list li div.right_block div.description h2{
     line-height: 1;
     margin-top: -2px;
-    margin-bottom: 0px;
+    margin-bottom: 16px;
     text-transform: uppercase;
 }
 ul#product_list li div.right_block div.description p{
-    margin-top: 16px;
     line-height: 1.2;
 }
-
+ul#product_list li div.right_block div.description p.productReference{
+    position: absolute;
+    bottom: 10px;
+    margin-bottom: 0px;
+    line-height: 1;
+}
 
 /* miesto pre dalsie akcie nad produktom */
 ul#product_list li div.right_block div.action_block{
