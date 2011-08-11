@@ -18,6 +18,8 @@
             <option value="{$link->addSortDetails($request, 'price', 'desc')|escape:'htmlall':'UTF-8'}" {if $orderby == 'price' AND $orderway == 'desc'}selected="selected"{/if}>{l s='price: highest first'}</option>
             <option value="{$link->addSortDetails($request, 'name', 'asc')|escape:'htmlall':'UTF-8'}" {if $orderby == 'name' AND $orderway == 'asc' }selected="selected"{/if}>{l s='name: A to Z'}</option>
             <option value="{$link->addSortDetails($request, 'name', 'desc')|escape:'htmlall':'UTF-8'}" {if $orderby == 'name' AND $orderway == 'desc'}selected="selected"{/if}>{l s='name: Z to A'}</option>
+            <option value="{$link->addSortDetails($request, 'manufacturer', 'asc')|escape:'htmlall':'UTF-8'}" {if $orderby == 'manufacturer' AND $orderway == 'asc' }selected="selected"{/if}>{l s='manufacturer: A to Z'}</option>
+            <option value="{$link->addSortDetails($request, 'manufacturer', 'desc')|escape:'htmlall':'UTF-8'}" {if $orderby == 'manufacturer' AND $orderway == 'desc' }selected="selected"{/if}>{l s='manufacturer: Z to A'}</option>
             <option value="{$link->addSortDetails($request, 'quantity', 'desc')|escape:'htmlall':'UTF-8'}" {if $orderby == 'quantity' AND $orderway == 'desc' }selected="selected"{/if}>{l s='in-stock first'}</option>
         </select>
     </p>
