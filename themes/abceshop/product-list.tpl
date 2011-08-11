@@ -24,9 +24,12 @@
                             <h2><a href="{$product.link|escape:'htmlall':'UTF-8'}" title="{$product.name|escape:'htmlall':'UTF-8'}">
                                     {$product.name|escape:'htmlall':'UTF-8'}
                             </a></h2>
-                            <p>
-                                {$product.description_short}
-                            </p>
+                            {$product.description_short}
+                            {if $product.reference AND !isset($groups)}
+                                <p class="productReference">
+                                    {l s='Reference :'} {$product.reference|escape}
+                                </p>
+                            {/if}
                         </div>
                         <div class="action_block">
                             <ul>

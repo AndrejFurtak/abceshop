@@ -394,6 +394,7 @@ $_LANG['product-list_78945de8de090e90045d299651a68a9b'] = 'Dostupný';
 $_LANG['product-list_b55197a49e8c4cd8c314bc2aa39d6feb'] = 'Vypredané';
 $_LANG['product-list_2d0f6b8300be19cf35e89e66f0677f95'] = 'Vložiť do košíka';
 $_LANG['product-list_4351cfebe4b61d8aa5efa1d020710005'] = 'Zobraziť';
+$_LANG['product-list_ea23e12cae068315b351f8d36d432d76'] = 'Kód produktu:';
 $_LANG['product-sort_cfab1ba8c67c7c838db98d666f02a132'] = '--';
 $_LANG['product-sort_14be014ada45c366d5a00803ce5bc587'] = 'ceny: najlacnejšie prvé';
 $_LANG['product-sort_59a6af2af1c9a638edace6337bce86ae'] = 'ceny: najdrahšie prvé';
