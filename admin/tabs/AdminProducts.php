@@ -1575,8 +1575,8 @@ class AdminProducts extends AdminTab
     	ThickboxI18nOf = '<?php echo $this->l('of') ?>';
     	ThickboxI18nClose = '<?php echo $this->l('Close') ?>';
     	ThickboxI18nOrEscKey = '<?php echo $this->l('(or "Esc")') ?>';
-    	ThickboxI18nNext = '<?php echo $this->l('Next >') ?>';
-    	ThickboxI18nPrev = '<?php echo $this->l('< Previous') ?>';
+    	ThickboxI18nNext = '<?php echo $this->l('Next') . '&nbsp;&rarr;' ?>';
+    	ThickboxI18nPrev = '<?php echo '&larr;&nbsp;' . $this->l('Previous') ?>';
     	tb_pathToImage = '../img/loadingAnimation.gif';
     //]]>
     </script>

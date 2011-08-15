@@ -548,7 +548,7 @@ $_LANG['thickbox_be53a0541a6d36f6ecb879fa2c584b08'] = 'Obrázok';
 $_LANG['thickbox_8bf8854bebe108183caeb845c7676ae4'] = 'z';
 $_LANG['thickbox_d3d2e617335f08df83599665eef8a418'] = 'Zatvoriť';
 $_LANG['thickbox_7a81aa9275331bb0f5e6adb5e8650a03'] = 'alebo stlačte Esc';
-$_LANG['thickbox_3ef61c7b2bd8bdefe44e782cd85a63cf'] = 'Ďalší >';
-$_LANG['thickbox_93819e8f150b7082ff169deef942fe5f'] = '< Predchádzajúci';
+$_LANG['thickbox_10ac3d04253ef7e1ddc73e6091c0cd55'] = 'Ďalší';
+$_LANG['thickbox_14230d11143a03f4330c6433d5032a9d'] = 'Predchádzajúci';
 
 ?>
