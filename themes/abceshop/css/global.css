@@ -1634,6 +1634,9 @@ div.categTree {
     padding-bottom: 0;
     line-height: 1;
 }
+#primary_block #pb_left_column {
+    padding-bottom: 8px;
+}
 .short_description {
     margin-bottom: 1em;
 }
@@ -1666,7 +1669,6 @@ div.categTree {
     width: inherit;
     height: 80px;
     margin-top: 8px;
-    padding-bottom: 8px;
 }
 #views_block #thumbs_list {
     width: 272px;
