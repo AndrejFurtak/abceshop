@@ -13,7 +13,7 @@ body, html { margin: 0; padding: 0; }
 body {
     font-size: 12px;
     line-height: 1.6;
-    background: #6c6d6f url('../img/bg.jpg') repeat-x; /* #dcdcde; */
+    background: #404041; /* #dcdcde; */
     color: #222;
     position: relative;
 }
@@ -217,20 +217,20 @@ li {
 
 
 #top-menu {
-    background: transparent url('../img/bg-top-menu.jpg') repeat-x;
+    background-image: none;
+    background-color: #404041;
     list-style-type: none;
     margin: 0; padding: 0;
     position: relative;
     height: 33px;
+    color: white;
 }
 #top-menu li { margin: 0; padding: 0; position: absolute; }
 #top-menu li.item2 { left: 171px; }
 #top-menu li.item3 { left: 342px; }
 #top-menu a:hover, #top-menu a.selected {
     color: #cf0f0c;
-    background: white;
     font-weight: bold;
-    border-bottom: 8px solid white;
 }
 
 
@@ -402,7 +402,6 @@ div#viewed-products_block_left ul{
 
 /* BLOCKVIEWED - KONIEC */
 
-
 ul.icon-list { list-style: none; }
 ul.icon-list, ul.icon-list li { margin: 0; padding: 0; }
 ul.icon-list li { width: 163px; margin-bottom: 8px; position: relative; }
@@ -413,17 +412,17 @@ ul.icon-list a {
     margin-left: 33px;
     padding-left: 8px;
     line-height: 25px;
-}
-ul.icon-list a {
-    font-weight: bold;
-    color: #222;
-    background: white;
     height: 25px;
+    color: white;
+}
+
+ul.icon-list a:hover {
+    font-weight: bold;
 }
 
 /* druhá úroveň (zahŕňa aj ďalšie úrovne) */
+
 ul.icon-list ul {
-    background: white;
     list-style: none;
     margin: 0 0 0 33px;
     padding: 0 8px 0 0;
@@ -438,14 +437,13 @@ ul.icon-list ul a,
 ul.icon-list li.selected ul a {
     display: inline;
     height: auto;
-    background: white;
-    color: #222;
     line-height: normal;
     margin: 0;
     padding: 0;
 }
 
 /* tretia úroveň */
+
 ul.icon-list ul ul {
     list-style: disc outside;
     margin: 0;
@@ -458,6 +456,7 @@ ul.icon-list ul ul li {
 }
 
 /* iné */
+
 ul.icon-list .icon {
     display: block;
     width: 25px;
@@ -468,20 +467,6 @@ ul.icon-list .icon {
     margin-left: 0px;
     left: 0;
     top: 0;
-}
-
-ul.icon-list > li.selected a,
-ul.icon-list a:hover {
-    text-decoration: none !important;
-    background: black;
-    color: white;
-}
-
-ul.icon-list ul li.selected > a,
-ul.icon-list ul a:hover,
-ul.icon-list li.selected ul a:hover {
-    color: #d2232a;
-    background: white;
 }
 
 
@@ -508,8 +493,8 @@ ul.icon-list li.selected ul a:hover {
 #search_query {
     display: block;
     height: 15px;
-    width: 120px;
-    border: 5px solid #404041;
+    width: 153px;
+    border: 5px solid #222222;
     margin: 0;
     padding: 0;
     text-decoration: none;
@@ -527,6 +512,7 @@ ul.icon-list li.selected ul a:hover {
     top: 0;
     right: 0;
     cursor: pointer;
+    display: none;
 }
 
 
@@ -651,7 +637,7 @@ form p.id_state { display: none; }
 /* generic style */
 .price-discount { text-decoration: line-through; }
 .price-pretax { color: gray; }
-img.icon { margin-right: 0.5em; vertical-align: middle; }
+img.icon { margin-right: 6px; vertical-align: middle; }
 .price, .price-shipping, .price-wrapping {
 	white-space: nowrap;
 }
@@ -829,8 +815,7 @@ div.block h4 {
 	padding: 5px;
     margin: 0;
 }
-div.block, div.block a { color: #222; text-decoration: none; }
-div.block a:hover { text-decoration: underline }
+div.block, div.block a { color: white; text-decoration: none; }
 div.block .block_content {
 	border-left: 1px #d0d3d8;
 	border-right: 1px #d0d3d8;
@@ -1080,26 +1065,37 @@ div#cart_block.block {
     top: 0;
     width: 163px;
     height: 190px;
-    background: white;
     padding: 0;
     margin: 0;
 }
 #cart_block h4 {
     height: 25px;
     margin-bottom: 16px;
-    padding-top: 8px;
-    padding-left: 8px;
+    padding-top: 0px;
+    padding-left: 0px;
     line-height: 25px;
 }
 #cart_block h4 a {
     text-decoration: none;
+    color: white;
+    height: 25px;
+    font-size: 22px;
+    font-weight:  lighter;
 }
-div#cart_block h4 .icon {
+div#cart_block h4 img.icon {
     background-color: yellow;
+    vertical-align:  top;
+    margin-right: 0px;
+}
+div#cart_block img.icon.bottomLeft {
+    position:  absolute;
+    left: 0px;
+    bottom: 0px;
+    background-color: red;
 }
 div#cart_block ul {
     position: absolute;
-    bottom: 8px;
+    bottom: 0px;
     left: 33px;
     width: 124px;
     padding: 0;
@@ -1112,28 +1108,30 @@ div#cart_block ul {
     padding: 0 8px;
 }
 div#cart_block ul li {
-    background-color: #e7e7e8;
     height: 25px;
     line-height: 25px;
     margin: 0;
-    margin-top: 8px;
     white-space: nowrap;
+    margin-top: 4px;
 }
 #cart_block ul li,
 #cart_block .price {
-    color: #222222;
+    color: white;
     overflow: hidden;
+}
+#cart_block ul li.discard a{
+    color: red;
 }
 #cart_block .price {
     font-weight: bold;
 }
 div#cart_block ul li a {
     display: block;
+    color: white;
     text-decoration: none;
 }
 div#cart_block ul li a:hover {
-    color: white;
-    background-color: #222222;
+    font-weight: bold;
 }
 
 
@@ -1416,8 +1414,18 @@ ul#product_list li div.right_block div.action_block ul li{
     background-color: white;
     line-height: 24px;
 }
+ul#product_list li div.right_block div.action_block ul li > a {
+    display: block;
+    width: 110px;
+    height: inherit;
+}
+ul#product_list li div.right_block div.action_block ul li > a:hover {
+    background-color: #222222;
+    color: white;
+}
+
 ul#product_list li div.right_block div.action_block ul li *{
-    margin-left: 8px;
+    padding-left: 8px;
 }
 ul#product_list li div.right_block div.action_block ul li.on_sale,
 ul#product_list li div.right_block div.action_block ul li.discount,
@@ -1757,7 +1765,7 @@ div.categTree {
     line-height: 25px;
 }
 .formSubmit #quantity_wanted_p input {
-    border-color: black;
+    border-color: #222222;
     border-width: 5px;
     width: 20px;
 }
@@ -1773,6 +1781,10 @@ div.categTree {
     font-weight: bold;
     text-align: left;
     cursor: pointer;
+}
+#add_to_cart:hover {
+    color:white;
+    background-color: #222222;
 }
 
 

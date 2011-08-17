@@ -39,7 +39,7 @@
                                 {elseif ($product.reduction_price != 0 || $product.reduction_percent != 0) && ($product.reduction_from == $product.reduction_to OR($smarty.now|date_format:'%Y-%m-%d %H:%M:%S' <= $product.reduction_to && $smarty.now|date_format:'%Y-%m-%d %H:%M:%S' >= $product.reduction_from))}
                                     <li class="discount"><span>{l s='Price lowered'}</span></li>
                                 {/if}
-                                <li class="{if ($product.allow_oosp OR $product.quantity > 0)}available{else}outOfStock{/if}"><span>{if ($product.allow_oosp OR $product.quantity > 0)}{l s='Available'}{else}{l s='Out of stock'}{/if}<span></li>
+                                <li class="{if ($product.allow_oosp OR $product.quantity > 0)}available{else}outOfStock{/if}"><span>{if ($product.allow_oosp OR $product.quantity > 0)}{l s='Available'}{else}{l s='Out of stock'}{/if}</span></li>
                                 {if ($product.allow_oosp OR $product.quantity > 0) && ($product.customizable != 2)}
                                     <li class="addToCart"><a class="ajax_add_to_cart_button" rel="ajax_id_product_{$product.id_product|intval}" href="{$base_dir}cart.php?add&amp;id_product={$product.id_product|intval}&amp;token={$static_token}" title="{l s='Add to cart'}">{l s='Add to cart'}</a></li>
                                 {else}
