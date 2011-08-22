@@ -1007,34 +1007,40 @@ div.paiement_logo_block img { margin: 0 0.5em }
 #categories_block_left h4 { display: none; }
 
 #categories_block_left a.mainCategory1{
-    background-color: #bcbdc1;
+    background-color: #ffffff;
 }
 #categories_block_left a.mainCategory2{
-    background-color: #0098d1;
-}
-#categories_block_left a.mainCategory3{
-    background-color: #b2422c;
-}
-#categories_block_left a.mainCategory4{
-    background-color: #d2232a;
-}
-#categories_block_left a.mainCategory5{
-    background-color: #92278f;
-}
-#categories_block_left a.mainCategory6{
-    background-color: #541101;
-}
-#categories_block_left a.mainCategory7{
-    background-color: #f499c2;
-}
-#categories_block_left a.mainCategory8{
-    background-color: #005826;
-}
-#categories_block_left a.mainCategory9{
     background-color: #2e3192;
 }
-#categories_block_left a.mainCategory10{
+#categories_block_left a.mainCategory3{
+    background-color: #0098d1;
+}
+#categories_block_left a.mainCategory4{
+    background-color: #b2422c;
+}
+#categories_block_left a.mainCategory5{
+    background-color: #f499c2;
+}
+#categories_block_left a.mainCategory6{
     background-color: #000000;
+}
+#categories_block_left a.mainCategory7{
+    background-color: #92278f;
+}
+#categories_block_left a.mainCategory8{
+    background-color: #541101;
+}
+#categories_block_left a.mainCategory9{
+    background-color: #3e0001;
+}
+#categories_block_left a.mainCategory10{
+    background-color: #d2232a;
+}
+#categories_block_left a.mainCategory11{
+    background-color: #005826;
+}
+#categories_block_left a.mainCategory12{
+    background-color: #bcbdc1;
 }
 
 
