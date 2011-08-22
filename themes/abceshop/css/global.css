@@ -360,6 +360,66 @@ li {
 
 
 
+/* HOME CATEGORIES */
+
+div#homeCategoriesBlock{
+    
+}
+
+div#homeCategoriesBlock ul{
+    color: black;
+    padding: 0px;
+    margin: 0px;
+    list-style-type: none;
+}
+
+div#homeCategoriesBlock ul li{
+    position: relative;
+    display: block;
+    float: left;
+    width: 145px;
+    height: 165px;
+    margin-top: 0px;
+    margin-right: 13px;
+    margin-bottom: 13px;
+}
+div#homeCategoriesBlock ul li.lineLast{
+    margin-right: 0px;
+}
+
+div#homeCategoriesBlock ul li img{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 145px;
+    height: 145px;
+}
+
+div#homeCategoriesBlock ul li div{
+    position: absolute;
+    width: 137px;
+    padding-left: 8px;
+    height: 55px;
+    bottom: 0px;
+    line-height: 27px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+div#homeCategoriesBlock ul li a *{
+    opacity: 0.9;
+    filter: alpha(opacity=90);
+}
+
+div#homeCategoriesBlock ul li a:hover *{
+    opacity: 1.0;
+    filter: alpha(opacity=100);
+    color: red;
+}
+
+/* HOME CATEGORIES - KONIEC */
+
+
 
 
 /* ADVERTISING */
@@ -1006,40 +1066,40 @@ div.paiement_logo_block img { margin: 0 0.5em }
 #left_column div.block { padding-bottom: 0; }
 #categories_block_left h4 { display: none; }
 
-#categories_block_left a.mainCategory1{
+.mainCategory1{
     background-color: #ffffff;
 }
-#categories_block_left a.mainCategory2{
+.mainCategory2{
     background-color: #2e3192;
 }
-#categories_block_left a.mainCategory3{
+.mainCategory3{
     background-color: #0098d1;
 }
-#categories_block_left a.mainCategory4{
+.mainCategory4{
     background-color: #b2422c;
 }
-#categories_block_left a.mainCategory5{
+.mainCategory5{
     background-color: #f499c2;
 }
-#categories_block_left a.mainCategory6{
+.mainCategory6{
     background-color: #000000;
 }
-#categories_block_left a.mainCategory7{
+.mainCategory7{
     background-color: #92278f;
 }
-#categories_block_left a.mainCategory8{
+.mainCategory8{
     background-color: #541101;
 }
-#categories_block_left a.mainCategory9{
+.mainCategory9{
     background-color: #3e0001;
 }
-#categories_block_left a.mainCategory10{
+.mainCategory10{
     background-color: #d2232a;
 }
-#categories_block_left a.mainCategory11{
+.mainCategory11{
     background-color: #005826;
 }
-#categories_block_left a.mainCategory12{
+.mainCategory12{
     background-color: #bcbdc1;
 }
 
