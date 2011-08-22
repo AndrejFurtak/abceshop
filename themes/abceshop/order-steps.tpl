@@ -1,6 +1,5 @@
 <div id="orderStepsHeader">
-    <img id="orderStepsIcon" src="" alt="IKONA">
-    <img id="orderStepsShopIcon" src="" alt="SHOP IKONA">
+    <img id="orderStepsIcon" src="{$img_dir}kosik.jpg" alt="IKONA">
 </div>
 
 {* Assign a value to 'current_step' to display current style *}
