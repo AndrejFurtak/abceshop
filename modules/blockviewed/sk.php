@@ -2,7 +2,7 @@
 
 global $_MODULE;
 $_MODULE = array();
-$_MODULE['<{blockviewed}prestashop>blockviewed_43560641f91e63dc83682bc598892fa1'] = 'Prezerané produkty';
+$_MODULE['<{blockviewed}prestashop>blockviewed_43560641f91e63dc83682bc598892fa1'] = 'Posledné prezerané';
 $_MODULE['<{blockviewed}prestashop>blockviewed_49fa2426b7903b3d4c89e2c1874d9346'] = 'Viac o';
 $_MODULE['<{blockviewed}prestashop>blockviewed_859e85774d372c6084d62d02324a1cc3'] = 'Blok: Posledne videné produkty';
 $_MODULE['<{blockviewed}prestashop>blockviewed_3b2eba71c233156a12f94f26b3b188ab'] = 'Pridá blok s posledne videnými produktami';

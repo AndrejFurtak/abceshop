@@ -76,7 +76,8 @@ class BlockViewed extends Module
 
 			$productIds = implode(',', $productsViewed);
 			$productsImages = Db::getInstance()->ExecuteS('
-			SELECT i.id_image, p.ean13, p.id_product, il.legend, p.active, pl.name, pl.description_short, pl.link_rewrite, cl.link_rewrite AS category_rewrite
+			SELECT i.id_image, p.ean13, p.id_product, p.price, il.legend, p.active, pl.name, pl.description_short,
+                pl.link_rewrite, cl.link_rewrite AS category_rewrite, cl.name AS category_name
 			FROM '._DB_PREFIX_.'product p
 			LEFT JOIN '._DB_PREFIX_.'product_lang pl ON (pl.id_product = p.id_product)
 			LEFT JOIN '._DB_PREFIX_.'image i ON (i.id_product = p.id_product AND i.cover = 1)
@@ -106,8 +107,9 @@ class BlockViewed extends Module
 					$obj->description_short = $productsImagesArray[$productViewed]['description_short'];
 					$obj->link_rewrite = $productsImagesArray[$productViewed]['link_rewrite'];
 					$obj->category_rewrite = $productsImagesArray[$productViewed]['category_rewrite'];
+					$obj->category_name = $productsImagesArray[$productViewed]['category_name'];
 					$obj->ean13 = $productsImagesArray[$productViewed]['ean13'];
-					
+
 
 					if (!isset($obj->cover) || !$productsImagesArray[$productViewed]['id_image'])
 					{
@@ -128,7 +130,7 @@ class BlockViewed extends Module
 				LEFT JOIN `'._DB_PREFIX_.'category_group` cg ON (cg.`id_category` = cp.`id_category`)
 				LEFT JOIN `'._DB_PREFIX_.'customer_group` cug ON (cug.`id_group` = cg.`id_group`)
 				WHERE p.`id_product` = '.intval($id_product).'
-				'.($cookie->id_customer ? 'AND cug.`id_customer` = '.intval($cookie->id_customer) : 
+				'.($cookie->id_customer ? 'AND cug.`id_customer` = '.intval($cookie->id_customer) :
 				'AND cg.`id_group` = 1')
 				);
 				if ($result['total'])

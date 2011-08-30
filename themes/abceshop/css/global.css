@@ -441,26 +441,38 @@ div#homeCategoriesBlock ul li a:hover *{
 
 
 /* BLOCKVIEWED */
-
-div#viewed-products_block_left{
-    background-color: white;
+#viewed-products_block_left {
+    margin-top: 33px;
 }
-
-
-
-div#viewed-products_block_left h4{
+#viewed-products_block_left h4 {
+    background: transparent url('../img/arr-down.jpg') no-repeat left center;
+    padding: 0 0 0 41px;
+    height: 25px;
+    line-height: 25px;
+    margin-bottom: 8px;
+}
+#viewed-products_block_left div.block_content {
     padding: 0px;
 }
-div#viewed-products_block_left div.block_content{
-    padding: 0px;
+#viewed-products_block_left .left_block {
+    background: white;
+    color: black;
+    padding: 0 8px 8px 8px;
+    margin-bottom: 8px;
 }
-div#viewed-products_block_left ul{
-    margin: 0px;
-    padding: 0px;
-    list-style: none;
+#viewed-products_block_left .overview_block {
+    background-color: #eeeef0;
+    margin: 0;
+    padding: 8px;
 }
-
+#viewed-products_block_left p {
+    margin: 0;
+}
+#viewed-products_block_left p.category{
+    font-size: 9px;
+}
 /* BLOCKVIEWED - KONIEC */
+
 
 ul.icon-list { list-style: none; }
 ul.icon-list, ul.icon-list li { margin: 0; padding: 0; }
@@ -876,6 +888,7 @@ div.block {
 div.block h4 {
 	padding: 5px;
     margin: 0;
+    font-size: 11px;
 }
 div.block, div.block a { color: white; text-decoration: none; }
 div.block .block_content {
