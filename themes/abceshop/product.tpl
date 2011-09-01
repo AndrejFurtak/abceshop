@@ -121,7 +121,7 @@ var fieldRequired = '{l s='Please fill all required fields' js=1}';
                 <span class="view_scroll_spacer"><a id="view_scroll_right" title="{l s='Other views'}" href="javascript:{ldelim}{rdelim}">{l s='Next'}</a></span>
             </div>
         {/if}
-		{if count($images) > 1}<p class="resetImages"><span id="wrapResetImages" style="display:none;"><a id="resetImages" href="{$link->getProductLink($product)}" onclick="$('span#wrapResetImages').hide('slow');return (false);">{l s='Display all pictures'}</a></span></p>{/if}
+		{if count($images) > 1}<p id="wrapResetImages" style="display:none;"><a id="resetImages" href="{$link->getProductLink($product)}" onclick="$('#wrapResetImages').hide('slow');return (false);">{l s='Display all pictures'}</a></p>{/if}
 
     </div>
 
