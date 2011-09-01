@@ -4,7 +4,7 @@
         <input type="hidden" name="orderby" value="position" />
         <input type="hidden" name="orderway" value="desc" />
         <input type="text" id="search_query" name="search_query" value="{if isset($smarty.get.search_query)}{$smarty.get.search_query|htmlentities:$ENT_QUOTES:'utf-8'|stripslashes}{/if}" />
-        <input class="hidden" type="submit" id="search_button" value="" />
+        <input type="submit" id="search_button" value="" />
     </form>
 </div>
 <script type="text/javascript">
@@ -27,7 +27,7 @@
             search_query_value = $("#search_query").val();
             if (!search_query_value) $("#search_query").val(search_string);
         });
-      
+
     });
 {/literal}
 </script>

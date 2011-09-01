@@ -567,13 +567,13 @@ ul.icon-list .icon {
 #search_query {
     display: block;
     height: 15px;
-    width: 153px;
+    width: 117px;
     border: 5px solid #222222;
     margin: 0;
     padding: 0;
     text-decoration: none;
     font-size: 11px;
-    line-height: 25px;
+    line-height: 15px;
 }
 #search_button {
     background: white url('../img/icon-ok.jpg') no-repeat;
@@ -586,7 +586,6 @@ ul.icon-list .icon {
     top: 0;
     right: 0;
     cursor: pointer;
-    display: none;
 }
 
 
