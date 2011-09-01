@@ -1825,6 +1825,10 @@ div.categTree {
 #views_block #view_scroll_right {
     background: url('../img/thumbs_right.gif') no-repeat center;
 }
+.resetImages {
+    clear: both;
+    text-align: center;
+}
 
 /* product_details */
 #pb_right_column .price {
