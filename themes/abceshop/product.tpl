@@ -292,7 +292,7 @@ var fieldRequired = '{l s='Please fill all required fields' js=1}';
                 {if !$virtual}
                     <tr id="quantity_wanted_p">
                         <td><label for="quantity_wanted">{l s='Quantity'}</label></td>
-                        <td class="quantity"><input type="text" name="qty" id="quantity_wanted" class="text" value="{if isset($quantityBackup)}{$quantityBackup|intval}{else}1{/if}" size="2" maxlength="3" /></td>
+                        <td class="quantity"><input type="text" name="qty" id="quantity_wanted" class="text" value="{if isset($quantityBackup)}{$quantityBackup|intval}{else}1{/if}" size="3" maxlength="3" /></td>
                     </tr>
                 {/if}
                 <tr><td colspan="2"><input id="add_to_cart" type="submit" name="Submit" value="{l s='Add to cart'}" /></td></tr>

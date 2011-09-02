@@ -13,7 +13,7 @@
     <p>
         <label for="selectPrductSort">{l s='sort by'}:</label>
         <select id="selectPrductSort" id="name" onchange="document.location.href = $(this).val();">
-            <option value="{$link->addSortDetails($request, 'position', $orderwayposition)|escape:'htmlall':'UTF-8'}" {if $orderby == 'position'}selected="selected"{/if}>{l s='--'}</option>
+            <option value="{$link->addSortDetails($request, 'position', 'desc')|escape:'htmlall':'UTF-8'}" {if $orderby == 'position'}selected="selected"{/if}>{l s='--'}</option>
             <option value="{$link->addSortDetails($request, 'price', 'asc')|escape:'htmlall':'UTF-8'}" {if $orderby == 'price' AND $orderway == 'asc' }selected="selected"{/if}>{l s='price: lowest first'}</option>
             <option value="{$link->addSortDetails($request, 'price', 'desc')|escape:'htmlall':'UTF-8'}" {if $orderby == 'price' AND $orderway == 'desc'}selected="selected"{/if}>{l s='price: highest first'}</option>
             <option value="{$link->addSortDetails($request, 'name', 'asc')|escape:'htmlall':'UTF-8'}" {if $orderby == 'name' AND $orderway == 'asc' }selected="selected"{/if}>{l s='name: A to Z'}</option>
