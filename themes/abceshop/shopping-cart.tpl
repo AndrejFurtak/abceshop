@@ -240,6 +240,7 @@
 
     <div class="cart_navigation">
         <a class="button continueShopping" href="{if (isset($smarty.server.HTTP_REFERER) && strstr($smarty.server.HTTP_REFERER, 'order.php')) || !isset($smarty.server.HTTP_REFERER)}{$base_dir}index.php{else}{$smarty.server.HTTP_REFERER|escape:'htmlall':'UTF-8'|secureReferrer}{/if}" title="{l s='Continue shopping'}">{l s='Continue shopping'}</a>
+        <a class="button clearCart" href="{$base_dir_ssl}cart.php?cancel&amp;token={$static_token}&amp;page={$come_from}" title="Vyprázdniť košík">Vyprázdniť košík</a>
         <a class="button next" href="{$base_dir_ssl}order.php?step=1{if $back}&amp;back={$back}{/if}" title="{l s='Next'}">{l s='Next'}</a>
     </div>
 

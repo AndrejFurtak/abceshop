@@ -1222,11 +1222,12 @@ div#cart_block ul li {
     color: white;
     overflow: hidden;
 }
-#cart_block ul li.discard a{
-    color: red;
-}
 #cart_block .price {
     font-weight: bold;
+}
+#cart_block .login,
+#cart_block .logout {
+    color: red;
 }
 div#cart_block ul li a {
     display: block;
@@ -1622,7 +1623,8 @@ table#cart_summary tfoot tr td:first-child {
 }
 .cart_navigation a.back,
 .cart_navigation a.continueShopping,
-.cart_navigation a.next{
+.cart_navigation a.clearCart,
+.cart_navigation a.next {
     display: block;
     height: inherit;
     min-width: 114px;
@@ -1649,8 +1651,18 @@ table#cart_summary tfoot tr td:first-child {
     float: left;
     margin-right: 16px;
 }
-.cart_navigation a.continueShopping{
+.cart_navigation a.continueShopping,
+.cart_navigation a.clearCart {
     float: left;
+}
+.cart_navigation a.clearCart {
+    background: #e60122;
+    color: white;
+    margin-left: 8px;
+    min-width: 0;
+}
+.cart_navigation a.clearCart:hover {
+    background: #ff1233;
 }
 .cart_navigation a.next{
     float: right;

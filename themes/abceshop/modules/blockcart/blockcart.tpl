@@ -8,17 +8,24 @@
     <div class="block_content">
         <!-- block summary -->
         <ul id="cart_block_list">
-            <li>
-                <a href="{$base_dir_ssl}authentication.php" title="{l s='Login' mod='blockcart'}">{l s='Login' mod='blockcart'}</a>
-            </li>
+            {if $logged}
+                <li>
+                    <a class="account" href="{$base_dir_ssl}my-account.php" title="Váš účet.">{$customerName}</a>
+                </li>
+                <li>
+                    <a class="logout" href="{$base_dir}index.php?mylogout" title="Odhlásiť sa z obchodu.">Odhlásiť</a>
+                </li>
+            {else}
+                <li>
+                    <a class="login" href="{$base_dir_ssl}my-account.php" title="{l s='Login' mod='blockcart'}">{l s='Login' mod='blockcart'}</a></span>
+                </li>
+                <li>{* len kvôli dizajnu *}</li>
+            {/if}
             <li class="shipping">
                 {l s='Shipping' mod='blockcart'}: <span class="price">{$shipping_wrapping_cost}</span>
             </li>
             <li class="total">
                 {l s='Total' mod='blockcart'}: <span class="price">{$total}</span>
-            </li>
-            <li class="discard">
-                <a href="{$base_dir_ssl}cart.php?cancel&amp;token={$static_token}&amp;page={$come_from}" title="{l s='Cancel' mod='blockcart'}">{l s='Cancel' mod='blockcart'}</a>
             </li>
             <li>
                 <a href="{$base_dir_ssl}order.php?step=1" title="{l s='Check out' mod='blockcart'}">{l s='Check out' mod='blockcart'}</a>
