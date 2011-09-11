@@ -53,22 +53,21 @@ noscript ul { list-style-type: none; background: black; color: white; padding: 1
 /* Footer links */
 ul.footer_links,
 ul.footer_links li {
-    height: 25px;
+    margin: 0;
     padding: 0;
 }
 ul.footer_links {
 	list-style-type: none;
+    margin-top: 36px;
 	clear: both;
-	margin: 2em;
 }
 ul.footer_links li {
-	float: left;
-    margin: 0;
-	margin-right: 2em;
+    height: 25px;
+    margin-bottom: 8px;
     line-height: 25px;
+    width: 163px;
 }
 ul.footer_links a { text-decoration: none !important; }
-ul.footer_links a:hover { text-decoration: underline !important; }
 
 /* transfert effect*/
 .transferProduct { border: 2px solid #888; }
@@ -1621,6 +1620,7 @@ table#cart_summary tfoot tr td:first-child {
     margin-top: 16px;
     height: 25px;
 }
+.button,
 .cart_navigation a.back,
 .cart_navigation a.continueShopping,
 .cart_navigation a.clearCart,
@@ -1628,17 +1628,21 @@ table#cart_summary tfoot tr td:first-child {
     display: block;
     height: inherit;
     min-width: 114px;
+    width: 114px;
     padding: 0 8px;
     line-height: 25px;
+    background-color: #e7e7e8;
 }
 .cart_navigation a.back,
 .cart_navigation a.next{
     background-color: #3dae48;
     color: white;
 }
+a.button:hover,
 .cart_navigation a.back:hover,
 .cart_navigation a.next:hover{
     background-color: #404041;
+    color: white;
 }
 .cart_navigation a.continueShopping{
     background-color: #e7e7e8;
@@ -1670,6 +1674,28 @@ table#cart_summary tfoot tr td:first-child {
 
 
 
+#accountMenu {
+    list-style: none;
+    margin: 0 !important;
+    padding: 0 !important;
+    padding-bottom: 32px !important;
+}
+#accountMenu li {
+    margin: 0 !important;
+    padding: 0 !important;
+    padding-bottom: 8px !important;
+}
+#accountMenu .button {
+    width: 163px;
+    background: #404041;
+    color: white;
+}
+#accountMenu .button:hover {
+    background: #3dae48;
+}
+.home {
+    width: 163px;
+}
 
 
 
