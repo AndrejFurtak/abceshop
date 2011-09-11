@@ -213,7 +213,7 @@ var fieldRequired = '{l s='Please fill all required fields' js=1}';
                 </p>
             {/if}
 
-            {if $product->reference AND !isset($groups)}
+            {if $product->reference}
                 <p class="productReference">
                     {l s='Reference :'} {$product->reference|escape}
                 </p>
