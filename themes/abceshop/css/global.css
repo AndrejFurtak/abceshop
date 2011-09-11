@@ -1290,6 +1290,8 @@ div#cart_block ul li a:hover {
     background-color: #404041;
     color: white;
 }
+.loginText { width: 136px; }
+.loginButton { cursor: pointer; }
 
 #authentication form#create-account_form table tr.firstRow td{
     height: 32px;
