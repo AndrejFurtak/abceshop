@@ -9,7 +9,7 @@
 
 <h2>{l s='My account'}</h2>
 <h4>{l s='Welcome to your account. Here you can manage your addresses and orders.'}</h4>
-<ul id="accountMenu">
+<ul class="buttons myAccount">
 	<li><a class="button" href="{$base_dir_ssl}history.php" title="{l s='Orders'}">{l s='History and details of my orders'}</a></li>
 	{if $returnAllowed}
 		<li><a class="button" href="{$base_dir_ssl}order-follow.php" title="{l s='Merchandise returns'}">{l s='My merchandise returns'}</a></li>

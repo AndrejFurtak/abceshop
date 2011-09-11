@@ -14,31 +14,34 @@
 	<form action="{$request_uri|escape:'htmlall':'UTF-8'}" method="post" class="std">
 		<fieldset>
 			<h3>{l s='Send a message'}</h3>
-			<p class="select">
-				<label for="id_contact">{l s='Subject'}</label>
-				<select id="id_contact" name="id_contact" onchange="showElemFromSelect('id_contact', 'desc_contact')">
-					<option value="0">{l s='-- Choose --'}</option>
-				{foreach from=$contacts item=contact}
-					<option value="{$contact.id_contact|intval}" {if isset($smarty.post.id_contact) && $smarty.post.id_contact == $contact.id_contact}selected="selected"{/if}>{$contact.name|escape:'htmlall':'UTF-8'}</option>
-				{/foreach}
-				</select>
-			</p>
-			<p id="desc_contact0" class="desc_contact">&nbsp;</p>
-		{foreach from=$contacts item=contact}
-			<p id="desc_contact{$contact.id_contact|intval}" class="desc_contact" style="display:none;">
-			<label>&nbsp;</label>{$contact.description|escape:'htmlall':'UTF-8'}</p>
-		{/foreach}
-		<p class="text">
-			<label for="email">{l s='E-mail address'}</label>
-			<input type="text" id="email" name="from" value="{$email}" />
-		</p>
-		<p class="textarea">
-			<label for="message">{l s='Message'}</label>
-			 <textarea id="message" name="message" rows="7" cols="35">{if isset($smarty.post.message)}{$smarty.post.message|escape:'htmlall':'UTF-8'|stripslashes}{/if}</textarea>
-		</p>
-		<p class="submit">
-			<input type="submit" name="submitMessage" id="submitMessage" value="{l s='Send'}" class="button_large" onclick="$(this).hide();" />
-		</p>
+            <table>
+                <tr>
+                    <td><label for="id_contact">{l s='Subject'}</label></td>
+                    <td>
+                        <select id="id_contact" name="id_contact" onchange="showElemFromSelect('id_contact', 'desc_contact')">
+                            <option value="0">{l s='-- Choose --'}</option>
+                            {foreach from=$contacts item=contact}
+                                <option value="{$contact.id_contact|intval}" {if isset($smarty.post.id_contact) && $smarty.post.id_contact == $contact.id_contact}selected="selected"{/if}>{$contact.name|escape:'htmlall':'UTF-8'}</option>
+                            {/foreach}
+                        </select>
+                        <p id="desc_contact0"></p>
+                        {foreach from=$contacts item=contact}
+                            <p id="desc_contact{$contact.id_contact|intval}" style="display:none;">{$contact.description|escape:'htmlall':'UTF-8'}</p>
+                        {/foreach}
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="email">{l s='E-mail address'}</label></td>
+                    <td><input type="text" id="email" name="from" value="{$email}" size="50" /></td>
+                </tr>
+                <tr>
+                    <td><label for="message">{l s='Message'}</label></td>
+                    <td><textarea id="message" name="message" rows="7" cols="45">{if isset($smarty.post.message)}{$smarty.post.message|escape:'htmlall':'UTF-8'|stripslashes}{/if}</textarea></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><input class="button submit" type="submit" name="submitMessage" id="submitMessage" value="{l s='Send'}" onclick="$(this).hide();" /></td>
+                </tr>
+            </table>
 	</fieldset>
 </form>
 {/if}

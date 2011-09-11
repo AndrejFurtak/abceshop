@@ -15,28 +15,42 @@
 	<h3>{l s='Your addresses are listed below.'}</h3>
 	<p>{l s='Be sure to update them if they have changed.'}</p>
 
-	{foreach from=$addresses item=address name=myLoop}
-	<ul class="address {if $smarty.foreach.myLoop.last}last_item{elseif $smarty.foreach.myLoop.first}first_item{/if} {if $smarty.foreach.myLoop.index % 2}alternate_item{else}item{/if}">
-		<li class="address_title">{$address.alias}</li>
-		{if $address.company}<li class="address_company">{$address.company}</li>{/if}
-		<li class="address_name">{$address.firstname} {$address.lastname}</li>
-		<li class="address_address1">{$address.address1}</li>
-		{if $address.address2}<li class="address_address2">{$address.address2}</li>{/if}
-		<li class="address_city">{$address.postcode} {$address.city}</li>
-		<li class="address_country">{$address.country}{if isset($address.state)} ({$address.state}){/if}</li>
-		{if $address.phone}<li class="address_phone">{$address.phone}</li>{/if}
-		{if $address.phone_mobile}<li class="address_phone_mobile">{$address.phone_mobile}</li>{/if}
-		<li class="address_update"><a href="{$base_dir_ssl}address.php?id_address={$address.id_address|intval}" title="{l s='Update'}">{l s='Update'}</a></li>
-		<li class="address_delete"><a href="{$base_dir_ssl}address.php?id_address={$address.id_address|intval}&amp;delete" onclick="return confirm('{l s='Are you sure?'}');" title="{l s='Delete'}">{l s='Delete'}</a></li>
-	</ul>
-	{/foreach}
-	<p class="clear" />
+    <table class="addresses">
+        <tr>
+        {foreach from=$addresses item=address name=myLoop}
+            <td width="50%">
+                <h4>{$address.alias}</h4>
+                <p>
+                {if $address.company}{$address.company}{/if}
+                {$address.firstname} {$address.lastname}<br />
+                {$address.address1}<br />
+                {if $address.address2}{$address.address2}<br />{/if}
+                {$address.postcode} {$address.city}<br />
+                {$address.country}{if isset($address.state)} ({$address.state}){/if}<br />
+                {if $address.phone}{$address.phone}<br />{/if}
+                {if $address.phone_mobile}{$address.phone_mobile}<br />{/if}
+                </p>
+                <p>
+                    <a href="{$base_dir_ssl}address.php?id_address={$address.id_address|intval}" title="{l s='Update'}">{l s='Update'}</a><br />
+                    <a href="{$base_dir_ssl}address.php?id_address={$address.id_address|intval}&amp;delete" onclick="return confirm('{l s='Are you sure?'}');" title="{l s='Delete'}">{l s='Delete'}</a>
+                </p>
+            </td>
+            {if $smarty.foreach.myLoop.index % 2}
+                </tr><tr>
+            {/if}
+        {/foreach}
+        </tr>
+    </table>
+    <p class="clear" />
 </div>
 {else}
 	<p class="warning">{l s='No addresses available.'}&nbsp;<a href="{$base_dir_ssl}address.php">{l s='add a new one!'}</a></p>
 {/if}
 
-<div class="clear address_add"><a href="{$base_dir_ssl}address.php" title="{l s='Add an address'}" class="button_large">{l s='Add an address'}</a></div>
+
+<ul class="buttons">
+    <li><a class="button" href="{$base_dir_ssl}address.php" title="{l s='Add an address'}" class="button_large">{l s='Add an address'}</a></li>
+</ul>
 
 <ul class="footer_links">
 	<li><a class="button" href="{$base_dir_ssl}my-account.php">{l s='Back to Your Account'}</a></li>

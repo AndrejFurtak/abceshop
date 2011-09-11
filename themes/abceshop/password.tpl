@@ -11,13 +11,15 @@
 <p>{l s='Please enter your e-mail address used to register. We will e-mail you your new password.'}</p>
 <form action="{$request_uri|escape:'htmlall':'UTF-8'}" method="post" class="std">
     <fieldset>
-        <p class="text">
-            <label for="email">{l s='Type your e-mail address:'}</label>
-            <input type="text" id="email" name="email" value="{if isset($smarty.post.email)}{$smarty.post.email|escape:'htmlall'|stripslashes}{/if}" />
-        </p>
-        <p class="submit">
-            <input type="submit" class="button" value="{l s='Retrieve'}" />
-        </p>
+        <table>
+        <tr>
+            <td><label for="email">{l s='Type your e-mail address:'}</label></td>
+            <td><input type="text" id="email" name="email" value="{if isset($smarty.post.email)}{$smarty.post.email|escape:'htmlall'|stripslashes}{/if}" /></td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="button submit" class="button" value="{l s='Retrieve'}" /></td>
+        </tr>
+        </table>
     </fieldset>
 </form>
 {/if}

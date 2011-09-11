@@ -590,7 +590,6 @@ ul.icon-list .icon {
 
 /* global table style */
 div.table_block {
-	background: transparent url('../img/table_footer.gif') no-repeat bottom left;
 	padding-bottom: 6px;
 	margin: 0 auto 2em;
 	width: 541px;
@@ -604,21 +603,17 @@ table.std td, table.std th { padding: 0.4em 0.5em; }
 table.std th { white-space: nowrap; }
 table.std tr.item td, table.std tr.item th { background-color: white; }
 table.std tr.alternate_item td,
-table.std tr.alternate_item th { background-color: #f1f2f4; }
+table.std tr.alternate_item th { }
 table.std tbody tr td, table.std tfoot tr td { border-top: 1px solid #bdc2c9; }
 table.std thead th {
 	background-color: transparent;
-	background-image: url('../img/table_header.gif');
-	background-repeat: no-repeat;
+    background-color: #f3f3f4;
 	height: 24px;
 	color: #374853;
 	font-weight: bold;
 	text-align: left;
 	white-space: nowrap;
 }
-table.std thead th.first_item { background-position: top left; }
-table.std thead th.last_item { background-position: top right; }
-table.std thead th.item { background-position: -5px 0; }
 table.std tfoot td {
 	color: #374853;
 	text-align: right;
@@ -627,8 +622,17 @@ table.std tfoot td {
 
 /* /global table style */
 
+
+#order-detail-content .itemCount { text-align: center; }
+#order-detail-content .price { text-align: right; }
+
+
 /* global form style */
 form.std { clear: both; }
+form.std th,
+form.std td {
+    padding: 2px 5px;
+}
 form.std h3 {
 	color: #555;
 	font-weight: normal;
@@ -637,8 +641,6 @@ form.std h3 {
 	margin: 0 0 0.5em 0;
 }
 form.std fieldset {
-	border: 1px solid #d0d3d8;
-	background: #D0D1D5 url('../img/form_bg.jpg') repeat-x top left;
 	margin-bottom: 1em;
 	padding-bottom: 1em;
 }
@@ -655,42 +657,28 @@ form.std h4, form.std p {
 	padding: 0.3em 1em;
 	clear: both;
 }
-form.std label, form.std p span {
-	float: left;
-	text-align: right;
-	width: 30%;
-}
 form.std p span.like_input {
 	width: auto;
 	margin-left: 0.7em;
 }
-input, textarea, select, span.editable {
-	margin-left: 0.7em;
-	font-size: 12px;
-	font-family: Verdana, Arial, Helvetica, Sans-Serif;
-	outline: none;
-}
-input, textarea, select { border: 1px solid #bdc2c9 }
-input.text {
-	height: 18px;
-	padding-left: 2px;
-	padding-right: 2px;
-}
-.checkbox input, .radio input { border: none }
-form.std .checkbox label, form.std .radio label, form.std span.form_info {
-	margin: 0;
-	float: none;
-	text-align: left;
-}
+input, textarea, select { border: 4px solid #404041; }
 .required sup { color: #da0f00; }
-form.std p.checkbox { padding-left: 30%; }
-form.std p.submit {
-	padding-left: 31%!important;
-	margin-bottom: 1.5em;
+
+form.std .button {
+    border: none;
+    background: #404041;
+    color: white;
+    text-align: left;
+    width: 130px;
+    height: 25px;
+    line-height: 25px;
 }
-#center_column form.std p.submit2 {
-	padding-left: 170px;
-	margin-bottom: 1.5em;
+form.std .button:hover {
+    background: #3dae48;
+}
+p.info {
+    background: #f3f3f4;
+    padding: 5px;
 }
 
 /* START OF BUTTONS SECTION
@@ -1321,17 +1309,6 @@ div#cart_block ul li a:hover {
 
 
 
-
-
-/* my-account.tpl */
-#my-account #main-content ul { margin: 2em 0 }
-#my-account #main-content li {
-	list-style: none;
-	margin: 2em 1.5em;
-}
-
-
-
 /* discount.tpl */
 td.discount_value { white-space: nowrap }
 
@@ -1651,6 +1628,7 @@ a.button:hover,
 }
 .cart_navigation a.continueShopping{
     background-color: #e7e7e8;
+    width: 136px;
 }
 .cart_navigation a.continueShopping:hover{
     background-color: #404041;
@@ -1678,60 +1656,49 @@ a.button:hover,
 }
 
 
-
-#accountMenu {
-    list-style: none;
-    margin: 0 !important;
-    padding: 0 !important;
-    padding-bottom: 32px !important;
-}
-#accountMenu li {
-    margin: 0 !important;
-    padding: 0 !important;
-    padding-bottom: 8px !important;
-}
-#accountMenu .button {
-    width: 163px;
-    background: #404041;
-    color: white;
-}
-#accountMenu .button:hover {
-    background: #3dae48;
-}
 .home {
     width: 163px;
 }
 
 
+ul.buttons {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 32px;
+}
+ul.buttons li {
+    margin: 0;
+    padding: 0;
+    padding-bottom: 8px;
+}
+.buttons .button {
+    background: #404041;
+    color: white;
+    text-align: left;
+    min-width: 114px;
+}
+.buttons .button:hover {
+    background: #3dae48;
+}
 
-/* contact-form.tpl */
-body#contact-form div#center_column form input#email,
-body#contact-form div#center_column form select#id_contact,
-body#contact-form div#center_column form textarea#message { width: 50% }
-form.std p.desc_contact span.like_input {
-	width: 366px;
-	text-align: left
+.myAccount .button {
+    width: 163px;
 }
 
 
 
 /* history.tpl*/
 #block-history { color: #374853 }
-.color-myaccount { color: #dd2a81 }
-#block-history table#order-list { border: none }
-#block-history table#order-list thead th { background-image: url('../img/block_myaccount_header_large.gif') }
-#block-history table#order-list thead th { color: white }
-#block-history table#order-list tbody { background: #D0D1D5 url('../img/form_bg.jpg') repeat-x top left }
-#block-history table#order-list tbody tr td { background-color: white }
 #block-history table#order-list td.history_link {
 	white-space: nowrap;
 	text-align: right
 }
 #block-history #block-order-detail {
-	border-top: 2px #dd2a81 solid;
-	border-bottom: 2px #dd2a81 solid;
+	border-top: 2px #404041 solid;
+	border-bottom: 2px #404041 solid;
 	padding: 0.5em;
-	background: #D0D1D5 url('../img/form_bg.jpg') repeat-x top left
+    margin: 1em 0;
 }
 #block-history #block-order-detail p {
 	padding-left: 0;
@@ -2082,6 +2049,23 @@ ul#suppliers_list li a.button,
 
 
 /* adresses */
+table.addresses {
+    width: 100%;
+    margin-bottom: 8px;
+}
+table.addresses td {
+    border: 3px solid #ddd;
+    padding: 8px;
+    margin: 8px;
+}
+table.addresses h4 {
+    font-size: larger;
+    margin: 0 0 8px 0;
+}
+table.addresses p {
+    line-height: 1.5em;
+}
+
 #order div.addresses {
     position: relative;
     margin-bottom: 8px;
@@ -2211,7 +2195,7 @@ ul.shop_info li {
 
 /* identity.tpl */
 p#security_informations {
-	margin: 0 3em
+	margin: 2em;
 }
 
 /* order step 3: PAYMENT */

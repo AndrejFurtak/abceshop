@@ -44,30 +44,40 @@
 	<p>{l s='Message:'} {$order->gift_message|nl2br}</p>
 {/if}
 <br />
-<ul class="address item">
-	<li class="address_title">{l s='Invoice'}</li>
-	{if $address_invoice->company}<li class="address_company">{$address_invoice->company|escape:'htmlall':'UTF-8'}</li>{/if}
-	<li class="address_name">{$address_invoice->firstname|escape:'htmlall':'UTF-8'} {$address_invoice->lastname|escape:'htmlall':'UTF-8'}</li>
-	<li class="address_address1">{$address_invoice->address1|escape:'htmlall':'UTF-8'}</li>
-	{if $address_invoice->address2}<li class="address_address2">{$address_invoice->address2|escape:'htmlall':'UTF-8'}</li>{/if}
-	<li class="address_city">{$address_invoice->postcode|escape:'htmlall':'UTF-8'} {$address_invoice->city|escape:'htmlall':'UTF-8'}</li>
-	<li class="address_country">{$address_invoice->country|escape:'htmlall':'UTF-8'}{if $invoiceState} - {$invoiceState->name|escape:'htmlall':'UTF-8'}{/if}</li>
-	{if $address_invoice->phone}<li class="address_phone">{$address_invoice->phone|escape:'htmlall':'UTF-8'}</li>{/if}
-	{if $address_invoice->phone_mobile}<li class="address_phone_mobile">{$address_invoice->phone_mobile|escape:'htmlall':'UTF-8'}</li>{/if}
-</ul>
-<ul class="address alternate_item">
-	<li class="address_title">{l s='Delivery'}</li>
-	{if $address_delivery->company}<li class="address_company">{$address_delivery->company|escape:'htmlall':'UTF-8'}</li>{/if}
-	<li class="address_name">{$address_delivery->firstname|escape:'htmlall':'UTF-8'} {$address_delivery->lastname|escape:'htmlall':'UTF-8'}</li>
-	<li class="address_address1">{$address_delivery->address1|escape:'htmlall':'UTF-8'}</li>
-	{if $address_delivery->address2}<li class="address_address2">{$address_delivery->address2|escape:'htmlall':'UTF-8'}</li>{/if}
-	<li class="address_city">{$address_delivery->postcode|escape:'htmlall':'UTF-8'} {$address_delivery->city|escape:'htmlall':'UTF-8'}</li>
-	<li class="address_country">{$address_delivery->country|escape:'htmlall':'UTF-8'}{if $deliveryState} - {$deliveryState->name|escape:'htmlall':'UTF-8'}{/if}</li>
-	{if $address_delivery->phone}<li class="address_phone">{$address_delivery->phone|escape:'htmlall':'UTF-8'}</li>{/if}
-	{if $address_delivery->phone_mobile}<li class="address_phone_mobile">{$address_delivery->phone_mobile|escape:'htmlall':'UTF-8'}</li>{/if}
-</ul>
+
+<table class="addresses">
+    <tr>
+        <td width="50%">
+            <p>
+                <b>{l s='Invoice'}</b><br />
+                {if $address_invoice->company}{$address_invoice->company|escape:'htmlall':'UTF-8'}<br />{/if}
+                {$address_invoice->firstname|escape:'htmlall':'UTF-8'} {$address_invoice->lastname|escape:'htmlall':'UTF-8'}<br />
+                {$address_invoice->address1|escape:'htmlall':'UTF-8'}<br />
+                {if $address_invoice->address2}{$address_invoice->address2|escape:'htmlall':'UTF-8'}<br />{/if}
+                {$address_invoice->postcode|escape:'htmlall':'UTF-8'} {$address_invoice->city|escape:'htmlall':'UTF-8'}<br />
+                {$address_invoice->country|escape:'htmlall':'UTF-8'}{if $invoiceState} - {$invoiceState->name|escape:'htmlall':'UTF-8'}{/if}<br />
+                {if $address_invoice->phone}{$address_invoice->phone|escape:'htmlall':'UTF-8'}<br />{/if}
+                {if $address_invoice->phone_mobile}{$address_invoice->phone_mobile|escape:'htmlall':'UTF-8'}<br />{/if}
+            </p>
+        </td>
+        <td width="50%">
+            <p>
+                <b>{l s='Delivery'}</b><br />
+                {if $address_delivery->company}{$address_delivery->company|escape:'htmlall':'UTF-8'}<br />{/if}
+                {$address_delivery->firstname|escape:'htmlall':'UTF-8'} {$address_delivery->lastname|escape:'htmlall':'UTF-8'}<br />
+                {$address_delivery->address1|escape:'htmlall':'UTF-8'}<br />
+                {if $address_delivery->address2}{$address_delivery->address2|escape:'htmlall':'UTF-8'}<br />{/if}
+                {$address_delivery->postcode|escape:'htmlall':'UTF-8'} {$address_delivery->city|escape:'htmlall':'UTF-8'}<br />
+                {$address_delivery->country|escape:'htmlall':'UTF-8'}{if $deliveryState} - {$deliveryState->name|escape:'htmlall':'UTF-8'}{/if}<br />
+                {if $address_delivery->phone}{$address_delivery->phone|escape:'htmlall':'UTF-8'}<br />{/if}
+                {if $address_delivery->phone_mobile}{$address_delivery->phone_mobile|escape:'htmlall':'UTF-8'}<br />{/if}
+            </p>
+        </td>
+    </tr>
+</table>
+
 <form action="{$base_dir_ssl}order-follow.php" method="post">
-<div id="order-detail-content" class="table_block">
+<div id="order-detail-content">
 	<table class="std">
 		<thead>
 			<tr>
@@ -131,7 +141,7 @@
 				        <td class="bold">
 				            <label for="cb_{$product.id_order_detail|intval}">
 				                {*Added - do not show links for refunded items*}
-				                {if $product.download_hash && $invoice && !in_array($order_history.0.id_order_state, $denyDownloadForOrderStates)}
+				                {if $produt.download_hash && $invoice && !in_array($order_history.0.id_order_state, $denyDownloadForOrderStates)}
 				                    <a href="{$base_dir}get-file.php?key={$product.filename|escape:'htmlall':'UTF-8'}-{$product.download_hash|escape:'htmlall':'UTF-8'}" title="{l s='download this product'}">
 				                        <img src="{$img_dir}icon/download_product.gif" class="icon" alt="{l s='Download product'}" />
 				                    </a>
@@ -143,9 +153,14 @@
 				                {/if}
 				            </label>
 						</td>
-						<td><input class="order_qte_input" name="order_qte_input[{$smarty.foreach.products.index}]" type="text" size="2" value="{$customizationQuantityTotal|intval}" /><label for="cb_{$product.id_order_detail|intval}"><span class="order_qte_span editable">{$product.customizationQuantityTotal|intval}</span></label></td>
-						<td><label for="cb_{$product.id_order_detail|intval}">{convertPriceWithCurrency price=$product.product_price_wt currency=$currency convert=0}</label></td>
-						<td><label for="cb_{$product.id_order_detail|intval}">{if isset($customizedDatas.$productId.$productAttributeId)}{convertPriceWithCurrency price=$product.total_customization_wt currency=$currency convert=0}{else}{convertPriceWithCurrency price=$product.total_wt currency=$currency convert=0}{/if}</label></td>
+						<td class="itemCount">
+                            <label for="cb_{$product.id_order_detail|intval}"><span class="order_qte_span editable">{$product.customizationQuantityTotal|intval}</span></label>
+                            {* // TODO: Gabo - toto tu bolo pôvodne.
+                            <input class="order_qte_input" name="order_qte_input[{$smarty.foreach.products.index}]" type="text" size="2" value="{$customizationQuantityTotal|intval}" /><label for="cb_{$product.id_order_detail|intval}"><span class="order_qte_span editable">{$product.customizationQuantityTotal|intval}</span></label>
+                            *}
+                        </td>
+						<td class="price"><label for="cb_{$product.id_order_detail|intval}">{convertPriceWithCurrency price=$product.product_price_wt currency=$currency convert=0}</label></td>
+						<td class="price"><label for="cb_{$product.id_order_detail|intval}">{if isset($customizedDatas.$productId.$productAttributeId)}{convertPriceWithCurrency price=$product.total_customization_wt currency=$currency convert=0}{else}{convertPriceWithCurrency price=$product.total_wt currency=$currency convert=0}{/if}</label></td>
 					</tr>
 					{foreach from=$customizedDatas.$productId.$productAttributeId item='customization' key='customizationId'}
 					<tr class="alternate_item">
@@ -168,8 +183,11 @@
 							{/if}
 						{/foreach}
 						</td>
-						<td>
-							<input class="order_qte_input" name="customization_qty_input[{$customizationId|intval}]" type="text" size="2" value="{$customization.quantity|intval}" /><label for="cb_{$product.id_order_detail|intval}"><span class="order_qte_span editable">{$customization.quantity|intval}</span></label>
+						<td class="itemCount">
+							<label for="cb_{$product.id_order_detail|intval}"><span class="order_qte_span editable">{$customization.quantity|intval}</span></label>
+                            {* // TODO: Gabo - toto tu bolo pôvodne.
+                            <input class="order_qte_input" name="customization_qty_input[{$customizationId|intval}]" type="text" size="2" value="{$customization.quantity|intval}" /><label for="cb_{$product.id_order_detail|intval}"><span class="order_qte_span editable">{$customization.quantity|intval}</span></label>
+                            *}
 						</td>
 						<td colspan="2"></td>
 					</tr>
@@ -194,9 +212,14 @@
 								{/if}
 							</label>
 						</td>
-						<td><input class="order_qte_input" name="order_qte_input[{$product.id_order_detail|intval}]" type="text" size="2" value="{$productQuantity|intval}" /><label for="cb_{$product.id_order_detail|intval}"><span class="order_qte_span editable">{$productQuantity|intval}</span></label></td>
-						<td><label for="cb_{$product.id_order_detail|intval}">{convertPriceWithCurrency price=$product.product_price_wt currency=$currency convert=0}</label></td>
-						<td><label for="cb_{$product.id_order_detail|intval}">{convertPriceWithCurrency price=$product.total_wt currency=$currency convert=0}</label></td>
+						<td class="itemCount">
+                            <label for="cb_{$product.id_order_detail|intval}"><span class="order_qte_span editable">{$productQuantity|intval}</span></label>
+                            {* // TODO: Gabo - toto tu bolo pôvodne.
+                            <input class="order_qte_input" name="order_qte_input[{$product.id_order_detail|intval}]" type="text" size="2" value="{$productQuantity|intval}" /><label for="cb_{$product.id_order_detail|intval}"><span class="order_qte_span editable">{$productQuantity|intval}</span></label>
+                            *}
+                        </td>
+						<td class="price"><label for="cb_{$product.id_order_detail|intval}">{convertPriceWithCurrency price=$product.product_price_wt currency=$currency convert=0}</label></td>
+						<td class="price"><label for="cb_{$product.id_order_detail|intval}">{convertPriceWithCurrency price=$product.total_wt currency=$currency convert=0}</label></td>
 					</tr>
 				{/if}
 			{/if}

@@ -26,7 +26,7 @@
 
 {include file=$tpl_dir./errors.tpl}
 
-<form id="form" action="{$base_dir_ssl}order.php" method="post" onsubmit="return acceptCGV('{l s='Please accept the terms of service before the next step.' js=1}');">
+<form id="form" name="carrierForm" action="{$base_dir_ssl}order.php" method="post" onsubmit="return acceptCGV('{l s='Please accept the terms of service before the next step.' js=1}');">
 
 {if $conditions}
 	<h3 class="condition_title">{l s='Terms of service'}</h3>
@@ -99,7 +99,6 @@
 			<input type="checkbox" name="gift" id="gift" value="1" {if $cart->gift == 1}checked="checked"{/if} onclick="$('#gift_div').toggle('slow');" />
 			<label for="gift">{l s='I would like the order to be gift-wrapped.'}</label>
 			<br />
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			{if $gift_wrapping_price > 0}
 				({l s='Additional cost of'}
 				<span class="price">
@@ -109,16 +108,18 @@
 			{/if}
 		</p>
 		<p id="gift_div" class="textarea">
-			<label for="gift_message">{l s='If you wish, you can add a note to the gift:'}</label>
+			<label for="gift_message">{l s='If you wish, you can add a note to the gift:'}</label><br />
 			<textarea rows="5" cols="35" id="gift_message" name="gift_message">{$cart->gift_message|escape:'htmlall':'UTF-8'}</textarea>
 		</p>
 	{/if}
 {/if}
 
+
 	<p class="cart_navigation submit">
 		<input type="hidden" name="step" value="3" />
 		<input type="hidden" name="back" value="{$back}" />
-		<a class="button" href="{$base_dir_ssl}order.php?step=1{if $back}&back={$back}{/if}" title="{l s='Previous'}" class="button">&laquo; {l s='Previous'}</a>
-		<input type="submit" name="processCarrier" value="{l s='Next'} &raquo;" class="exclusive" />
-	</p>
+		<input type="hidden" name="processCarrier" value="1" />
+        <a class="button back" href="{$base_dir_ssl}order.php?step=1{if $back}&back={$back}{/if}" title="Späť">Späť</a>
+        <a class="button next" href="javascript: document.carrierForm.submit();" title="">Ďalej</a>
+    </p>
 </form>
