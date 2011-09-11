@@ -24,8 +24,8 @@
                             <h2><a href="{$product.link|escape:'htmlall':'UTF-8'}" title="{$product.name|escape:'htmlall':'UTF-8'}">
                                     {$product.name|escape:'htmlall':'UTF-8'}
                             </a></h2>
-                            {$product.description_short}
-                            {if $product.reference AND !isset($groups)}
+                            {$product.description_short|truncate:230:'...'}
+                            {if $product.reference}
                                 <p class="productReference">
                                     {l s='Reference :'} {$product.reference|escape}
                                 </p>
