@@ -228,7 +228,9 @@ var fieldRequired = '{l s='Please fill all required fields' js=1}';
         <div class="availability">
             <!-- number of item in stock -->
             {if $display_qties == 1}
-                <p {if $product->quantity == 0} class="warning_inline"{/if}>{l s='items in stock'} {$product->quantity|intval}</p>
+                {if $product->quantity > 0}
+                    <p {if $product->quantity == 0} class="warning_inline"{/if}>{l s='items in stock'} {$product->quantity|intval}</p>
+                {/if}
             {/if}
             {if ($product->quantity == 0 && !$product->available_later) OR ($product->quantity != 0 && !$product->available_now)}
                 {* produkt je úplne nedostupný *}
