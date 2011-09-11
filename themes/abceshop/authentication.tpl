@@ -72,11 +72,11 @@ countriesNeedIDNumber = new Array();
                 <tr>
                     <td>{l s='Password'}</td>
                     <td><input type="password" id="passwd" name="passwd" value="{if isset($smarty.post.passwd)}{$smarty.post.passwd|escape:'htmlall'|stripslashes}{/if}" /></td>
-                </tr>                
+                </tr>
                 <tr>
                     <td>&nbsp;</td>
                     <td>
-                        <a class="button" id="submitLogin" href="javascript: document.login_form.submit();" title="">{l s='Log in'}</a>
+                        <input type="submit" id="submitLogin" name="submitLogin" value="{l s='Log in'}" />
                     </td>
                 </tr>
                 <tr>

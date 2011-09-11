@@ -1284,7 +1284,7 @@ div#cart_block ul li a:hover {
 }
 
 #authentication form#create-account_form table td a#submitCreate,
-#authentication form#login_form table td a#submitLogin{
+#submitLogin {
     display: block;
     width: 136px;
     height: 25px;
@@ -1292,8 +1292,13 @@ div#cart_block ul li a:hover {
     padding-left: 8px;
     line-height: 25px;
 }
+#submitLogin {
+    width: 144px;
+    border: none !important;
+    text-align: left;
+}
 #authentication form#create-account_form table td a#submitCreate:hover,
-#authentication form#login_form table td a#submitLogin:hover{
+#submitLogin:hover {
     background-color: #404041;
     color: white;
 }
