@@ -25,30 +25,34 @@ class HomeCategories extends Module
 	}
 
 
-	function hookHome($params)
-	{
-		global $smarty;
-                global $link;
+    function hookHome($params)
+    {
+        global $smarty;
+        global $link;
 
-                $categories = Category::getHomeCategories(intval($params['cookie']->id_lang));
+        require _PS_THEME_DIR_ . 'modules/homecategories/categories.php';
+        $categoryIds = array_flip($categoryIds);
 
-                $homeCategories = array();
-                foreach ($categories as $category) {
-                    $category['link'] = $link->getCategoryLink($category['id_category'],  $category['link_rewrite']);
+        $categories = Category::getHomeCategories(intval($params['cookie']->id_lang));
 
-                    $imgFile = $category['id_category'] . '.jpg';
-                    if (file_exists(_PS_CAT_IMG_DIR_ . $imgFile)) {
-                        $category['imgLink'] = _THEME_CAT_DIR_ . $imgFile;
-                    } else {
-                        $category['imgLink'] = _PS_IMG_ . 'empty-icon.jpg';
-                    }
+        $homeCategories = array();
+        foreach ($categories as $category) {
+            $category['link'] = $link->getCategoryLink($category['id_category'],  $category['link_rewrite']);
 
-                    $homeCategories[] = $category;
-                }
+            $imgFile = $category['id_category'] . '.jpg';
+            if (file_exists(_PS_CAT_IMG_DIR_ . $imgFile)) {
+                $category['imgLink'] = _THEME_CAT_DIR_ . $imgFile;
+            } else {
+                $category['imgLink'] = _PS_IMG_ . 'empty-icon.jpg';
+            }
+            $category['imgName'] = $categoryIds[$category['id_category']];
+
+            $homeCategories[] = $category;
+        }
 
 
-		$smarty->assign('homeCategories', $homeCategories);
+        $smarty->assign('homeCategories', $homeCategories);
 
-		return $this->display(__FILE__, 'homecategories.tpl');
-	}
+        return $this->display(__FILE__, 'homecategories.tpl');
+    }
 }
