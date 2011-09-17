@@ -61,7 +61,6 @@ countriesNeedIDNumber = new Array();
 
         <form name="login_form" id="login_form" action="{$base_dir_ssl}authentication.php" method="post">
             {if isset($back)}<input type="hidden" class="hidden" name="back" value="{$back|escape:'htmlall':'UTF-8'}" />{/if}
-            <input type="hidden" name="SubmitLogin" value="{l s='Log in'}" />
 
             <h3>{l s='Already registered ?'}</h3>
             <table>
@@ -76,7 +75,7 @@ countriesNeedIDNumber = new Array();
                 <tr>
                     <td>&nbsp;</td>
                     <td>
-                        <input class="loginButton" "type="submit" id="submitLogin" name="submitLogin" value="{l s='Log in'}" />
+                        <input class="loginButton" type="submit" id="submitLogin" name="SubmitLogin" value="{l s='Log in'}" />
                     </td>
                 </tr>
                 <tr>
