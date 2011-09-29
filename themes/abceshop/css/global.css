@@ -20,6 +20,12 @@ body {
 body, input, select, h1, h2, h3, h4, a { font-family: "Trebuchet MS", Calibri, Verdana, "Geneva CE", lucida, sans-serif; }
 
 
+/* Tlačítko Facebook Like */
+.fb-like {
+    margin: 0.5em 0;
+}
+
+
 /* Useful */
 .alc { text-align: center; }
 .alr { text-align: right; }
@@ -534,7 +540,7 @@ ul.icon-list .icon {
     display: block;
     width: 25px;
     height: 25px;
-    background: white;
+    background: transparent;
     position: absolute;
     border: none;
     margin-left: 0px;
@@ -1176,12 +1182,6 @@ div#cart_block h4 img.icon {
     background-color: yellow;
     vertical-align:  top;
     margin-right: 0px;
-}
-div#cart_block img.icon.bottomLeft {
-    position:  absolute;
-    left: 0px;
-    bottom: 0px;
-    background-color: red;
 }
 div#cart_block ul {
     position: absolute;

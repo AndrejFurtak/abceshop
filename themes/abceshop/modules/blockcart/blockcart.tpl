@@ -1,7 +1,7 @@
 <!-- MODULE Block cart -->
 <div id="cart_block" class="block">
     <h4>
-        <img class="icon" src="{$img_ps_dir}transparent-icon.gif" width="25 "height="25" />
+        <img class="icon" src="{$img_dir}kosik_25_25.jpg" width="25 "height="25" />
         <a href="{$base_dir_ssl}order.php">{l s='Cart' mod='blockcart'}</a>
     </h4>
 
@@ -32,6 +32,5 @@
             </li>
         </ul>
     </div>
-    <img class="icon bottomLeft" src="{$img_ps_dir}transparent-icon.gif" width="25 "height="25" />
 </div>
 <!-- /MODULE Block cart -->

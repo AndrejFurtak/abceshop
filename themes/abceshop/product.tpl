@@ -351,6 +351,25 @@ var fieldRequired = '{l s='Please fill all required fields' js=1}';
 <div id="more_info_block" class="clear">
     <!-- description, features, more fotos and videos -->
     <div id="more_info_sheets" class="sheets align_justify">
+        <div id="fb-root"></div>
+{literal}
+<script type="text/javascript">
+// <![CDATA[
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {
+            return;
+        }
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+        fjs.parentNode.insertBefore(js, fjs);
+    } (document, 'script', 'facebook-jssdk'));
+//]]>
+</script>
+{/literal}
+        <div class="fb-like" data-href="{$link->getProductLink($product)}" data-send="true" data-width="450" data-show-faces="false" data-colorscheme="dark"></div>
+
         {if $quantity_discounts}
             <!-- quantity discount -->
             <div id="quantityDiscount">

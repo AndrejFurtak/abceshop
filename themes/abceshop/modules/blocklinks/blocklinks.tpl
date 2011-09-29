@@ -9,7 +9,8 @@
             <li><img class="icon" src="{$img_dir}icon-doprava.jpg" width="25" height="25" alt="{l s='Icon' mod='blocklinks'}" /><a href="{$base_dir}cms.php?id_cms=7" title="{l s='Carrying' mod='blocklinks'}">{l s='Carrying' mod='blocklinks'}</a></li>
             <li><img class="icon" src="{$img_dir}icon-reklamacia.jpg" width="25" height="25" alt="{l s='Icon' mod='blocklinks'}" /><a href="{$base_dir}cms.php?id_cms=6" title="{l s='Claiming' mod='blocklinks'}">{l s='Claiming' mod='blocklinks'}</a></li>
             <li><img class="icon" src="{$img_dir}icon-obchodne-podmienky.jpg" width="25" height="25" alt="{l s='Icon' mod='blocklinks'}" /><a href="{$base_dir}cms.php?id_cms=3" title="{l s='Trading terms' mod='blocklinks'}">{l s='Trading terms' mod='blocklinks'}</a></li>
-            <li class="last"><img class="icon" src="{$img_dir}icon-o-nas.jpg" width="25" height="25" alt="{l s='Icon' mod='blocklinks'}" /><a href="{$base_dir}?id_cms=4" title="{l s='About us' mod='blocklinks'}">{l s='About us' mod='blocklinks'}</a></li>
+            <li><img class="icon" src="{$img_dir}icon-o-nas.jpg" width="25" height="25" alt="{l s='Icon' mod='blocklinks'}" /><a href="{$base_dir}cms.php?id_cms=4" title="{l s='About us' mod='blocklinks'}">{l s='About us' mod='blocklinks'}</a></li>
+            <li class="last"><img class="icon" src="{$img_dir}icon-akciovy-letak.png" width="25" height="25" alt="{l s='Icon' mod='blocklinks'}" /><a href="{$base_dir}cms.php?id_cms=11" title="Akciový leták">Akciový leták</a></li> <!-- // TODO: L10N -->
         </ul>
     </div>
 <!-- /MODULE Block links -->
