@@ -17,7 +17,7 @@
             <td><input type="text" id="email" name="email" value="{if isset($smarty.post.email)}{$smarty.post.email|escape:'htmlall'|stripslashes}{/if}" /></td>
         </tr>
         <tr>
-            <td colspan="2"><input type="button submit" class="button" value="{l s='Retrieve'}" /></td>
+            <td colspan="2"><input type="submit" class="button" value="{l s='Retrieve'}" /></td>
         </tr>
         </table>
     </fieldset>
