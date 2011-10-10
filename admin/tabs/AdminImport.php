@@ -757,14 +757,21 @@ class AdminImport extends AdminTab
 
 				if (isset($product->image) AND is_array($product->image) and sizeof($product->image))
 				{
+                    $firstImage = true;
 					$productHasImages = (bool)Image::getImages(intval($cookie->id_lang), intval($product->id));
-					foreach ($product->image AS $key => $url)
+                    foreach ($product->image AS $key => $url)
 						if (!empty($url))
 						{
 							$image = new Image();
 							$image->id_product = intval($product->id);
 							$image->position = Image::getHighestPosition($product->id) + 1;
-							$image->cover = (!$key AND !$productHasImages) ? true : false;
+                            if (($productHasImages) && ($firstImage)) {
+                                $product->deleteImages();
+                                $image->cover = true;
+                                $firstImage = false;
+                            } else {
+                                $image->cover = (!$key AND !$productHasImages) ? true : false;
+                            }
 							$image->legend = self::createMultiLangField($product->name[$defaultLanguageId]);
 							if (($fieldError = $image->validateFields(UNFRIENDLY_ERROR, true)) === true AND ($langFieldError = $image->validateFieldsLang(UNFRIENDLY_ERROR, true)) === true AND $image->add())
 							{
