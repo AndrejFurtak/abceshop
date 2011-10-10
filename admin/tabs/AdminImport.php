@@ -755,36 +755,51 @@ class AdminImport extends AdminTab
 					}
 				}
 
-				if (isset($product->image) AND is_array($product->image) and sizeof($product->image))
-				{
-                    $firstImage = true;
-					$productHasImages = (bool)Image::getImages(intval($cookie->id_lang), intval($product->id));
-                    foreach ($product->image AS $key => $url)
-						if (!empty($url))
-						{
-							$image = new Image();
-							$image->id_product = intval($product->id);
-							$image->position = Image::getHighestPosition($product->id) + 1;
-                            if (($productHasImages) && ($firstImage)) {
-                                $product->deleteImages();
+                if (isset($product->image) AND is_array($product->image) and sizeof($product->image))
+                {
+                    $imagesAdded = 0;
+                    $productImages = array();
+                    $productImagesData = Image::getImages(intval($cookie->id_lang), intval($product->id));
+                    foreach ($productImagesData as $row) {
+                        $productImages[] = intval($row['id_image']);
+                    }
+                    foreach ($product->image AS $key => $url) {
+                        if (!empty($url))
+                        {
+                            $image = new Image();
+                            $image->id_product = intval($product->id);
+                            $image->position = Image::getHighestPosition($product->id) + 1;
+                            if ($imagesAdded == 0) {
+                                // Ak sa pridáva prvý obrázok, nastavím ho ako hlavný.
                                 $image->cover = true;
-                                $firstImage = false;
                             } else {
-                                $image->cover = (!$key AND !$productHasImages) ? true : false;
+                                // $image->cover = (!$key AND !$productHasImages) ? true : false;
+                                $image->cover = false;
                             }
-							$image->legend = self::createMultiLangField($product->name[$defaultLanguageId]);
-							if (($fieldError = $image->validateFields(UNFRIENDLY_ERROR, true)) === true AND ($langFieldError = $image->validateFieldsLang(UNFRIENDLY_ERROR, true)) === true AND $image->add())
-							{
-								if (!self::copyImg($product->id, $image->id, $url))
-									$this->_warnings[] = Tools::displayError('Error copying image: ').$url;
-							}
-							else
-							{
-								$this->_warnings[] = $image->legend[$defaultLanguageId].(isset($image->id_product) ? ' ('.$image->id_product.')' : '').' '.Tools::displayError('cannot be saved');
-								$this->_errors[] = ($fieldError !== true ? $fieldError : '').($langFieldError !== true ? $langFieldError : '').mysql_error();
-							}
-						}
-				}
+                            $image->legend = self::createMultiLangField($product->name[$defaultLanguageId]);
+                            if (($fieldError = $image->validateFields(UNFRIENDLY_ERROR, true)) === true AND ($langFieldError = $image->validateFieldsLang(UNFRIENDLY_ERROR, true)) === true AND $image->add())
+                            {
+                                if (!self::copyImg($product->id, $image->id, $url)) {
+                                    // Ak sa obrázok nepodarilo skopírovať (neplatná URL), vymažem o ňom aj záznam z databázy.
+                                    $image->delete();
+                                    $this->_warnings[] = Tools::displayError('Error copying image: ').$url;
+                                } else {
+                                    $imagesAdded++;
+                                }
+                            }
+                            else
+                            {
+                                $this->_warnings[] = $image->legend[$defaultLanguageId].(isset($image->id_product) ? ' ('.$image->id_product.')' : '').' '.Tools::displayError('cannot be saved');
+                                $this->_errors[] = ($fieldError !== true ? $fieldError : '').($langFieldError !== true ? $langFieldError : '').mysql_error();
+                            }
+                        }
+                    }
+                    if (($imagesAdded > 0) && (count($productImages) > 0)) {
+                        // V rámci importu boli pridané nejaké obrázky, tak vymažem pôvodné obrázky produktu.
+                        // Je to ochrana, ak by sa importoval produkt druhý krát, aby sa mu obrázok neduplikoval.
+                        $product->deleteImages($productImages);
+                    }
+                }
 				if (isset($product->id_category))
 					$product->updateCategories(array_map('intval', $product->id_category));
 
