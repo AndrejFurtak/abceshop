@@ -429,7 +429,7 @@ var fieldRequired = '{l s='Please fill all required fields' js=1}';
                 <h2 class="product_subheader">Vlastnosti</h2>
                 <ul id="idTab2" class="bullet">
                 {foreach from=$features item=feature}
-                    <li><span>{$feature.name|escape:'htmlall':'UTF-8'}</span> {$feature.value|escape:'htmlall':'UTF-8'}</li>
+                    <li><span>{$feature.name|escape:'htmlall':'UTF-8'}:</span> {$feature.value|escape:'htmlall':'UTF-8'}</li>
                 {/foreach}
                 </ul>
             </div>
