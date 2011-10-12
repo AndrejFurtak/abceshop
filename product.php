@@ -76,17 +76,16 @@ function formTargetFormat()
 
 /* CSS ans JS files calls */
 $css_files = array(
-	__PS_BASE_URI__.'css/thickbox.css' => 'screen'
+	__PS_BASE_URI__.'js/slimbox2/css/slimbox2.css' => 'screen'
 );
 
-$js_files = array(
-	__PS_BASE_URI__.'js/jquery/thickbox-modified.js',
+$js_files = array(        
 	__PS_BASE_URI__.'js/jquery/jquery.idTabs.modified.js',
 	__PS_BASE_URI__.'js/jquery/jquery.scrollto.js',
 	__PS_BASE_URI__.'js/jquery/jquery.serialScroll.js',
+	__PS_BASE_URI__.'js/slimbox2/js/slimbox2.js',
 	_THEME_JS_DIR_.'tools.js',
-	_THEME_JS_DIR_.'product.js'
-);
+	_THEME_JS_DIR_.'product.js');
 
 /* jqZoom */
 $jqZoomEnabled = (Configuration::get('PS_DISPLAY_JQZOOM') == 1);
@@ -339,8 +338,8 @@ $smarty->assign(array(
 	'display_qties' => intval(Configuration::get('PS_DISPLAY_QTIES')),
 	'display_ht' => !Tax::excludeTaxeOption()));
 
-if (file_exists(_PS_THEME_DIR_.'thickbox.tpl'))
-	$smarty->display(_PS_THEME_DIR_.'thickbox.tpl');
+if (file_exists(_PS_THEME_DIR_.'lightbox2.tpl'))
+	$smarty->display(_PS_THEME_DIR_.'lightbox2.tpl');
 $smarty->assign(array(
 	'currencySign' => $currency->sign,
 	'currencyRate' => $currency->conversion_rate,

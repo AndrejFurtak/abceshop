@@ -94,7 +94,7 @@ var fieldRequired = '{l s='Please fill all required fields' js=1}';
         <!-- product img-->
         <div id="image-block">
             {if $have_image}
-                <img src="{$link->getImageLink($product->link_rewrite, $cover.id_image, 'large')}" {if $jqZoomEnabled}class="jqzoom" alt="{$link->getImageLink($product->link_rewrite, $cover.id_image, 'thickbox')}"{else} title="{$product->name|escape:'htmlall':'UTF-8'}" alt="{$product->name|escape:'htmlall':'UTF-8'}" {/if} id="bigpic" width="{$largeSize.width}" height="{$largeSize.height}" />
+                <img id="bigpic" src="{$link->getImageLink($product->link_rewrite, $cover.id_image, 'large')}" {if $jqZoomEnabled}class="jqzoom" alt="{$link->getImageLink($product->link_rewrite, $cover.id_image)}"{else}title="{$product->name|escape:'htmlall':'UTF-8'}" alt="{$product->name|escape:'htmlall':'UTF-8'}"{/if} width="{$largeSize.width}" height="{$largeSize.height}" />
             {else}
                 <img src="{$img_prod_dir}{$lang_iso}-default-large.jpg" alt="" title="{$product->name|escape:'htmlall':'UTF-8'}" />
             {/if}
@@ -110,7 +110,7 @@ var fieldRequired = '{l s='Please fill all required fields' js=1}';
                         {foreach from=$images item=image name=thumbnails}
                             {assign var=imageIds value=`$product->id`-`$image.id_image`}
                             <li id="thumbnail_{$image.id_image}">
-                                <a href="{$link->getImageLink($product->link_rewrite, $imageIds, 'thickbox')}" rel="other-views" class="thickbox {if $smarty.foreach.thumbnails.first}shown{/if}" title="{$image.legend|htmlspecialchars}">
+                                <a href="{$link->getImageLink($product->link_rewrite, $imageIds, 'thickbox')}" rel="lightbox-thumbs_list" class="{if $smarty.foreach.thumbnails.first}shown{/if}" title="{$image.legend|htmlspecialchars}">
                                     <img id="thumb_{$image.id_image}" src="{$link->getImageLink($product->link_rewrite, $imageIds, 'medium')}" alt="{$image.legend|htmlspecialchars}" />
                                 </a>
                             </li>

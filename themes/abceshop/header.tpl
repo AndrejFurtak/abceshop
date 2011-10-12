@@ -14,9 +14,9 @@
     <link rel="icon" type="image/vnd.microsoft.icon" href="{$img_ps_dir}favicon.ico" />
     <link rel="shortcut icon" type="image/x-icon" href="{$img_ps_dir}favicon.ico" />
 {if isset($css_files)}
-{foreach from=$css_files key=css_uri item=media}
-    <link href="{$css_uri}" rel="stylesheet" type="text/css" media="{$media}" />
-{/foreach}
+    {foreach from=$css_files key=css_uri item=media}
+        <link rel="stylesheet" href="{$css_uri}" type="text/css" media="{$media}" />
+    {/foreach}
 {/if}
     <script type="text/javascript" src="{$content_dir}js/tools.js"></script>
     <script type="text/javascript">
@@ -29,11 +29,10 @@
     <script type="text/javascript" src="{$content_dir}js/jquery/jquery-1.2.6.pack.js"></script>
     <script type="text/javascript" src="{$content_dir}js/jquery/jquery.easing.1.3.js"></script>
     <script type="text/javascript" src="{$content_dir}js/jquery/jquery.hotkeys-0.7.8-packed.js"></script>
-    <script type="text/javascript" src="{$content_dir}js/jquery/jquery.scrollto.js"></script>
 {if isset($js_files)}
-{foreach from=$js_files item=js_uri}
-    <script type="text/javascript" src="{$js_uri}"></script>
-{/foreach}
+    {foreach from=$js_files item=js_uri}
+        <script type="text/javascript" src="{$js_uri}"></script>
+    {/foreach}
 {/if}
 {$HOOK_HEADER}
 </head>

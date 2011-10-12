@@ -550,5 +550,6 @@ $_LANG['thickbox_d3d2e617335f08df83599665eef8a418'] = 'Zatvoriť';
 $_LANG['thickbox_7a81aa9275331bb0f5e6adb5e8650a03'] = 'alebo stlačte Esc';
 $_LANG['thickbox_10ac3d04253ef7e1ddc73e6091c0cd55'] = 'Ďalší';
 $_LANG['thickbox_14230d11143a03f4330c6433d5032a9d'] = 'Predchádzajúci';
-
+$_LANG['lightbox2_8bf8854bebe108183caeb845c7676ae4'] = 'z';
+$_LANG['lightbox2_be53a0541a6d36f6ecb879fa2c584b08'] = 'Obrázok';
 ?>

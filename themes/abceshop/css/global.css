@@ -1802,6 +1802,7 @@ div.categTree {
     margin: 0;
     height: inherit;
     width: 10000px;
+    padding: 0px;
     list-style-type: none;
 }
 #thumbs_list ul li {
