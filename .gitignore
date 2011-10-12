@@ -3,6 +3,9 @@ robots.txt
 admin/backups/*
 !admin/backups/.htaccess
 !admin/backups/index.php
+admin/import/*
+!admin/import/.htaccess
+!admin/import/index.php
 config/settings.inc.php
 config/settings-local.inc.php
 download/*

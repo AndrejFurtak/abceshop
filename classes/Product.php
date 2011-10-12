@@ -556,17 +556,37 @@ class		Product extends ObjectModel
 	*
 	* @return array Deletion result
 	*/
-	public function deleteImages()
-	{
-		$result = Db::getInstance()->ExecuteS('
-		SELECT `id_image`
-		FROM `'._DB_PREFIX_.'image`
-		WHERE `id_product` = '.intval($this->id));
-		foreach($result as $row)
-			if (!deleteImage(intval($this->id), $row['id_image']) OR !Db::getInstance()->Execute('DELETE FROM `'._DB_PREFIX_.'image_lang` WHERE `id_image` = '.intval($row['id_image'])))
-				return false;
-		return Db::getInstance()->Execute('DELETE FROM `'._DB_PREFIX_.'image` WHERE `id_product` = '.intval($this->id));
-	}
+    public function deleteImages($imagesIds = NULL)
+    {
+        $deleteAll = false;
+        if (!is_array($imagesIds)) {
+            // Nemám zadané ID obrázkov, ktoré treba vymazať, tak sa mažú všetky.
+            $deleteAll = true;
+            $imagesIds = array();
+            $result = Db::getInstance()->ExecuteS('
+                SELECT `id_image`
+                FROM `'._DB_PREFIX_.'image`
+                WHERE `id_product` = '.intval($this->id));
+
+            foreach ($result as $row) {
+                $imagesIds[] = $row['id_image'];
+            }
+        }
+        if (count($imagesIds) == 0) {
+            return true;
+        }
+
+        foreach ($imagesIds as $imageId) {
+            if (!deleteImage(intval($this->id), $imageId) OR !Db::getInstance()->Execute('DELETE FROM `'._DB_PREFIX_.'image_lang` WHERE `id_image` = '.intval($imageId)))
+                return false;
+        }
+        if ($deleteAll) {
+            // Vymazanie všetkých obrázkov produku - podľa ID produktu.
+            return Db::getInstance()->Execute('DELETE FROM `'._DB_PREFIX_.'image` WHERE `id_product` = '.intval($this->id));
+        }
+        // Vymazanie určených obrázkov produku - podľa ID obrázkov.
+        return Db::getInstance()->Execute('DELETE FROM `'._DB_PREFIX_.'image` WHERE `id_image` IN ( '.  implode(',', $imagesIds) . ')');
+    }
 
 	static public function getProductAttributePrice($id_product_attribute)
 	{

@@ -1465,6 +1465,7 @@ ul#product_list li div.right_block div.description{
 ul#product_list li div.right_block div.description h2{
     line-height: 1;
     margin-bottom: 16px;
+    margin-top: 2px;
     text-transform: uppercase;
 }
 ul#product_list li div.right_block div.description p{
