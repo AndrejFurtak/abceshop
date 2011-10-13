@@ -73,7 +73,8 @@ else /* Else display homepage */
 	<h2>'.translate('Welcome to your Back Office').'</h2>
 	'.translate('Click the tabs to navigate.').'
 	<br /><br /><br />';
-	if (@ini_get('allow_url_fopen') AND $update = checkPSVersion())
+/*
+    if (@ini_get('allow_url_fopen') AND $update = checkPSVersion())
 		echo '<div class="warning warn" style="margin-bottom:30px;"><h3>'.translate('New PrestaShop version available').' : <a style="text-decoration: underline;" href="'.$update['link'].'">'.translate('Download').'&nbsp;'.$update['name'].'</a> !</h3></div>';
     elseif (!@ini_get('allow_url_fopen'))
     {
@@ -82,17 +83,18 @@ else /* Else display homepage */
 		echo '<p>'.translate('To receive PrestaShop update warnings, you need to activate the <b>allow_url_fopen</b> command in your <b>php.ini</b> config file.').' [<a href="http://www.php.net/manual/'.$isoUser.'/ref.filesystem.php">'.translate('more infos').'</a>]</p>';
 		echo '<p>'.translate('If you don\'t know how to do that, please contact your host administrator !').'</p><br>';
 	}
-  echo '</div>';
+*/
+    echo '</div>';
 
 	echo Module::hookExec('backOfficeHome');
 
 	/* News from PrestaShop website */
-	echo '<div id="adminNews">
+/*
+    echo '<div id="adminNews">
 	<h2>'.translate('PrestaShop live feed').'</h2>';
 	$protocol = (isset($_SERVER['HTTPS']) AND strtolower($_SERVER['HTTPS']) == 'on') ? 'https' : 'http';
 	echo'<iframe frameborder="no" style="margin: 0px; padding: 0px; width: 780px; height: 380px;" src="'.$protocol.'://www.prestashop.com/rss/news.php?v='._PS_VERSION_.'&lang='.$isoUser.'"></iframe></div>';
+*/
 }
 
 include(PS_ADMIN_DIR.'/footer.inc.php');
-
-?>
