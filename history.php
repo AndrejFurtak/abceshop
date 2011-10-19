@@ -10,7 +10,7 @@ if (!$cookie->isLogged())
 	Tools::redirect('authentication.php?back=history.php');
 
 /* JS files call */
-$js_files = array(__PS_BASE_URI__.'js/jquery/jquery.scrollto.js', _THEME_JS_DIR_.'history.js');
+$js_files = array(_THEME_JS_DIR_.'history.js');
 
 if ($orders = Order::getCustomerOrders(intval($cookie->id_customer)))
 	foreach ($orders AS &$order)

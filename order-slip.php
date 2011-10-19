@@ -10,9 +10,7 @@ if (!$cookie->isLogged())
 	Tools::redirect('authentication.php?back=history.php');
 
 /* Js files call */
-$js_files = array(
-	__PS_BASE_URI__.'js/jquery/jquery.scrollto.js',
-	_THEME_JS_DIR_.'history.js');
+$js_files = array(_THEME_JS_DIR_.'history.js');
 
 $smarty->assign('ordersSlip', OrderSlip::getOrdersSlip(intval($cookie->id_customer)));
 

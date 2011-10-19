@@ -81,7 +81,6 @@ $css_files = array(
 
 $js_files = array(        
 	__PS_BASE_URI__.'js/jquery/jquery.idTabs.modified.js',
-	__PS_BASE_URI__.'js/jquery/jquery.scrollto.js',
 	__PS_BASE_URI__.'js/jquery/jquery.serialScroll.js',
 	__PS_BASE_URI__.'js/slimbox2/js/slimbox2.js',
 	_THEME_JS_DIR_.'tools.js',
